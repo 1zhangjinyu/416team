@@ -1,0 +1,92 @@
+import React, { Component } from 'react'
+import './style.css';
+export default class Weight extends Component {
+    constructor(){
+        super();
+        this.state={
+            inpSex:'',
+            inpWeight:'',
+            inpNew:'',
+            inpType:''
+        }
+    }
+    sexChange = (e)=>{
+        this.setState({inpSex:e.target.value})
+    }
+    weightChange = (e)=>{
+        this.setState({inpWeight:e.target.value})
+    }
+    newChange = (e)=>{
+        this.setState({inpNew:e.target.value})
+    }
+    heightChange = (e)=>{
+        this.setState({inpHeight:e.target.value})
+    }
+    typeChange = (e)=>{
+        this.setState({inpType:e.target.value})
+    }
+    
+    sub=()=>{
+        let data = {sex:this.state.inpSex,weight:this.state.inpWeight,goalweight:this.state.inpNew,height:this.state.inpHeight,type:this.state.inpType};
+        fetch('https://www.hmyyz.top:8087/weight', {
+            method: 'POST', 
+            mode:'cors',
+            body: JSON.stringify(data), 
+                
+        })
+        .then(function(res){return res.text()})
+        .catch(error => console.error('Error:', error))
+        .then(function(res){
+            console.log(res);
+        });
+    }
+    render() {
+        return (
+            <div className="weight">
+                <div className="weight-header">个人信息</div>
+                <form>
+                    性别：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="man" id="man" value="man" onChange={this.sexChange}/> 男 &nbsp;&nbsp;
+                    <input type="radio" name="man" id="woman" value="woman" onChange={this.sexChange}/> 女
+                    <br/>
+                    ——————————————————————
+                    <br/>
+                    当前体重：<input 
+                                type="number" 
+                                className="weight-number"
+                                value={this.state.inpWeight} 
+                                onChange={this.weightChange}
+                            />kg
+                    <br/>
+                    ——————————————————————
+                    <br/>
+                    目标体重：<input
+                                type="number" 
+                                className="weight-number"
+                                value={this.state.inpNew} 
+                                onChange={this.newChange}
+                                 />kg
+                    <br/>
+                    ——————————————————————
+                    <br/>
+                    身高：<input
+                            type="number" 
+                            className="weight-number"
+                            value={this.state.inpHeight} 
+                            onChange={this.heightChange} 
+                            />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cm
+                    <br/>
+                    ——————————————————————
+                    <br/>
+                    目标形式：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="type" id="add" value="addweight" onChange={this.typeChange} /> 增重&nbsp;&nbsp;
+                    <input type="radio" name="type" id="delete" value="loseweight" onChange={this.typeChange}/> 减重&nbsp;&nbsp;
+                    <input type="radio" name="type" id="keep" value="keepweight" onChange={this.typeChange}/> 保持&nbsp;&nbsp;
+                    ——————————————————————
+                    <input type="submit" value="提交" id="weight"></input>
+                </form>
+                <button onClick={this.sub}>提交</button>
+            </div>
+        )
+    }
+}
