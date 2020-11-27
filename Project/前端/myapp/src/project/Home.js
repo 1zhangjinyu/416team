@@ -1,8 +1,44 @@
 import React, { Component } from 'react'
 import Cookbook, { Breakfast, Lunch,Dinner } from './Cookbook';
 import './nav.css';
-export default class Home extends Component {
+import {connect} from 'react-redux';
+import {foods} from './actionCreators'
+import Mytab from './Mytab'
+class Home extends Component {
+    constructor(props) {
+        super(props);
+      }
+      componentDidMount(){
+          this.props.dispatch(foods())
+      }
     render() {
+        // this.props.dispatch(foods())
+        console.log(this.props.foods);
+        let arr1=[],arr2=[],arr3=[];
+        this.props.foods.map((item)=>{
+            if(item.eattime==='早'){
+                arr1.push(item);
+            }
+            else if(item.eattime==='中'){
+                arr2.push(item);
+            }
+            else if(item.eattime==='晚'){
+                arr3.push(item);
+            }
+        })
+        // let arr1=['https://ns-strategy.cdn.bcebos.com/ns-strategy/upload/fc_big_pic/part-00679-3288.jpg',
+        // 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1895037277,3199019854&fm=26&gp=0.jpg',
+        // 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2517943680,1479891239&fm=26&gp=0.jpg',];
+        // let arr2=[
+        //     'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1258033031,1196083719&fm=26&gp=0.jpg',
+        //     'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1005779767,1621209550&fm=26&gp=0.jpg',
+        //     'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2304171237,4096663632&fm=26&gp=0.jpg',];
+        // let arr3=[
+        //     'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2741553010,2122120810&fm=26&gp=0.jpg',
+        //     'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1689433545,3167262103&fm=26&gp=0.jpg',
+        //     'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2132254289,481893094&fm=26&gp=0.jpg'
+        // ];
+
         return (
             <div style={{backgroundColor:'rgb(247,240,240)'}}>
                 <div style={{backgroundColor:'rgb(86,186,186)'}}>
@@ -17,7 +53,7 @@ export default class Home extends Component {
                 </div>
                 <div id="healthy">
                     <span id="rec">健康记录</span>
-                    <span id="rep">健康报告></span>
+                    <span id="rep">健康报告> </span>
                     <p style={{fontSize:'5px',color:'grey',paddingTop:'20px',paddingLeft:'20px'}}>还可以吃</p>
                     <p style={{paddingLeft:'20px'}}>__________________________________________</p>
                     <p style={{fontSize:'5px',color:'grey',paddingTop:'20px',paddingLeft:'20px'}}>体重</p>
@@ -25,16 +61,22 @@ export default class Home extends Component {
                     <p style={{paddingLeft:'115px',paddingTop:'15px',fontSize:'17px'}}>查看更多 ></p>
                 </div>
                 <p style={{fontSize:'18px',paddingTop:'20px',paddingLeft:'10px'}}>我的食谱</p>
-                <span className="iconfont icon-shuaxin" style={{paddingLeft:'300px'}}>换一批</span>
+                <span className="iconfont icon-shuaxin" style={{paddingLeft:'300px'}} onClick={()=>this.props.dispatch(foods())}>换一批</span>
                 <div id="eat">
                     <p style={{fontSize:'15px'}}>早餐</p>
-                    <Breakfast/>
+                    <Breakfast data={arr1}/>
                     <p style={{fontSize:'15px',paddingTop:'30px'}}>午餐</p>
-                    <Lunch/>
+                    <Lunch data={arr2}/>
                     <p style={{fontSize:'15px',paddingTop:'30px'}}>晚餐</p>
-                    <Dinner/>
+                    <Dinner data={arr3}/>
                 </div>
+                <Mytab />
             </div>
+           
         )
     }
 }
+const mapStateToProps = (state) =>({
+    foods:state.foodslist.foods
+  })
+  export default connect(mapStateToProps)(Home)
