@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom';
 import './nav.css';
 
-const Breakfast = (data) => {
+const Breakfast = (data,props) => {
+    console.log(props.props)
     return (
         <div id="morning">{
             data.data.map((item)=><li onClick={()=>{
-                this.props.history.push({
-                  pathname:'/home/detail',
+               props.history.push({
+                  pathname:'/recommend/fooddetails',
                   img:item.img,
                   content:item.content,
                   foodname:item.foodname,
@@ -22,12 +24,12 @@ const Breakfast = (data) => {
     )
     
 }
-const Lunch = (data) => {
+const Lunch = (data,props) => {
     return (
         <div id="lunch">{
             data.data.map((item)=><li onClick={()=>{
-                this.props.history.push({
-                  pathname:'/home/detail',
+                this.history.push({
+                  pathname:'/recommend/fooddetails',
                   img:item.img,
                   content:item.content,
                   foodname:item.foodname,
@@ -42,12 +44,13 @@ const Lunch = (data) => {
         </div>
     )
 }
-const Dinner = (data) => {
+const Dinner = (data,props) => {
+    console.log(props)
     return (
         <div id="dinner">{
-            data.data.map((item)=><li onClick={()=>{
-                this.props.history.push({
-                  pathname:'/home/detail',
+            data.data.map((item)=><li onClick={(props)=>{
+                props.history.push({
+                  pathname:'/recommend/fooddetails',
                   img:item.img,
                   content:item.content,
                   foodname:item.foodname,
@@ -62,6 +65,7 @@ const Dinner = (data) => {
         </div>
     )
 }
-export {Dinner}
-export {Breakfast}
+export {Dinner};
 export {Lunch}
+export {Breakfast}
+export default withRouter(Breakfast)

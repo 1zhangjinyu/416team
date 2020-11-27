@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Cookbook, { Breakfast, Lunch,Dinner } from './Cookbook';
+import  {Breakfast,Lunch,Dinner} from './Cookbook';
 import './nav.css';
 import {connect} from 'react-redux';
 import {foods} from './actionCreators'
@@ -64,7 +64,7 @@ class Home extends Component {
                 <span className="iconfont icon-shuaxin" style={{paddingLeft:'300px'}} onClick={()=>this.props.dispatch(foods())}>换一批</span>
                 <div id="eat">
                     <p style={{fontSize:'15px'}}>早餐</p>
-                    <Breakfast data={arr1}/>
+                    <Breakfast data={arr1} props={this.props.history}/>
                     <p style={{fontSize:'15px',paddingTop:'30px'}}>午餐</p>
                     <Lunch data={arr2}/>
                     <p style={{fontSize:'15px',paddingTop:'30px'}}>晚餐</p>

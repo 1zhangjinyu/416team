@@ -25,7 +25,7 @@ class Search extends React.Component {
         onClear={value => console.log(value, 'onClear')}
         onFocus={() => console.log('onFocus')}
         onBlur={() => console.log('onBlur')}
-        onCancel={()=>this.props.history.push('/')}
+        onCancel={()=>this.props.history.push('/home')}
         showCancelButton
         onChange={this.onChange}
       />

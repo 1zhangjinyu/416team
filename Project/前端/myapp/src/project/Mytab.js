@@ -58,7 +58,6 @@ class Mytab extends React.Component {
 				  data-seed="logId1"
 			
 			>
-			 每日推荐
 			</TabBar.Item>
 			<TabBar.Item
 			  icon={

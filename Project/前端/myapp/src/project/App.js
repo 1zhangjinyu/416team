@@ -11,9 +11,10 @@ import Home from './Home';
 import Search from './Search';
 import Search1 from './Search1';
 import My from './My';
-import store from './Store';
 import Recommend from './Recommend';
 import Fooddetails from './Fooddetails';
+import store from './Store'
+
 
 
 const App = ()=>{
@@ -27,6 +28,8 @@ const App = ()=>{
             <Route path="/home/rank" component={FoodRank}/>
             <Route path="/home/com" component={Compare}/>
 			<Route path="/home/search1" component={Search1}/>
+			<Route exact path="/recommend" component={Recommend}/>
+			<Route path="/recommend/fooddetails" component={Fooddetails}/>
             <Route path="/my" component={My}/>
 			<Route exact path="/recommend" component={Recommend}/>
 			<Route path="/recommend/fooddetails" component={Fooddetails}/>
