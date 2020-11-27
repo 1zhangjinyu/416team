@@ -9,6 +9,10 @@ import Compare from './Compare';
 import Mytab from './Mytab';
 import Home from './Home';
 import Search from './Search';
+<<<<<<< HEAD
+=======
+import Search1 from './Search1';
+>>>>>>> ed008a09df3bb42292acd06c179f53ad30bc743d
 import My from './My';
 
 
@@ -22,6 +26,10 @@ const App = ()=>{
             <Route path='/home/search' component={Search}/>
             <Route path="/home/rank" component={FoodRank}/>
             <Route path="/home/com" component={Compare}/>
+<<<<<<< HEAD
+=======
+			<Route path="/home/search1" component={Search1}/>
+>>>>>>> ed008a09df3bb42292acd06c179f53ad30bc743d
             <Route path="/my" component={My}/>
             
             
@@ -30,4 +38,3 @@ const App = ()=>{
 	</Router>
 }
 export default App;
-

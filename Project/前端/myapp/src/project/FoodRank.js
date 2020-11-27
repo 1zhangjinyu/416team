@@ -141,8 +141,8 @@ const FoodContent = (props)=>{
                 fruitlist.map((item)=><li>
                     <img src={item.img} className='foodrank-picture' />
                     <div className="foodlist-name">
-                        <p>{item.name}</p>
-                        <p style={{fontSize:'12px',marginTop:'10px'}}>{item.cal}</p>
+                        <p style={{marginTop:'-10px'}}>{item.name}</p>
+                        <p style={{fontSize:'12px',marginTop:'20px'}}>{item.cal}</p>
                     </div>
                 </li>
                 )
@@ -153,7 +153,7 @@ const FoodContent = (props)=>{
                 foodlists.map((item)=><li>
                     <img src={item.img} className='foodrank-picture' />
                     <div className="foodlist-name">
-                        <p>{item.name}</p>
+                        <p style={{marginTop:'-10px'}}>{item.name}</p>
                         <p style={{fontSize:'12px',marginTop:'10px'}}>{item.cal}</p>
                     </div>
                     
@@ -166,7 +166,7 @@ const FoodContent = (props)=>{
                 meatlist.map((item)=><li>
                     <img src={item.img} className='foodrank-picture' />
                     <div className="foodlist-name">
-                        <p>{item.name}</p>
+                        <p style={{marginTop:'-10px'}}>{item.name}</p>
                         <p style={{fontSize:'12px',marginTop:'10px'}}>{item.cal}</p>
                     </div>
                 </li>
@@ -179,7 +179,7 @@ const FoodContent = (props)=>{
                 beanlist.map((item)=><li>
                     <img src={item.img} className='foodrank-picture' />
                     <div className="foodlist-name">
-                        <p>{item.name}</p>
+                        <p style={{marginTop:'-10px'}}>{item.name}</p>
                         <p style={{fontSize:'12px',marginTop:'10px'}}>{item.cal}</p>
                     </div>
                 </li>
@@ -191,7 +191,7 @@ const FoodContent = (props)=>{
                 sealist.map((item)=><li>
                     <img src={item.img} className='foodrank-picture' />
                     <div className="foodlist-name">
-                        <p>{item.name}</p>
+                        <p style={{marginTop:'-10px'}}>{item.name}</p>
                         <p style={{fontSize:'12px',marginTop:'10px'}}>{item.cal}</p>
                     </div>
                 </li>
@@ -203,7 +203,7 @@ const FoodContent = (props)=>{
                 vegtablelist.map((item)=><li>
                     <img src={item.img} className='foodrank-picture' />
                     <div className="foodlist-name">
-                        <p>{item.name}</p>
+                        <p style={{marginTop:'-10px'}}>{item.name}</p>
                         <p style={{fontSize:'12px',marginTop:'10px'}}>{item.cal}</p>
                     </div>
                 </li>
@@ -215,7 +215,7 @@ const FoodContent = (props)=>{
                 nutlist.map((item)=><li>
                     <img src={item.img} className='foodrank-picture' />
                     <div className="foodlist-name">
-                        <p>{item.name}</p>
+                        <p style={{marginTop:'-10px'}}>{item.name}</p>
                         <p style={{fontSize:'12px',marginTop:'10px'}}>{item.cal}</p>
                     </div>
                 </li>
@@ -227,7 +227,7 @@ const FoodContent = (props)=>{
                 oillist.map((item)=><li>
                     <img src={item.img} className='foodrank-picture' />
                     <div className="foodlist-name">
-                        <p>{item.name}</p>
+                        <p style={{marginTop:'-10px'}}>{item.name}</p>
                         <p style={{fontSize:'12px',marginTop:'10px'}}>{item.cal}</p>
                     </div>
                 </li>
@@ -239,7 +239,7 @@ const FoodContent = (props)=>{
                 acidlist.map((item)=><li>
                     <img src={item.img} className='foodrank-picture' />
                     <div className="foodlist-name">
-                        <p>{item.name}</p>
+                        <p style={{marginTop:'-10px'}}>{item.name}</p>
                         <p style={{fontSize:'12px',marginTop:'10px'}}>{item.cal}</p>
                     </div>
                 </li>
@@ -251,7 +251,7 @@ const FoodContent = (props)=>{
                 calist.map((item)=><li>
                     <img src={item.img} className='foodrank-picture' />
                     <div className="foodlist-name">
-                        <p>{item.name}</p>
+                        <p style={{marginTop:'-10px'}}>{item.name}</p>
                         <p style={{fontSize:'12px',marginTop:'10px'}}>{item.cal}</p>
                     </div>
                 </li>
@@ -263,7 +263,7 @@ const FoodContent = (props)=>{
                 znlist.map((item)=><li>
                     <img src={item.img} className='foodrank-picture' />
                     <div className="foodlist-name">
-                        <p>{item.name}</p>
+                        <p style={{marginTop:'-10px'}}>{item.name}</p>
                         <p style={{fontSize:'12px',marginTop:'10px'}}>{item.cal}</p>
                     </div>
                 </li>
@@ -275,7 +275,7 @@ const FoodContent = (props)=>{
                 felist.map((item)=><li>
                     <img src={item.img} className='foodrank-picture' />
                     <div className="foodlist-name">
-                        <p>{item.name}</p>
+                        <p style={{marginTop:'-10px'}}>{item.name}</p>
                         <p style={{fontSize:'12px',marginTop:'10px'}}>{item.cal}</p>
                     </div>
                 </li>

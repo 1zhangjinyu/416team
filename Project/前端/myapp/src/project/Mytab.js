@@ -33,7 +33,7 @@ class Mytab extends React.Component {
 			  selected={pathname === '/'}
 			  onPress={() => {
 				
-				this.props.history.push('/')
+				this.props.history.push('/home')
 			  }}
 			  data-seed="logId"
 			>

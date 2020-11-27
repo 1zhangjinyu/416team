@@ -3,7 +3,6 @@ import Cookbook, { Breakfast, Lunch,Dinner } from './Cookbook';
 import './nav.css';
 export default class Home extends Component {
     render() {
-       
         return (
             <div style={{backgroundColor:'rgb(247,240,240)'}}>
                 <div style={{backgroundColor:'rgb(86,186,186)'}}>
@@ -19,10 +18,10 @@ export default class Home extends Component {
                 <div id="healthy">
                     <span id="rec">健康记录</span>
                     <span id="rep">健康报告></span>
-                    <p style={{fontSize:'5px',color:'grey',paddingTop:'25px',paddingLeft:'20px'}}>还可以吃</p>
-                    <p style={{paddingLeft:'20px',paddingTop:'10px'}}>__________________________________________</p>
-                    <p style={{fontSize:'5px',color:'grey',paddingTop:'25px',paddingLeft:'20px'}}>体重</p>
-                    <p style={{paddingLeft:'20px',paddingTop:'10px'}}>__________________________________________</p>
+                    <p style={{fontSize:'5px',color:'grey',paddingTop:'20px',paddingLeft:'20px'}}>还可以吃</p>
+                    <p style={{paddingLeft:'20px'}}>__________________________________________</p>
+                    <p style={{fontSize:'5px',color:'grey',paddingTop:'20px',paddingLeft:'20px'}}>体重</p>
+                    <p style={{paddingLeft:'20px'}}>__________________________________________</p>
                     <p style={{paddingLeft:'115px',paddingTop:'15px',fontSize:'17px'}}>查看更多 ></p>
                 </div>
                 <p style={{fontSize:'18px',paddingTop:'20px',paddingLeft:'10px'}}>我的食谱</p>

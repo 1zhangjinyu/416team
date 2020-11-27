@@ -7,6 +7,7 @@ li{
 .icon-paixingbang{
     color:white;
     float: left;
+  
    
 }
 .icon-xiugai{
@@ -53,7 +54,7 @@ li{
 }
 .icon-jiantou{
     float:right;
-    margin-top: -13px;
+    margin-top: -30px;
 }
 
 .search{
@@ -85,12 +86,12 @@ li{
 #bang{
    
     margin-left: 18px;
-    margin-top: -19px;
+    margin-top: -22px;
     color:white;
 }
 #healthy{
     width:300px;
-    height:200px;
+    height:230px;
     background-color: white;
     box-shadow: 2px 2px 10px #909090;
     margin-left: 38px;
@@ -148,13 +149,15 @@ li{
     margin-right: 120px;
 }
 .foodrank ol{
+    margin-top: 0px;
     width: 90px;
     height: 550px;
     background-color: rgb(238, 237, 237);
 }
 .foodrank ol li{
-    width: 90px;
+    width: 130px;
     height: 45px;
+    margin-left: -40px;
     text-align: center;
     line-height: 45px;
     border-bottom: 1px solid silver;
@@ -166,7 +169,7 @@ li{
 .foodlist{
     float: left;
     margin-top: -548px;
-    margin-left: 95px;
+    margin-left: 150px;
     width: 278px;
 
 }
