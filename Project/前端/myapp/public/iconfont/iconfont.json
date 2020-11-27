@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "3331811",
+      "name": "新东方-刷新图标",
+      "font_class": "refresh",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
       "icon_id": "5807121",
       "name": "箭头",
       "font_class": "jiantou",

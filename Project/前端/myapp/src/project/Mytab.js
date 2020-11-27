@@ -30,7 +30,7 @@ class Mytab extends React.Component {
 				<i className='iconfont icon-shouye'></i>
 			}
 			 
-			  selected={pathname === '/'}
+			  selected={pathname === '/home'}
 			  onPress={() => {
 				
 				this.props.history.push('/home')
@@ -48,17 +48,16 @@ class Mytab extends React.Component {
 			  }
 			  title="每日推荐"
 			  key="Login"
-				  selected={pathname === '/shoucang'}
+				  selected={pathname === '/recommend'}
 				  onPress={() => {
 					// this.setState({
 					//   selectedTab: 'redTab',
 					// });
-					this.props.history.push('/shoucang')
+					this.props.history.push('/recommend')
 				  }}
 				  data-seed="logId1"
 			
 			>
-			 每日推荐
 			</TabBar.Item>
 			<TabBar.Item
 			  icon={
