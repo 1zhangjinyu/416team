@@ -73,7 +73,7 @@
 #woman{
     width: 15px;
 }
-#weight{
+.weight button{
     width: 250px;
     height: 40px;
     color:white;

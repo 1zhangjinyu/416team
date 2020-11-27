@@ -10,9 +10,9 @@ class Mytab extends React.Component {
 	}
 	render() {
 		const {pathname}=this.props.location;
-		if(pathname.split('/').length>2){
-            return null
-        }
+		// if(pathname.split('/').length>2){
+        //     return null
+        // }
 	  return (
 		<div style={{ position: 'fixed',  width: '100%', bottom: 0 }}>
 		  <TabBar

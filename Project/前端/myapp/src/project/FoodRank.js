@@ -290,7 +290,7 @@ class FoodRank extends Component {
         return (
             <div className='foodrank'>
                 <div className='foodrank-header'>
-                    <span className="iconfont icon-jiantouarrowhead7" onClick={()=>this.props.history.push('/')}></span>
+                    <span className="iconfont icon-jiantouarrowhead7" onClick={()=>this.props.history.push('/home')}></span>
                     <span>食物排行榜</span>
                 </div>
                <ol>

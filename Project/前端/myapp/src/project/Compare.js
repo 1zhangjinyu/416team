@@ -5,7 +5,7 @@ export default class Compare extends Component {
         return (
             <div  style={{backgroundColor:'rgb(247,240,240)'}}>
                  <div className='foodrank-header'>
-                    <span className="iconfont icon-jiantouarrowhead7" onClick={()=>this.props.history.push('/')}></span>
+                    <span className="iconfont icon-jiantouarrowhead7" onClick={()=>this.props.history.push('/home')}></span>
                     <span>对比详情</span>
                 </div>
                 <div style={{width:'400px',height:'150px',backgroundColor:'rgb(247,240,240)'}}>

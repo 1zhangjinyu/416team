@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom';
 import './style.css';
-export default class Weight extends Component {
-    constructor(){
-        super();
+
+class Weight extends Component {
+    constructor(props){
+        super(props);
         this.state={
             inpSex:'',
             inpWeight:'',
@@ -82,11 +84,18 @@ export default class Weight extends Component {
                     <input type="radio" name="type" id="add" value="addweight" onChange={this.typeChange} /> 增重&nbsp;&nbsp;
                     <input type="radio" name="type" id="delete" value="loseweight" onChange={this.typeChange}/> 减重&nbsp;&nbsp;
                     <input type="radio" name="type" id="keep" value="keepweight" onChange={this.typeChange}/> 保持&nbsp;&nbsp;
+                    <br/>
                     ——————————————————————
-                    <input type="submit" value="提交" id="weight"></input>
+                    
                 </form>
-                <button onClick={this.sub}>提交</button>
+                <button onClick={()=>{
+                    this.props.history.push('/home');
+                    return this.sub();
+                }}>提交</button>
             </div>
         )
     }
 }
+//onClick={this.props.history.push('/home')
+//onDoubleClick={this.props.history.push('/home')}
+export default withRouter(Weight);

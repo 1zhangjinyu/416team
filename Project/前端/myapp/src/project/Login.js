@@ -2,9 +2,12 @@ import React, { Component } from 'react'
 import {HashRouter as Router,Redirect,Route,NavLink,Switch,privateRoute} from 'react-router-dom'
 import './style.css';
 import Weight from './Weight';
+var flag = '';
 export default class Login extends Component {
     constructor(props){
+
         super(props);
+       
         this.state={
             inpName:'',
             inpPsd:''
@@ -17,24 +20,26 @@ export default class Login extends Component {
         this.setState({inpPsd:e.target.value})
     }
     
-    sub=()=>{
-        let data = {username:this.state.inpName,password:this.state.inpPsd};
-        fetch('https://www.hmyyz.top:8087/', {
-            method: 'POST', 
-            mode:'cors',
-            body: JSON.stringify(data), 
+   sub=async()=>{
+            let data = {username:this.state.inpName,password:this.state.inpPsd};
+            fetch('https://www.hmyyz.top:8087/', {
+                method: 'POST', 
+                mode:'cors',
+                body: JSON.stringify(data), 
+                    
+            })
+            .then(function(res){return res.text()})
+            .catch(error => console.error('Error:', error))
+            .then(function(res){
+                flag=res;
+                console.log(flag)
                 
-        })
-        .then(function(res){return res.text()})
-        .catch(error => console.error('Error:', error))
-        .then(function(res){
-            return res;
-        });
-    }
-
-    render(){
-      this.props.history.push('/weight');
+                return res;
+            });
+        }
       
+    render(){
+        
         return (
             <div className="login">
                 <img src={require('./image/logo.jpg')} className="login-img"/>
@@ -53,8 +58,17 @@ export default class Login extends Component {
                         onChange={this.psdChange} 
                         placeholder="请输入密码"></input>
                 </form>
-                <button onClick={this.sub}>登录/注册</button>
+                <button onClick={async ()=>{
+                    await this.sub();
+                    console.log(123)
+                   
+                    this.props.history.push('/weight')
+                    return;
+                }
+                    
+                }>登录/注册</button>
             </div>
         )
     }
 }
+
