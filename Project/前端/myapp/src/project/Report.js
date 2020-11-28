@@ -36,19 +36,19 @@ class Report extends Component {
 			barTintColor="white"
 		  >
 			<TabBar.Item
-			  title="首页"
-			  key="home"
+			  title="早餐"
+			  key="breakfast"
 			  icon={
-				  <i className='iconfont icon-shouye1'></i>
+				  <i className='iconfont icon-zaocan'></i>
 			  }
 			selectedIcon={
-				<i className='iconfont icon-shouye'></i>
+				<i className='iconfont icon-zaocan1'></i>
 			}
 			 
-			  selected={pathname === '/home'}
+			  selected={pathname === '/report/threefood'}
 			  onPress={() => {
 				
-				this.props.history.push('/home')
+				this.props.history.push('/report/threefood')
 			  }}
 			  data-seed="logId"
 			>
@@ -56,19 +56,19 @@ class Report extends Component {
 			</TabBar.Item>
 			<TabBar.Item
 			  icon={
-				<i className='iconfont icon-biaoqing'></i>
+				<i className='iconfont icon-shiwu-1'></i>
 			  }
 			  selectedIcon={
-				<i className='iconfont icon-biaoqing1'></i>
+				<i className='iconfont icon-shiwu-1'></i>
 			  }
-			  title="每日推荐"
+			  title="午餐"
 			  key="Login"
-				  selected={pathname === '/recommend'}
+				  selected={pathname === '/report/threefood'}
 				  onPress={() => {
 					// this.setState({
 					//   selectedTab: 'redTab',
 					// });
-					this.props.history.push('/recommend')
+					this.props.history.push('/report/threefood')
 				  }}
 				  data-seed="logId1"
 			
@@ -76,19 +76,31 @@ class Report extends Component {
 			</TabBar.Item>
 			<TabBar.Item
 			  icon={
-				  <i className='iconfont icon-wode2'></i>
+				  <i className='iconfont icon-shiwu-'></i>
 				}
 			  selectedIcon={
-				<i className='iconfont icon-tianchongxing-'></i>
+				<i className='iconfont icon-shiwu-'></i>
 				}
-			  title="我的"
+			  title="晚餐"
 			  key="my"
-			  selected={pathname === '/my'}
+			  selected={pathname === '/report/threefood'}
 			  onPress={() => {
-				// this.setState({
-				//   selectedTab: 'yellowTab',
-				// });
-				this.props.history.push('/my');
+				this.props.history.push('/report/threefood');
+			  }}
+			>
+			</TabBar.Item>
+			<TabBar.Item
+			  icon={
+				  <i className='iconfont icon-xiaojie'></i>
+				}
+			  selectedIcon={
+				<i className='iconfont icon-xiaojie'></i>
+				}
+			  title="体重"
+			  key="my"
+			  selected={pathname === '/report/addweight'}
+			  onPress={() => {
+				this.props.history.push('/report/addweight');
 			  }}
 			>
 			</TabBar.Item>

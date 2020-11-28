@@ -1,14 +1,13 @@
 li{
     list-style: none;
 }
+/* 图标 */
 .icon-duibifenxi{
     color:white;
 }
 .icon-paixingbang{
     color:white;
     float: left;
-  
-   
 }
 .icon-xiugai{
     color:white;
@@ -66,6 +65,10 @@ li{
 .icon-tuijianfuwu{
     margin-top: 20px;
     margin-left: 20px;
+}
+.icon-jiantouarrowhead7{
+    color:white;
+    
 }
 .search{
     width:300px;
@@ -281,4 +284,18 @@ li{
     margin-left:90px;
     margin-top:30px;
     border:1px solid #ccc;
+}
+/* 添加食物 */
+#mornfood li{
+    border-bottom: 1px solid #ccc;
+}
+/* 健康报告 */
+#score{
+    width:100px;
+    height:100px;
+    background-color: white;
+    margin-left: 135px;
+    margin-top: 40px;
+    border-radius: 55px;
+    border:5px solid rgb(86,186,186);
 }

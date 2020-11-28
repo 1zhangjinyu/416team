@@ -131,7 +131,7 @@ class Home extends Component {
                 </div>
                 <div id="healthy">
                     <span id="rec">健康记录</span>
-                    <span id="rep">健康报告> </span>
+                    <span id="rep" onClick={()=>this.props.history.push('/home/health')}>健康报告> </span>
                     <p style={{fontSize:'5px',color:'grey',paddingTop:'20px',paddingLeft:'20px'}}>还可以吃</p>
                     <p style={{paddingLeft:'20px'}}>__________________________________________</p>
                     <p style={{fontSize:'5px',color:'grey',paddingTop:'20px',paddingLeft:'20px'}}>体重</p>
