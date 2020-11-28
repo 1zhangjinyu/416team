@@ -32,6 +32,7 @@ const comparefoods = (data)=>{
         });
     }
 }
+
 const goodsList = (goods,props)=>{
     return (dispatch)=>{
         fetch(url+'getgoodslist',{

@@ -1,6 +1,7 @@
-function comparefoods(state={comparefoods:[]},action){
+let compares = [];
+function comparefoods(state=compares,action){
     if(action.type=='RANK'){
-      return {comparefoods:action.comparefoods};
+      return [...state,action.comparefoods];
     }
     return state;
 }
