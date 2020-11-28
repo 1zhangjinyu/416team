@@ -2,7 +2,8 @@ import {createStore,combineReducers,applyMiddleware,compose} from 'redux';
 import foodslist from './foodslistReducer';
 import thunk from 'redux-thunk';
 import shoucang from './shoucangReducer';
-let rootReducer = combineReducers({foodslist,shoucang})
+import comparefoods from './comparefoodsReducer';
+let rootReducer = combineReducers({foodslist,shoucang,comparefoods})
 const store = createStore(
     rootReducer,
     compose(applyMiddleware(thunk),

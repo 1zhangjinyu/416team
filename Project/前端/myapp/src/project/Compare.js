@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
 import './nav.css'
-export default class Compare extends Component {
+import {connect} from 'react-redux';
+class Compare extends Component {
     render() {
+        console.log(this.props.comparefoods)
         return (
-            <div  style={{backgroundColor:'rgb(247,240,240)'}}>
+            <div style={{width:'100%',backgroundColor:'rgb(247,240,240)'}}>
                  <div className='foodrank-header'>
                     <span className="iconfont icon-jiantouarrowhead7" onClick={()=>this.props.history.push('/home')}></span>
                     <span>对比详情</span>
                 </div>
-                <div style={{width:'400px',height:'150px',backgroundColor:'rgb(247,240,240)'}}>
+                <div style={{width:'370px',height:'150px',backgroundColor:'rgb(247,240,240)'}}>
                 <div id="comleft" onClick={()=>this.props.history.push('/home/search1')}>
                     <p style={{fontSize:'30px',paddingLeft:'35px',color:'red'}}>+</p>
                 </div>
@@ -19,12 +21,13 @@ export default class Compare extends Component {
                 </div>
                 <div style={{width:'100%',height:'600px',backgroundColor:'white'}}>
                     <p style={{fontSize:'18px',textAlign:'center',paddingTop:'20px'}}>营养元素</p>
-                    <p style={{color:'#ccc'}}>_____________________________________________________________</p>
+                    <p style={{color:'#ccc'}}>  ___________________________________________________________</p>
                 </div>
-               
-               
-               
             </div>
         )
     }
 }
+const mapStateToProps = (state) =>({
+    comparefoods:state.comparefoods.comparefoods
+  })
+  export default connect(mapStateToProps)(Compare)

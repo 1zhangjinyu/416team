@@ -21,7 +21,7 @@ export default class Login extends Component {
     
    sub=()=>{
             let data = {username:this.state.inpName,password:this.state.inpPsd};
-            fetch('https://www.hmyyz.top:8087/', {
+            fetch('https://www.hmyyz.top:8089/', {
                 method: 'POST', 
                 mode:'cors',
                 body: JSON.stringify(data), 

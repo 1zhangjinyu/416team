@@ -91,7 +91,7 @@ class Home extends Component {
       }
     render() {
         // this.props.dispatch(foods())
-        //console.log(this.props.foods);
+        console.log(this.props.foods);
         let arr1=[],arr2=[],arr3=[];
         this.props.foods.map((item)=>{
             if(item.eattime==='早'){

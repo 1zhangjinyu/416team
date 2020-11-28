@@ -1,30 +1,51 @@
 import { SearchBar, Button, WhiteSpace, WingBlank } from 'antd-mobile';
 import React from 'react'
+import {comparefoods} from './actionCreators';
+import {connect} from 'react-redux';
 class Search1 extends React.Component {
-  state = {
-    value: '食物',
-  };
- 
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: '食物',
+    };
+    
+  }
   onChange= (value) => {
     this.setState({ value });
   };
   clear = () => {
-    this.setState({ value: '' });
+    this.setState({value: '' });
   };
-  constructor(props) {
-    super(props);
-    
+  onFocus = ()=>{
+    this.setState({value: '' });
   }
+  //食物对比页搜索
+//   comparefoods = (data)=>{
+//     return (dispatch)=>{
+//         fetch('https://www.liucl.xyz:3745/compare',{
+//             method:'POST',
+//             body:JSON.stringify('123'),
+//             mode:'cors',
+//         })
+//         .then(function(res){return res.json()})
+//         .then(function(res){
+//             return dispatch({
+//                 type:'RANK',
+//                 comparefoods:res,
+//             })
+//         });
+//     }
+// }
+
   render() {
     return (<div>
-      
       <SearchBar
         value={this.state.value}
         placeholder="Search"
-        onSubmit={value => console.log(value, 'onSubmit')}
-        onClear={value => console.log(value, 'onClear')}
-        onFocus={() => console.log('onFocus')}
-        onBlur={() => console.log('onBlur')}
+        onSubmit={(value)=>this.props.dispatch(comparefoods(value))}
+        onClear={this.clear}
+        onFocus={this.onFocus}
+        onBlur={() => this.props.history.push('/home/com')}
         onCancel={()=>this.props.history.push('/home/com')}
         showCancelButton
         onChange={this.onChange}
@@ -32,5 +53,7 @@ class Search1 extends React.Component {
     </div>);
   }
 }
-
-export default Search1;
+const mapStateToProps = (state) =>({
+  comparefoods:state.comparefoods.comparefoods
+})
+export default connect(mapStateToProps)(Search1)

@@ -30,7 +30,7 @@ class Weight extends Component {
     
     sub=()=>{
         let data = {sex:this.state.inpSex,weight:this.state.inpWeight,goalweight:this.state.inpNew,height:this.state.inpHeight,type:this.state.inpType};
-        fetch('https://www.hmyyz.top:8087/weight', {
+        fetch('https://www.hmyyz.top:8089/weight', {
             method: 'POST', 
             mode:'cors',
             body: JSON.stringify(data), 
