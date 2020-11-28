@@ -14,6 +14,7 @@ import My from './My';
 import Recommend from './Recommend';
 import Fooddetails from './Fooddetails';
 import store from './Store'
+import Report from './Report'
 
 
 
@@ -32,7 +33,8 @@ const App = ()=>{
 			<Route path="/recommend/fooddetails" component={Fooddetails}/>
             <Route path="/my" component={My}/>
 			<Route exact path="/recommend" component={Recommend}/>
-			<Route path="/recommend/fooddetails" component={Fooddetails}/>
+			<Route path="/home/fooddetails" component={Fooddetails}/>
+			<Route exact path="/report" component={Report}/>
             
             
 	</Switch>

@@ -1,9 +1,87 @@
 import React, { Component } from 'react'
-import  {Breakfast,Lunch,Dinner} from './Cookbook';
+//import  {Breakfast,Lunch,Dinner} from './Cookbook';
+//import Breakfast from './Cookbook';
 import './nav.css';
 import {connect} from 'react-redux';
 import {foods} from './actionCreators'
 import Mytab from './Mytab'
+
+class Breakfast extends Component {
+    constructor(props){
+        super(props);
+    }
+    render() {
+        //console.log(this.props)
+        return (
+            <div id="morning">{
+                this.props.data.map((item)=><li onClick={()=>{
+                   this.props.props.history.push({
+                      pathname:'/home/fooddetails',
+                      img:item.img,
+                      content:item.content,
+                      foodname:item.foodname,
+                      id:item.id
+                    })
+                }}>
+                    <img id="picture" src={item.img} ></img>
+                </li>   
+                )
+            }
+            </div>
+        )
+    }
+}
+class Lunch extends Component {
+    constructor(props){
+        super(props);
+    }
+    render() {
+        //console.log(this.props)
+        return (
+            <div id="dinner">{
+                this.props.data.map((item)=><li onClick={()=>{
+                   this.props.props.history.push({
+                      pathname:'/home/fooddetails',
+                      img:item.img,
+                      content:item.content,
+                      foodname:item.foodname,
+                      id:item.id
+                    })
+                }}>
+                    <img id="picture" src={item.img} ></img>
+                </li>   
+                )
+            }
+            </div>
+        )
+    }
+}
+class Dinner extends Component {
+    constructor(props){
+        super(props);
+    }
+    render() {
+        //console.log(this.props)
+        return (
+            <div id="dinner">{
+                this.props.data.map((item)=><li onClick={()=>{
+                   this.props.props.history.push({
+                      pathname:'/home/fooddetails',
+                      img:item.img,
+                      content:item.content,
+                      foodname:item.foodname,
+                      id:item.id
+                    })
+                }}>
+                    <img id="picture" src={item.img} ></img>
+                </li>   
+                )
+            }
+            </div>
+        )
+    }
+}
+
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -13,7 +91,7 @@ class Home extends Component {
       }
     render() {
         // this.props.dispatch(foods())
-        console.log(this.props.foods);
+        //console.log(this.props.foods);
         let arr1=[],arr2=[],arr3=[];
         this.props.foods.map((item)=>{
             if(item.eattime==='早'){
@@ -58,17 +136,17 @@ class Home extends Component {
                     <p style={{paddingLeft:'20px'}}>__________________________________________</p>
                     <p style={{fontSize:'5px',color:'grey',paddingTop:'20px',paddingLeft:'20px'}}>体重</p>
                     <p style={{paddingLeft:'20px'}}>__________________________________________</p>
-                    <p style={{paddingLeft:'115px',paddingTop:'15px',fontSize:'17px'}}>查看更多 ></p>
+                    <p style={{paddingLeft:'115px',paddingTop:'15px',fontSize:'17px'}} onClick={()=>this.props.history.push('/report')}>查看更多 ></p>
                 </div>
                 <p style={{fontSize:'18px',paddingTop:'20px',paddingLeft:'10px'}}>我的食谱</p>
                 <span className="iconfont icon-shuaxin" style={{paddingLeft:'300px'}} onClick={()=>this.props.dispatch(foods())}>换一批</span>
                 <div id="eat">
                     <p style={{fontSize:'15px'}}>早餐</p>
-                    <Breakfast data={arr1} props={this.props.history}/>
+                    <Breakfast data={arr1} props={this.props}/>
                     <p style={{fontSize:'15px',paddingTop:'30px'}}>午餐</p>
-                    <Lunch data={arr2}/>
+                    <Lunch data={arr2} props={this.props}/>
                     <p style={{fontSize:'15px',paddingTop:'30px'}}>晚餐</p>
-                    <Dinner data={arr3}/>
+                    <Dinner data={arr3} props={this.props}/>
                 </div>
                 <Mytab />
             </div>
@@ -79,4 +157,4 @@ class Home extends Component {
 const mapStateToProps = (state) =>({
     foods:state.foodslist.foods
   })
-  export default connect(mapStateToProps)(Home)
+export default connect(mapStateToProps)(Home)

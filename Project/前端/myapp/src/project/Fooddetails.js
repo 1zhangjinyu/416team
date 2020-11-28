@@ -11,7 +11,7 @@ class DetailExample extends React.Component{
 	  }	
 	  componentDidMount(){
 		let id=this.props.location.id
-		console.log(this.props.todo);
+		//console.log(this.props.todo);
 		this.props.todo.map((item)=>{
 			if(item.id==id){
 				this.setState({
@@ -23,11 +23,11 @@ class DetailExample extends React.Component{
     render(){
 		const {img,id,content,foodname}=this.props.location;
 		let url = this.props.location.pathname.split('/')[1];
-		console.log(url);
+		//console.log(url);
 		let url1 = '/'+url
        return(
             <div>
-                 <NavBar mode="light" icon={<Icon type="left" />} onLeftClick={() => this.props.history.push(url1)}>商品详情</NavBar>
+                 <NavBar mode="light" icon={<Icon type="left" />} onLeftClick={() => this.props.history.push(url1)}>详情</NavBar>
 					<img  src={this.props.location.img}   style={{width:'100%',height:'60%'}}/>
 					<span>{foodname}</span>
 					 

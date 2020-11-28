@@ -17,7 +17,6 @@ class Search extends React.Component {
   }
   render() {
     return (<div>
-      
       <SearchBar
         value={this.state.value}
         placeholder="Search"

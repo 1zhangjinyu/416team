@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './nav.css'
+import Mytab from './Mytab'
 export default class My extends Component {
     render() {
         return (
@@ -56,7 +57,7 @@ export default class My extends Component {
                     <div id="healthyrep"></div>
 
                 </div>
-               
+            <Mytab />
             </div>
         )
     }
