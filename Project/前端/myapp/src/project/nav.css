@@ -99,7 +99,7 @@ li{
 #bang{
    
     margin-left: 18px;
-    margin-top: -22px;
+    margin-top: -19px;
     color:white;
 }
 #healthy{
@@ -298,4 +298,27 @@ li{
     margin-top: 40px;
     border-radius: 55px;
     border:5px solid rgb(86,186,186);
+}
+#weight{
+    width:350px;
+    height:200px;
+    margin-left: 13px;
+    margin-top: 20px;
+    background-color: white;
+}
+#diary{
+    width:350px;
+    height:400px;
+    margin-left: 13px;
+    margin-top: 20px;
+    background-color: white;
+}
+#weekday{
+    width:35px;
+    height:200px;
+    background-color: white;
+    border-right: 1px solid #ccc;
+    float:left;
+    margin-left: 13px;
+    margin-top: 10px;
 }
