@@ -322,3 +322,35 @@ li{
     margin-left: 13px;
     margin-top: 10px;
 }
+
+/* 记录体重 */
+.dayweight{
+    margin-top:20px;
+    margin-left:16%;
+    border:1px solid #ccc;
+    width: 70%;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 5px;
+    /* background-color:  rgb(130, 235, 235); */
+}
+.record{
+    height: 40px;
+    /* width: 100px; */
+    border-radius: 5px;
+    /* background-color: rgb(86,186,186); */
+    border: 2px solid  rgb(86,186,186);
+    color: black;
+    text-align: center;
+    margin-top: 40px;
+    margin-left: 20%;
+}
+.sure{
+    width: 50px;
+    height: 40px;
+    margin-left: 10px;
+    border: 2px solid  rgb(86,186,186);
+    border-radius: 5px;
+    background-color: white;
+}

@@ -75,7 +75,7 @@ class Weight extends Component {
                             type="number" 
                             className="weight-number"
                             value={this.state.inpHeight} 
-                            onChange={this.heightChange} 
+                            onChange={this.heightChange}  
                             />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cm
                     <br/>
                     ——————————————————————

@@ -1,3 +1,4 @@
+
 //食谱
 let url = 'https://www.hmyyz.top:8089/';
 const foods = (props)=>{
@@ -51,7 +52,26 @@ const goodsList = (goods,props)=>{
         });
     }
 }
+//记录体重
+const weights = (data)=>{
+    return (dispatch)=>{
+        fetch('https://www.liucl.xyz:8000/jltz',{
+            method:'POST',
+            mode:'cors',
+            // body:JSON.stringify(data)
+            body:data
+        })
+        .then(function(res){return res.json()})
+        .then(function(res){
+            return dispatch({
+                type:'ADD-WEIGHT',
+                weights:res,
+            })
+        });
+        
+    }
+}
 export {comparefoods}
 export {foods}
 export {goodsList}
-
+export {weights}
