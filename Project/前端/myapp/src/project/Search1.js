@@ -34,7 +34,7 @@ class Search1 extends React.Component {
 //                 comparefoods:res,
 //             })
 //         });
-//     }
+//     }S
 // }
 
   render() {

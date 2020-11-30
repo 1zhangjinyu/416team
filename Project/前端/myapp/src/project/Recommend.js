@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux';
-import {foods} from './actionCreators'
+import {recommendfoods} from './actionCreators'
 import Mytab from './Mytab'
 class Recommend extends Component {
     constructor(props) {
         super(props);
       }
       componentDidMount(){
-          this.props.dispatch(foods())
+          this.props.dispatch(recommendfoods())
       }
     render() {
         // let arr=[
@@ -23,11 +23,11 @@ class Recommend extends Component {
             <div style={{backgroundColor:'rgb(247,240,240)',position:'absolute',height:'900px'}}>
                 <div style={{backgroundColor:'rgb(86,186,186)',height:'40px'}}>
                     <p style={{color:'white',fontSize:'17px',textAlign:'center',lineHeight:'40px'}}>逛吃</p>
-                    <div className="iconfont icon-refresh" onClick={()=>this.props.dispatch(foods())}></div>
+                    <div className="iconfont icon-refresh" onClick={()=>this.props.dispatch(recommendfoods())}></div>
                 </div>
                 <div className="iconfont icon-tuijianfuwu">&nbsp;推荐</div>
                     {
-                        this.props.foods.map((item)=><div id="recommend"
+                        this.props.refoods.map((item)=><div id="recommend"
                             onClick={()=>{
                                 this.props.history.push({
                                     pathname:'/recommend/fooddetails',
@@ -44,11 +44,10 @@ class Recommend extends Component {
                     }
                 <Mytab />       
                 </div>
-          
         )
     }
 }
 const mapStateToProps = (state) =>({
-    foods:state.foodslist.foods
+    refoods:state.recommendlist.recommendfoods
   })
 export default connect(mapStateToProps)(Recommend)

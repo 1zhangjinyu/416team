@@ -38,7 +38,7 @@ class Lunch extends Component {
     render() {
         //console.log(this.props)
         return (
-            <div id="dinner">{
+            <div id="morning">{
                 this.props.data.map((item)=><li onClick={()=>{
                    this.props.props.history.push({
                       pathname:'/home/fooddetails',
@@ -63,7 +63,7 @@ class Dinner extends Component {
     render() {
         //console.log(this.props)
         return (
-            <div id="dinner">{
+            <div id="morning">{
                 this.props.data.map((item)=><li onClick={()=>{
                    this.props.props.history.push({
                       pathname:'/home/fooddetails',
@@ -87,7 +87,10 @@ class Home extends Component {
         super(props);
       }
       componentDidMount(){
-          this.props.dispatch(foods())
+          if(this.props.foods[0]=={}){
+            this.props.dispatch(foods());
+          }
+          
       }
     render() {
         // this.props.dispatch(foods())
