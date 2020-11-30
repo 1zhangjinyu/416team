@@ -1,8 +1,12 @@
 let compares = [];
 function comparefoods(state=compares,action){
-    if(action.type=='RANK'){
+    if(action.type=='COMPARE'){
       return [...state,action.comparefoods];
     }
-    return state;
+    if(action.type=='DELETE_COMPARE'){
+      compares=[];
+      return compares;
+  }
+  return state;
 }
 export default comparefoods;

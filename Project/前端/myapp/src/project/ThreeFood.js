@@ -1,20 +1,9 @@
 import React, { Component } from 'react'
-import { SearchBar, Button, WhiteSpace, WingBlank } from 'antd-mobile';
-export default class ThreeFood extends Component {
-    state = {
-        value: '食物',
-      };
-     
-      onChange= (value) => {
-        this.setState({ value });
-      };
-      clear = () => {
-        this.setState({ value: '' });
-      };
-      constructor(props) {
-        super(props);
-        
-      };
+import {addbreakfast} from './actionCreators';
+import {connect} from 'react-redux';
+import Search2 from './Search2';
+class ThreeFood extends Component {
+    
      
     render() {
         let foodarr=[
@@ -25,24 +14,15 @@ export default class ThreeFood extends Component {
             {name:'香蕉',img:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3229991947,3100427209&fm=26&gp=0.jpg',detail:'89千卡/100g'},
             {name:'草莓',img:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1137215794,2231151138&fm=26&gp=0.jpg',detail:'32千卡/100g'},
         ];
+        console.log(this.props.breakfastfoods);
         return (
             <div>
                  <div className='foodrank-header'>
                     <span className="iconfont icon-jiantouarrowhead7" onClick={()=>this.props.history.push('/report')}></span>
                     <span>添加食物</span>
                 </div>
-                {/* 搜索框 */}
-                <SearchBar
-        value={this.state.value}
-        placeholder="Search"
-        onSubmit={value => console.log(value, 'onSubmit')}
-        onClear={value => console.log(value, 'onClear')}
-        onFocus={() => console.log('onFocus')}
-        onBlur={() => console.log('onBlur')}
-        onCancel={()=>this.props.history.push('/home')}
-        showCancelButton
-        onChange={this.onChange}
-      />
+                <Search2 props={this.props}/>
+
       
             <ul id='mornfood'>{
                 foodarr.map((item)=>
@@ -60,3 +40,7 @@ export default class ThreeFood extends Component {
         )
     }
 }
+const mapStateToProps = (state) =>({
+  breakfastfoods:state.breakfastfoods.breakfastfoods
+})
+export default connect(mapStateToProps)(ThreeFood)

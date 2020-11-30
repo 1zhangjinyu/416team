@@ -1,0 +1,44 @@
+import React, { Component } from 'react'
+import { SearchBar, Button, WhiteSpace, WingBlank } from 'antd-mobile';
+import {addbreakfast} from './actionCreators';
+import {connect} from 'react-redux';
+class Search2 extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: '食物',
+          };
+      };
+    
+      onChange= (value) => {
+        this.setState({ value });
+      };
+      clear = () => {
+        this.setState({ value: '' });
+      };
+      onFocus = ()=>{
+        this.setState({value: '' });
+      }
+    render() {
+        
+        return (
+            <div>
+                <SearchBar
+                  value={this.state.value}
+                  placeholder="Search"
+                  onSubmit={(value) => this.props.dispatch(addbreakfast(value))}
+                  onClear={this.clear}
+                  onFocus={this.onFocus}
+                  onBlur={() => this.props.props.history.push('/report')}
+                  onCancel={()=>this.props.props.history.push('/report')}
+                  showCancelButton
+                  onChange={this.onChange}
+                />
+            </div>
+        )
+    }
+}
+const mapStateToProps = (state) =>({
+    breakfastfoods:state.breakfastfoods.breakfastfoods
+})
+export default connect(mapStateToProps)(Search2)

@@ -25,10 +25,17 @@ class Report extends Component {
                         <p>体重(kg) 45</p>
                     </div>    
                 </div>
-                <div className="report-mid">
-                    <p>你还没有记录</p>
-                    <p>点击屏幕下方按钮添加</p>
-                </div>
+				
+				<div className="report-max">
+					<div className="report-mid">
+						<p>你还没有记录</p>
+						<p>点击屏幕下方按钮添加</p>
+					</div>
+					<div className="report-food">
+
+					</div>
+				</div>
+                
                 <div style={{ position: 'fixed',  width: '100%', bottom: 0 }}>
 		  <TabBar
 			unselectedTintColor="#949494"
@@ -110,4 +117,4 @@ class Report extends Component {
         )
     }
 }
-export default withRouter(Report);
+export default Report;
