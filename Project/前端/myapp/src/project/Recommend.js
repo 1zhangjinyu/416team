@@ -39,7 +39,7 @@ class Recommend extends Component {
                             }}>
                             <img src={item.img} style={{width:'160px',height:'140px'}}/>
                             <p style={{fontSize:'10px'}}>{item.foodname}</p>
-                            <p style={{fontSize:'10px'}}>{item.content}</p>
+                            {/* <p style={{fontSize:'10px'}}>{item.content}</p> */}
                         </div>)
                     }
                 <Mytab />       

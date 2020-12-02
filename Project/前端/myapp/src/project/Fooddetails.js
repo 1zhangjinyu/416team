@@ -9,6 +9,7 @@ class DetailExample extends React.Component{
 		  }
 		
 	  }	
+	  
 	  componentDidMount(){
 		let id=this.props.location.id
 		//console.log(this.props.todo);
@@ -20,14 +21,29 @@ class DetailExample extends React.Component{
 			}
 		})
 	}
+	componentDidMount(){
+		let id=this.props.location.id
+		console.log(this.props.nice);
+		this.props.nice.map((item)=>{
+			if(item.id==id){
+				this.setState({
+					selectedTab:'greenTab',
+				})
+			}
+		})
+	}
     render(){
 		const {img,id,content,foodname}=this.props.location;
 		let url = this.props.location.pathname.split('/')[1];
 		//console.log(url);
 		let url1 = '/'+url
+		console.log(this.props)
        return(
             <div>
-                 <NavBar mode="light" icon={<Icon type="left" />} onLeftClick={() => this.props.history.push(url1)}>详情</NavBar>
+                 <div className='foodrank-header'>
+                    <span className="iconfont icon-jiantouarrowhead7" onClick={()=>this.props.history.push('/recommend')}></span>
+                    <span>详情</span>
+                </div>
 					<img  src={this.props.location.img}   style={{width:'100%',height:'60%'}}/>
 					<span>{foodname}</span>
 					 
@@ -43,7 +59,7 @@ class DetailExample extends React.Component{
 				<i className='iconfont icon-shoucang1'></i>
 			  }
 			  selectedIcon={
-				<i className='iconfont icon-star__easyico'></i>
+				<i className='iconfont icon-shoucang'></i>
 			  }
 			  title="收藏"	
 			  key="shoucang"
@@ -52,7 +68,7 @@ class DetailExample extends React.Component{
 				  
 				this.props.dispatch({
 					type:'ADD_TODO',
-					col:{img:img,id:id}
+					col:{img:img,foodname:foodname,content:content,id:id}
 				})
 
 			this.setState({
@@ -64,23 +80,22 @@ class DetailExample extends React.Component{
 			</TabBar.Item>
             <TabBar.Item
 			  icon={
-				<i className='iconfont icon-shoucang1'></i>
+				<i className='iconfont icon-dianzan1'></i>
 			  }
 			  selectedIcon={
-				<i className='iconfont icon-star__easyico'></i>
+				<i className='iconfont icon-dianzan1'></i>
 			  }
 			  title="点赞"	
-			  key="shoucang"
-			  selected={this.state.selectedTab==='blueTab'}
-			  onPress={() => {
-				  
+			  key="item"
+			  selected={this.state.selectedTab==='greenTab'}
+			  onPress={() => {  
 				this.props.dispatch({
 					type:'ADD_TODO',
-					col:{img:img,id:id}
+					tre:{img:img,foodname:foodname,id:id}
 				})
 
 			this.setState({
-					  selectedTab:'blueTab',
+					  selectedTab:'greenTab',
 				  })
 			  }}	 
 			>
@@ -97,7 +112,8 @@ class DetailExample extends React.Component{
 }
 
 const mapStateToProps = (state) =>({
-    todo:state.shoucang
+	todo:state.shoucang,
+	nice:state.dianzan
 })
 export default connect(mapStateToProps)(DetailExample)
 //export default DetailExample

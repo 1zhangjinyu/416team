@@ -18,8 +18,9 @@ import Report from './Report'
 import ThreeFood from './ThreeFood';
 import AddWeight from './AddWeight';
 import Health from './Health';
-
-
+import Trends from './Trends';
+import Collect from './Collect';
+import Food from './Food';
 
 const App = ()=>{
 	return <Provider store={store}>
@@ -34,13 +35,17 @@ const App = ()=>{
 			<Route path="/home/search1" component={Search1}/>
 			<Route exact path="/recommend" component={Recommend}/>
 			<Route path="/recommend/fooddetails" component={Fooddetails}/>
-            <Route path="/my" component={My}/>
+            <Route exact path="/my" component={My}/>
+			<Route path="/my/trends" component={Trends}/>
+			<Route path="/my/collect" component={Collect}/>
+			<Route path="/my/food" component={Food}/>
 			<Route exact path="/recommend" component={Recommend}/>
 			<Route path="/home/fooddetails" component={Fooddetails}/>
 			<Route exact path="/report" component={Report}/>
 			<Route path="/report/threefood" component={ThreeFood}/>
 			<Route path="/report/addweight" component={AddWeight}/>
 			<Route path="/home/health" component={Health}/>
+
             
             
 	</Switch>

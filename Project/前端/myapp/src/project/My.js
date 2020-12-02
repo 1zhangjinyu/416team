@@ -11,14 +11,17 @@ export default class My extends Component {
                     <div className="iconfont icon-xiugai"></div>
                 </div>
                 <div id="nav">
-                    <div id="mytrend">
-                       <img src={require('./image/dongtai.png')}/>              
+                    <div id="mytrend" onClick={()=>this.props.history.push('/my/trends')}>
+                        <div className="iconfont icon-dongtai"></div>
+                        <p style={{paddingTop:'10px',fontSize:'5px',textAlign:'center'}}>我的动态</p>
                     </div>
-                    <div id="mytrend">
-                        <img src={require('./image/shoucang.png')}/> 
+                    <div id="mytrend" onClick={()=>this.props.history.push('/my/collect')}>
+                    <div className="iconfont icon-shoucang2"></div>
+                        <p style={{paddingTop:'10px',fontSize:'5px',textAlign:'center'}}>我的收藏</p>                   
                     </div>
-                    <div id="mytrend">
-                        <img src={require('./image/food.png')}/> 
+                    <div id="mytrend" onClick={()=>this.props.history.push('/my/food')}>
+                    <div className="iconfont icon-shiwu"></div>
+                        <p style={{paddingTop:'10px',fontSize:'5px',textAlign:'center'}}>我的食物</p>
                     </div>
                 </div>
                 <div id="report">
@@ -30,7 +33,7 @@ export default class My extends Component {
                         <div className="iconfont icon-jiantou"></div>
                         
                     </div>
-                    <div id="healthyrep">
+                    <div id="healthyrep" onClick={()=>this.props.history.push('/home/health')}>
                         <div className="iconfont icon-rizhi"></div>
                         <p id="word">健康报告</p>
                         <div className="iconfont icon-jiantou"></div>

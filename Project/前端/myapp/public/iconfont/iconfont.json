@@ -6,6 +6,34 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "14378669",
+      "name": "收 藏",
+      "font_class": "shoucang3",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    },
+    {
+      "icon_id": "3693516",
+      "name": "收 藏",
+      "font_class": "shoucang2",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "3926866",
+      "name": "动态",
+      "font_class": "dongtai",
+      "unicode": "e787",
+      "unicode_decimal": 59271
+    },
+    {
+      "icon_id": "4007907",
+      "name": "食物",
+      "font_class": "shiwu",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
       "icon_id": "17135181",
       "name": "小结",
       "font_class": "xiaojie",
