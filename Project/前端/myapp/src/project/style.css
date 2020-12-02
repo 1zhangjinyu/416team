@@ -142,10 +142,13 @@
 }
 .report-food{
     position:absolute;
-    width: 350px;
-    height: 500px;
-    margin-top:-230px ;
-    background-color: brown;
+    width: 355px;
+    height: 100%;
+    margin-top:-220px;
+    margin-left: 10px;
+    border-radius: 15px;
+    border:1px solid rgb(222, 219, 219);
+    background-color: white;
     
 }
 .report-mid{

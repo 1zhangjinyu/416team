@@ -82,7 +82,6 @@ const addbreakfast = (data)=>{
         });
     }
 }
-<<<<<<< HEAD
 //记录体重
 const weights = (data)=>{
     return (dispatch)=>{
@@ -102,15 +101,9 @@ const weights = (data)=>{
         
     }
 }
-export {comparefoods}
-export {foods}
-export {goodsList}
 export {weights}
-=======
-
 export {comparefoods}
 export {foods}
 export {recommendfoods}
 export {addbreakfast}
 
->>>>>>> a36b888f7bcf25f012bcc40cab25e482495c453d

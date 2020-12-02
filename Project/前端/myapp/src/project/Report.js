@@ -1,14 +1,31 @@
 import React, { Component } from 'react'
 import {Button,TabBar} from 'antd-mobile';
 import {withRouter} from 'react-router-dom';
-
+import {connect} from 'react-redux';
+class Breakfastfood extends Component {
+    constructor(props){
+        super(props);
+    }
+    render() {
+        console.log(this.props)
+        return (
+            <div id="morning">{
+                // this.props.data.map((item)=><li>
+                //     <img id="picture" src={item.img} ></img>
+                // </li>   
+                // )
+            }
+            </div>
+        )
+    }
+}
 class Report extends Component {
     constructor(props) {
         super(props);
         this.state = {
           selectedTab: 'blueTab',
         };
-      }
+	  }
     render() {
         const {pathname}=this.props.location;
         return (
@@ -32,7 +49,7 @@ class Report extends Component {
 						<p>点击屏幕下方按钮添加</p>
 					</div>
 					<div className="report-food">
-
+						<Breakfastfood props={this.props}/>
 					</div>
 				</div>
                 
@@ -117,4 +134,7 @@ class Report extends Component {
         )
     }
 }
-export default Report;
+const mapStateToProps = (state) =>({
+    breakfastfoods:state.breakfastfoods.breakfastfoods
+})
+export default connect(mapStateToProps)(Report)
