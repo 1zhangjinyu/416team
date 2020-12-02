@@ -53,12 +53,12 @@ li{
 }
 .icon-jiantou{
     float:right;
-    margin-top: -30px;
+    margin-top: -10px;
 }
 .icon-refresh{
     color:white;
     float:right;
-    margin-top: -45px;
+    margin-top: -30px;
     margin-right:10px;
 
 }
@@ -69,6 +69,26 @@ li{
 .icon-jiantouarrowhead7{
     color:white;
     
+}
+.icon-dongtai{
+    color:rgb(86,186,186);
+    margin-top: 10px;
+    text-align: center;
+   
+}
+.icon-shoucang2{
+    color:rgb(86,186,186);
+    margin-top: 10px;
+    text-align: center;
+}
+.icon-shiwu{
+    color:rgb(86,186,186);
+    margin-top: 10px;
+    text-align: center;
+}
+.icon-shoucang3{
+    margin-top: 10px;
+    margin-left:20px;
 }
 .search{
     width:300px;
