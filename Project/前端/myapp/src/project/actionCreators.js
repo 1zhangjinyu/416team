@@ -1,6 +1,25 @@
-
-//食谱
+//登录页
 let url = 'https://www.hmyyz.top:8089/';
+const login = (data)=>{
+    return (dispatch)=>{
+        fetch('https://www.hmyyz.top:8089/',{
+            method:'POST',
+            body:JSON.stringify(data),
+            mode:'cors',
+        })
+        .then(function(res){return res.text()})
+        .then(function(res){
+            if(res===false){
+                alert("密码错误")
+            }
+            return dispatch({
+                type:'LOGIN',
+                user:res,
+            })
+        });
+    }
+}
+//食谱
 const foods = (props)=>{
     return (dispatch)=>{
         fetch(url+'foods',{
@@ -72,12 +91,48 @@ const addbreakfast = (data)=>{
             body:JSON.stringify(data),
             mode:'cors',
         })
-        .then(function(res){return res.text()})
+        .then(function(res){return res.json()})
         .then(function(res){
             console.log(res)
             return dispatch({
                 type:'ADDBRE',
                 breakfastfoods:res,
+            })
+        });
+    }
+}
+//添加午餐食物
+const addlunch = (data)=>{
+    return (dispatch)=>{
+        fetch('https://www.liucl.xyz:3745/eat',{
+            method:'POST',
+            body:JSON.stringify(data),
+            mode:'cors',
+        })
+        .then(function(res){return res.json()})
+        .then(function(res){
+            console.log(res)
+            return dispatch({
+                type:'ADDLUN',
+                lunchfoods:res,
+            })
+        });
+    }
+}
+//添加晚餐食物
+const adddinner = (data)=>{
+    return (dispatch)=>{
+        fetch('https://www.liucl.xyz:3745/eat',{
+            method:'POST',
+            body:JSON.stringify(data),
+            mode:'cors',
+        })
+        .then(function(res){return res.json()})
+        .then(function(res){
+            console.log(res)
+            return dispatch({
+                type:'ADDDIN',
+                dinnerfoods:res,
             })
         });
     }
@@ -101,9 +156,31 @@ const weights = (data)=>{
         
     }
 }
+//获取摄入热量
+const heat = (data)=>{
+    return (dispatch)=>{
+        fetch(url+'rest',{
+            method:'POST',
+            body:JSON.stringify(data),
+            mode:'cors',
+        })
+        .then(function(res){return res.json()})
+        .then(function(res){
+            console.log(res)
+            return dispatch({
+                type:'REST',
+                restcal:res,
+            })
+        });
+    }
+}
+export {login}
 export {weights}
 export {comparefoods}
 export {foods}
 export {recommendfoods}
 export {addbreakfast}
+export {addlunch}
+export {adddinner}
+export {heat}
 

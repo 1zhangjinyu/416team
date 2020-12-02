@@ -9,7 +9,8 @@ class Weight extends Component {
             inpSex:'',
             inpWeight:'',
             inpNew:'',
-            inpType:''
+            inpType:'',
+            inpAge:''
         }
     }
     sexChange = (e)=>{
@@ -26,6 +27,9 @@ class Weight extends Component {
     }
     typeChange = (e)=>{
         this.setState({inpType:e.target.value})
+    }
+    ageChange = (e)=>{
+        this.setState({inpAge:e.target.value})
     }
     
     sub=()=>{
@@ -48,8 +52,8 @@ class Weight extends Component {
                 <div className="weight-header">个人信息</div>
                 <form>
                     性别：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="radio" name="man" id="man" value="man" onChange={this.sexChange}/> 男 &nbsp;&nbsp;
-                    <input type="radio" name="man" id="woman" value="woman" onChange={this.sexChange}/> 女
+                    <input type="radio" name="man" id="man" value="'男'" onChange={this.sexChange}/> 男 &nbsp;&nbsp;
+                    <input type="radio" name="man" id="woman" value="'女'" onChange={this.sexChange}/> 女
                     <br/>
                     ——————————————————————
                     <br/>
@@ -80,10 +84,20 @@ class Weight extends Component {
                     <br/>
                     ——————————————————————
                     <br/>
+                    年龄：<input
+                            type="number" 
+                            className="weight-number"
+                            value={this.state.inpAge} 
+                            onChange={this.ageChange}  
+                            />&nbsp;&nbsp;&nbsp;&nbsp;周岁
+                    <br/>
+                    ——————————————————————
+                    <br/>
+                    <br />
                     目标形式：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="radio" name="type" id="add" value="addweight" onChange={this.typeChange} /> 增重&nbsp;&nbsp;
-                    <input type="radio" name="type" id="delete" value="loseweight" onChange={this.typeChange}/> 减重&nbsp;&nbsp;
-                    <input type="radio" name="type" id="keep" value="keepweight" onChange={this.typeChange}/> 保持&nbsp;&nbsp;
+                    <input type="radio" name="type" id="add" value="'增重'" onChange={this.typeChange} /> 增重&nbsp;&nbsp;
+                    <input type="radio" name="type" id="delete" value="'减重'" onChange={this.typeChange}/> 减重&nbsp;&nbsp;
+                    <input type="radio" name="type" id="keep" value="'保持'" onChange={this.typeChange}/> 保持&nbsp;&nbsp;
                     <br/>
                     ——————————————————————
                     

@@ -2,18 +2,63 @@ import React, { Component } from 'react'
 import {Button,TabBar} from 'antd-mobile';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
+import {heat} from './actionCreators';
+import './style.css';
 class Breakfastfood extends Component {
+    constructor(props){
+        super(props);
+    }
+    render() {
+		console.log(this.props);
+        return (
+            <div>{
+                this.props.props.breakfastfoods.map((item)=><li className="report-food-li">
+                    <img className="report-food-picture" src={item.img} ></img>
+					<p className="report-food-p">{item.fname}</p>
+					<p className="report-food-p2">{item.heat}千卡</p>
+					<p className="report-food-p3">早餐</p>
+                </li>   
+                )
+            }
+            </div>
+        )
+    }
+}
+class Lunchfood extends Component {
     constructor(props){
         super(props);
     }
     render() {
         console.log(this.props)
         return (
-            <div id="morning">{
-                // this.props.data.map((item)=><li>
-                //     <img id="picture" src={item.img} ></img>
-                // </li>   
-                // )
+            <div>{
+                this.props.props.lunchfoods.map((item)=><li className="report-food-li">
+                    <img className="report-food-picture" src={item.img} ></img>
+					<p className="report-food-p">{item.fname}</p>
+					<p className="report-food-p2">{item.heat}千卡</p>
+					<p className="report-food-p3">午餐</p>
+                </li>   
+                )
+            }
+            </div>
+        )
+    }
+}
+class Dinnerfood extends Component {
+    constructor(props){
+        super(props);
+    }
+    render() {
+        console.log(this.props.props.dinnerfoods)
+        return (
+            <div>{
+                this.props.props.dinnerfoods.map((item)=><li className="report-food-li">
+                    <img className="report-food-picture" src={item.img} ></img>
+					<p className="report-food-p">{item.fname}</p>
+					<p className="report-food-p2">{item.heat}千卡</p>
+					<p className="report-food-p3">晚餐</p>
+                </li>   
+                )
             }
             </div>
         )
@@ -26,7 +71,22 @@ class Report extends Component {
           selectedTab: 'blueTab',
         };
 	  }
+	  componentDidMount(){
+		  this.props.dispatch(heat());
+	  }
     render() {
+		let kcal = 0;
+		this.props.breakfastfoods.map((item)=>{
+			kcal += item.heat;
+		})
+		this.props.lunchfoods.map((item)=>{
+			kcal += item.heat;
+		})
+		this.props.dinnerfoods.map((item)=>{
+			kcal += item.heat;
+		})
+		console.log(kcal)
+		console.log(this.props.restcal)
         const {pathname}=this.props.location;
         return (
             <div className="report">
@@ -35,11 +95,14 @@ class Report extends Component {
                     <span>健康记录</span>
                 </div>
                 <div className="report-nav">
-                    <span>建议总共摄入kcal</span>
-                    <div className="report-range"></div>
+                    <span>建议摄入总共{Math.floor(this.props.restcal)}kcal</span>
+                    <div className="report-range">
+						<div style={{height:'30px',backgroundColor:'rgb(87,189,203)',width:`${(this.props.restcal-kcal)/this.props.restcal*100}%`}}></div>
+					</div>
                     <div style={{position:'absolute'}}>
-                        <p style={{marginRight:'140px'}}>摄入(kcal) 132</p>
-                        <p>体重(kg) 45</p>
+                        <p style={{marginRight:'120px'}}>
+							剩余(kcal) {Math.floor(this.props.restcal-kcal)}</p>
+                        <p>摄入(kcal) {kcal}</p>
                     </div>    
                 </div>
 				
@@ -50,6 +113,8 @@ class Report extends Component {
 					</div>
 					<div className="report-food">
 						<Breakfastfood props={this.props}/>
+						<Lunchfood props={this.props}/>
+						<Dinnerfood props={this.props} />
 					</div>
 				</div>
                 
@@ -69,10 +134,10 @@ class Report extends Component {
 				<i className='iconfont icon-zaocan1'></i>
 			}
 			 
-			  selected={pathname === '/report/threefood'}
+			  selected={pathname === '/report/onefood'}
 			  onPress={() => {
 				
-				this.props.history.push('/report/threefood')
+				this.props.history.push('/report/onefood')
 			  }}
 			  data-seed="logId"
 			>
@@ -87,12 +152,12 @@ class Report extends Component {
 			  }
 			  title="午餐"
 			  key="Login"
-				  selected={pathname === '/report/threefood'}
+				  selected={pathname === '/report/twofood'}
 				  onPress={() => {
 					// this.setState({
 					//   selectedTab: 'redTab',
 					// });
-					this.props.history.push('/report/threefood')
+					this.props.history.push('/report/twofood')
 				  }}
 				  data-seed="logId1"
 			
@@ -135,6 +200,9 @@ class Report extends Component {
     }
 }
 const mapStateToProps = (state) =>({
-    breakfastfoods:state.breakfastfoods.breakfastfoods
+	breakfastfoods:state.breakfastfoods,
+	lunchfoods:state.lunchfoods,
+	dinnerfoods:state.dinnerfoods,
+	restcal:state.rest.restcal
 })
 export default connect(mapStateToProps)(Report)

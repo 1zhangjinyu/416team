@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { SearchBar, Button, WhiteSpace, WingBlank } from 'antd-mobile';
-import {addbreakfast} from './actionCreators';
+import {addlunch} from './actionCreators';
 import {connect} from 'react-redux';
-class Search2 extends Component {
+class Search3 extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -26,7 +26,7 @@ class Search2 extends Component {
                 <SearchBar
                   value={this.state.value}
                   placeholder="Search"
-                  onSubmit={(value) => this.props.dispatch(addbreakfast(value))}
+                  onSubmit={(value) => this.props.dispatch(addlunch(value))}
                   onClear={this.clear}
                   onFocus={this.onFocus}
                   onBlur={() => this.props.props.history.push('/report')}
@@ -39,6 +39,6 @@ class Search2 extends Component {
     }
 }
 const mapStateToProps = (state) =>({
-    breakfastfoods:state.breakfastfoods.breakfastfoods
+    lunchfoods:state.lunchfoods,
 })
-export default connect(mapStateToProps)(Search2)
+export default connect(mapStateToProps)(Search3)

@@ -15,6 +15,8 @@ import Recommend from './Recommend';
 import Fooddetails from './Fooddetails';
 import store from './Store'
 import Report from './Report'
+import OneFood from './OneFood';
+import TwoFood from './TwoFood';
 import ThreeFood from './ThreeFood';
 import AddWeight from './AddWeight';
 import Health from './Health';
@@ -38,6 +40,8 @@ const App = ()=>{
 			<Route exact path="/recommend" component={Recommend}/>
 			<Route path="/home/fooddetails" component={Fooddetails}/>
 			<Route exact path="/report" component={Report}/>
+			<Route path="/report/onefood" component={OneFood}/>
+			<Route path="/report/twofood" component={TwoFood}/>
 			<Route path="/report/threefood" component={ThreeFood}/>
 			<Route path="/report/addweight" component={AddWeight}/>
 			<Route path="/home/health" component={Health}/>

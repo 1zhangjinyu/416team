@@ -122,8 +122,8 @@
 .report-nav p{
     font-size: 12px;
     font-weight: bold;
-    width: 60px;
-    float:left
+    width: 65px;
+    float:left;
     
     
 }
@@ -181,4 +181,40 @@
     height: 20px;
     
     text-align: center;
+}
+
+/*显示食物*/
+.report-food-picture{
+    width: 60px;
+    height: 60px;
+    float:left;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.report-food-li{
+    width: 320px;
+    height: 70px;
+    margin-top:10px;
+    margin-left: 15px;
+    border-radius: 5px;
+    border:1px solid rgb(222, 219, 219);
+}
+.report-food-p{
+    float:left;
+    width: 50px;
+    margin-top: 25px;
+    margin-left:10px;
+    font-size: 16px;
+}
+.report-food-p2{
+    float:left;
+    margin-top: 27px;
+    margin-left:130px;
+    font-size: 13px;
+}
+.report-food-p3{
+    margin-top: 50px;
+    margin-left:270px;
+    font-size: 14px;
+    color:#ccc;
 }

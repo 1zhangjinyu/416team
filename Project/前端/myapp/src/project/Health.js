@@ -20,32 +20,25 @@ export default class Health extends Component {
                 <div id="diary">
                     <p style={{paddingLeft:'30px',paddingTop:'10px'}}>体重日志</p>
                     <div id="weekday">
-                        一 
-                        <div style={{marginTop:'10px',width:'20px',height:'20px',backgroundColor:'rgb(188,238,244)',borderRadius:'10px'}}>10</div>
+                        <div style={{marginTop:'10px',width:'20px',height:'20px',backgroundColor:'rgb(188,238,244)',borderRadius:'10px'}}>一</div>
                     </div>
                     <div id="weekday">
-                        二
-                        <div style={{marginTop:'10px',width:'20px',height:'20px',backgroundColor:'rgb(188,238,244)',borderRadius:'10px'}}>11</div>
+                        <div style={{marginTop:'10px',width:'20px',height:'20px',backgroundColor:'rgb(188,238,244)',borderRadius:'10px'}}>二</div>
                     </div>
                     <div id="weekday">
-                        三
-                        <div style={{marginTop:'10px',width:'20px',height:'20px',backgroundColor:'rgb(188,238,244)',borderRadius:'10px'}}>12</div>
+                        <div style={{marginTop:'10px',width:'20px',height:'20px',backgroundColor:'rgb(188,238,244)',borderRadius:'10px'}}>三</div>
                     </div>
                     <div id="weekday">
-                        四
-                        <div style={{marginTop:'10px',width:'20px',height:'20px',backgroundColor:'rgb(188,238,244)',borderRadius:'10px'}}>13</div>
+                        <div style={{marginTop:'10px',width:'20px',height:'20px',backgroundColor:'rgb(188,238,244)',borderRadius:'10px'}}>四</div>
                     </div>
                     <div id="weekday">
-                        五
-                        <div style={{marginTop:'10px',width:'20px',height:'20px',backgroundColor:'rgb(188,238,244)',borderRadius:'10px'}}>14</div>
+                        <div style={{marginTop:'10px',width:'20px',height:'20px',backgroundColor:'rgb(188,238,244)',borderRadius:'10px'}}>五</div>
                     </div>
                     <div id="weekday">
-                        六
-                        <div style={{marginTop:'10px',width:'20px',height:'20px',backgroundColor:'rgb(188,238,244)',borderRadius:'10px'}}>15</div>
+                        <div style={{marginTop:'10px',width:'20px',height:'20px',backgroundColor:'rgb(188,238,244)',borderRadius:'10px'}}>六</div>
                     </div>
                     <div id="weekday">
-                        日
-                        <div style={{marginTop:'10px',width:'20px',height:'20px',backgroundColor:'rgb(188,238,244)',borderRadius:'10px'}}>16</div>
+                        <div style={{marginTop:'10px',width:'20px',height:'20px',backgroundColor:'rgb(188,238,244)',borderRadius:'10px'}}>七</div>
                     </div>
                 </div>
             </div>

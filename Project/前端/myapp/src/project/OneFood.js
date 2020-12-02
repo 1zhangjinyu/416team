@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import {adddinner} from './actionCreators';
+import {addbreakfast} from './actionCreators';
 import {connect} from 'react-redux';
-import Search4 from './Search4';
-class ThreeFood extends Component {
+import Search2 from './Search2';
+class OneFood extends Component {
     
      
     render() {
@@ -21,15 +21,15 @@ class ThreeFood extends Component {
                     <span className="iconfont icon-jiantouarrowhead7" onClick={()=>this.props.history.push('/report')}></span>
                     <span>添加食物</span>
                 </div>
-                <Search4 props={this.props}/>
+                <Search2 props={this.props}/>
 
       
             <ul id='mornfood'>{
                 foodarr.map((item)=>
                     <li onClick={()=>{
                         this.props.history.push('/report');
-                        return this.props.dispatch(adddinner(item.name));
-                        }}>            
+                        return this.props.dispatch(addbreakfast(item.name));
+                        }}>             
                             <img src={item.img} style={{width:'70px',height:'70px',marginLeft:'10px',marginTop:'10px'}}/>
                             <div style={{float:'right',marginRight:'200px',marginTop:'20px'}}>
                                 <p style={{fontSize:'15px'}}>{item.name}</p>
@@ -44,6 +44,6 @@ class ThreeFood extends Component {
     }
 }
 const mapStateToProps = (state) =>({
-    dinnerfoods:state.dinnerfoods
+  breakfastfoods:state.breakfastfoods
 })
-export default connect(mapStateToProps)(ThreeFood)
+export default connect(mapStateToProps)(OneFood)
