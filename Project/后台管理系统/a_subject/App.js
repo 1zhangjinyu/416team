@@ -5,12 +5,13 @@ import provider, { Provider } from 'react-redux'
 
 import Login from './Login'
 import Manager from './Manager'
-import home from './home'
+import Home from './Home'
 import Head from  './head'
 import Infor from './Infor'
 import Collection from './Collection'
 
 import store from './Store';
+import InfoDetail from './InfoDetail'
 
 
 //import
@@ -19,15 +20,18 @@ import store from './Store';
     render() {
         return (<Provider store={store}>
 			<Router>
-				<switch>
+				<Switch>
 					{/* <Route exact path='/' component={Login} /> */}
 				{/* <Login /> */}
-				{/* <home /> */}
+				{/* <Home /> */}
 				{/* <Head /> */}
 				{/* < Collection/> */}
-				<Infor />
+				{/* <Infor /> */}
+				<Route exact path='/home' component={Home}/>
+				<Route  path="/infor" component={Infor}/>
+				<Route  path="/detail" component={InfoDetail}/>
 				{/* <Manager /> */}
-				</switch>
+				</Switch>
 			</Router>
 	</Provider >
 

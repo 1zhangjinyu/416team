@@ -20,7 +20,7 @@ const manager=(data)=>{
         });
     }
 }
-
+//管理员
 const managerdetail=(props)=>{
     return (dispatch)=>{
         fetch(url+'manager/detail',{
@@ -38,5 +38,22 @@ const managerdetail=(props)=>{
         });
     }
 }
+//详细信息
+const Information=(props)=>{
+    return (dispatch)=>{
+        fetch('https://www.liucl.xyz:3745/inforuser',{
+            method:'POST',
+            mode:'cors',
+        })
+        .then(function (res){return res})
+        .then(function (res){
+            return dispatch({
+                type:'INFORMATION',
+                information:res
+            })
+        });
+    }
+}
 export {managerdetail}
 export {manager}
+export {Information}

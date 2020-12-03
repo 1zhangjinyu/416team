@@ -1,8 +1,10 @@
 import React from 'react'
 import './manage.css'
+import {Information} from './actionCreators';
+import {connect} from 'react-redux'
 
-
-const Infor = () => {
+const Infor = (props) => {
+    props.dispatch(Information);
     return (
         <div className="inforContainer">
             <div className="daohanglan"> 用户管理 {'>'} 基本信息</div>
@@ -40,4 +42,10 @@ const Infor = () => {
         </div>
     )
 }
-export  default Infor;
+const mapStateToProps=(state)=>({
+    information:state.infodetail.information,
+    
+}); 
+
+export default  connect(mapStateToProps)(Infor);
+// export  default Infor;
