@@ -1,8 +1,8 @@
 
-const managerReducer=(state={managerdetail:''},action)=>{
+const managerReducer=(state={upmanager:''},action)=>{
     switch(action.type){
-        case 'MANAGERDETAIL':
-            return {managerdetail:action.managerdetail}
+        case 'CHANGEMANAGER':
+            return {upmanager:action.upmanager}
         default:
             return state;
         }

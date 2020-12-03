@@ -1,5 +1,6 @@
 import React from 'react'
 import './manage.css'
+import {collpages} from './actionCreators'
 
 
 const Collection = () => {
