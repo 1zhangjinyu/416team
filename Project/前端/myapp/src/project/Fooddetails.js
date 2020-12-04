@@ -41,7 +41,7 @@ class DetailExample extends React.Component{
        return(
             <div>
                  <div className='foodrank-header'>
-                    <span className="iconfont icon-jiantouarrowhead7" onClick={()=>this.props.history.push('/recommend')}></span>
+                    <span className="iconfont icon-jiantouarrowhead7" onClick={()=>this.props.history.push(url1)}></span>
                     <span>详情</span>
                 </div>
 					<img  src={this.props.location.img}   style={{width:'100%',height:'60%'}}/>

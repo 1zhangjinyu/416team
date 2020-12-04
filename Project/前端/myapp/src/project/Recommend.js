@@ -7,7 +7,9 @@ class Recommend extends Component {
         super(props);
       }
       componentDidMount(){
-          this.props.dispatch(recommendfoods())
+        if(this.props.refoods[0]=={}){
+            this.props.dispatch(recommendfoods());
+        }
       }
     render() {
         // let arr=[

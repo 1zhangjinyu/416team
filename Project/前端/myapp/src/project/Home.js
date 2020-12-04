@@ -3,7 +3,9 @@ import React, { Component } from 'react'
 //import Breakfast from './Cookbook';
 import './nav.css';
 import {connect} from 'react-redux';
-import {foods} from './actionCreators'
+import {foods} from './actionCreators';
+import {heat} from './actionCreators';
+import {health} from './actionCreators'
 import Mytab from './Mytab'
 
 class Breakfast extends Component {
@@ -87,14 +89,16 @@ class Home extends Component {
         super(props);
       }
       componentDidMount(){
-          if(this.props.foods[0]=={}){
+        this.props.dispatch(heat());
+        this.props.dispatch(health());
+        if(this.props.foods[0]=={}){
             this.props.dispatch(foods());
-          }
+        }
           
       }
     render() {
         // this.props.dispatch(foods())
-        console.log(this.props.foods);
+        console.log(this.props.health.sevenweight);
         let arr1=[],arr2=[],arr3=[];
         this.props.foods.map((item)=>{
             if(item.eattime==='早'){
@@ -106,7 +110,18 @@ class Home extends Component {
             else if(item.eattime==='晚'){
                 arr3.push(item);
             }
-        })
+        });
+        let kcal = 0;
+		this.props.breakfastfoods.map((item)=>{
+			kcal += item.heat;
+		})
+		this.props.lunchfoods.map((item)=>{
+			kcal += item.heat;
+		})
+		this.props.dinnerfoods.map((item)=>{
+			kcal += item.heat;
+		})
+		console.log(kcal)
         // let arr1=['https://ns-strategy.cdn.bcebos.com/ns-strategy/upload/fc_big_pic/part-00679-3288.jpg',
         // 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1895037277,3199019854&fm=26&gp=0.jpg',
         // 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2517943680,1479891239&fm=26&gp=0.jpg',];
@@ -135,9 +150,9 @@ class Home extends Component {
                 <div id="healthy">
                     <span id="rec">健康记录</span>
                     <span id="rep" onClick={()=>this.props.history.push('/home/health')}>健康报告> </span>
-                    <p style={{fontSize:'5px',color:'grey',paddingTop:'20px',paddingLeft:'20px'}}>还可以吃</p>
+        <p style={{fontSize:'5px',color:'grey',paddingTop:'20px',paddingLeft:'20px'}}>还可以吃 {Math.floor(this.props.restcal-kcal)}</p>
                     <p style={{paddingLeft:'20px'}}>__________________________________________</p>
-                    <p style={{fontSize:'5px',color:'grey',paddingTop:'20px',paddingLeft:'20px'}}>体重</p>
+                    <p style={{fontSize:'5px',color:'grey',paddingTop:'20px',paddingLeft:'20px'}}>体重 </p>
                     <p style={{paddingLeft:'20px'}}>__________________________________________</p>
                     <p style={{paddingLeft:'115px',paddingTop:'15px',fontSize:'17px'}} onClick={()=>this.props.history.push('/report')}>查看更多 ></p>
                 </div>
@@ -158,6 +173,11 @@ class Home extends Component {
     }
 }
 const mapStateToProps = (state) =>({
-    foods:state.foodslist.foods
+    foods:state.foodslist.foods,
+    breakfastfoods:state.breakfastfoods,
+	lunchfoods:state.lunchfoods,
+	dinnerfoods:state.dinnerfoods,
+    restcal:state.rest.restcal,
+    health:state.healthlist.health
   })
 export default connect(mapStateToProps)(Home)

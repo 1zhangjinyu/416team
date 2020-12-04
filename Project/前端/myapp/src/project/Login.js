@@ -62,7 +62,18 @@ class Login extends Component {
                 </form>
                 <button onClick={()=>{
                     //this.props.history.push('/weight')
-                    return this.props.dispatch(login(data));
+                    //return this.props.dispatch(login(data));
+                    this.props.dispatch(login(data));
+                    setTimeout(()=>{
+                        if(this.props.user===false){
+                            alert("123");
+                            return ;
+                        }
+                        else{
+                            this.props.history.push('/weight');
+                        }
+                    },5000);
+                    return ;
                 }}>注册</button>
                 <button onClick={()=>{
                     this.props.dispatch(login(data));

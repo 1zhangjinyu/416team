@@ -7,16 +7,13 @@ import dianzan from './TrendsReducer';
 import comparefoods from './comparefoodsReducer';
 import weightlist from './AddweightReducer'
 import breakfastfoods from './addbreakfastReducer';
-<<<<<<< HEAD
 import lunchfoods from './addlunchReducer';
 import dinnerfoods from './adddinnerReducer';
 import login from './loginReducer';
 import rest from './restReducer';
-let rootReducer = combineReducers({foodslist,breakfastfoods,login,
+import healthlist from './healthReducer';
+let rootReducer = combineReducers({foodslist,breakfastfoods,login,dianzan,healthlist,
     shoucang,comparefoods,recommendlist,weightlist,lunchfoods,dinnerfoods,rest})
-=======
-let rootReducer = combineReducers({foodslist,breakfastfoods,shoucang,dianzan,comparefoods,recommendlist,weightlist})
->>>>>>> a0eb8f7972be8e2d164bf10d1734aa2ba02f14a8
 const store = createStore(
     rootReducer,
     compose(applyMiddleware(thunk),
