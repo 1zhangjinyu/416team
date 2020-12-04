@@ -11,7 +11,7 @@ const manager=(data)=>{
           mode:'cors',
           body:JSON.stringify(data) 
         })
-        .then(function(res){return res.json()})
+        .then(function(res){return res.text()})
         .then(res=>{
             dispatch({
                 type:'MANAGER',
@@ -76,23 +76,41 @@ const collpages=(updata)=>{
     }
 }
 //基本信息
-const Information=(props)=>{
+const information=(props)=>{
     return (dispatch)=>{
-        fetch('https://www.liucl.xyz:3745/inforuser',{
+        fetch('https://www.liucl.xyz:3745/inforusers',{
             method:'POST',
             mode:'cors',
         })
-        .then(function (res){return res})
+        .then(function (res){return res.json()})
         .then(function (res){
             return dispatch({
                 type:'INFORMATION',
-                information:res
+                users:res
             })
         });
     }
 }
-export{Information}
+//删除用户
+const deleteuser=(deleteid)=>{
+    return (dispatch)=>{
+        fetch('https://www.liucl.xyz:3745/deleteuser',{
+            method:'POST',
+            mode:'cors',
+            body:JSON.parse(deleteid)
+        })
+        .then(function (res){return res.text()})
+        .then(function (res){
+            return dispatch({
+                type:'DELETEUSERS',
+                users:res
+            })
+        });
+    }
+}
+export{information}
 export {collpages}
 export {managerdetail}
 export {manager}
 export {changeManager}
+export {deleteuser}

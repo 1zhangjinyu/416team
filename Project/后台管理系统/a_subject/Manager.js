@@ -49,6 +49,7 @@ class Manager extends Component {
                     <span className="managerUser">用户名:</span>
                     <input className="managerUsename" 
                     type="text"
+                    // placeholder={this.props.managers.username}
                     value={this.state.inpname}
                     onChange={this.nameChange}
                    

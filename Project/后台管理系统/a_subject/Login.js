@@ -10,8 +10,8 @@ class Login extends Component {
     constructor(){
         super();
         this.state={
-            inpname:'',
-            inppsd:''
+            inpname:this.props.managers.username,
+            inppsd:this.props.managers.username
         }    
     }   
     // componentDidMount(props){

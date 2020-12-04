@@ -2,8 +2,9 @@ import {createStore,combineReducers,applyMiddleware,compose} from 'redux';
 import thunk from 'redux-thunk';
 import login from './loginReducer';
 import manager from './managerReducer'
+import infor from './inforReducer'
 
-let rootReducer = combineReducers({login,manager})
+let rootReducer = combineReducers({login,manager,infor})
 // console.log(login.action)
 const store = createStore(
     rootReducer,

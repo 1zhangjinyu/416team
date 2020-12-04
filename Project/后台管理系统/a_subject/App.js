@@ -23,8 +23,8 @@ import store from './Store';
 					<Route exact path='/' component={Login} />
 					{/* <Route path='home' component={Home} /> */}
 				{/* < Collection/> */}
-				<Route path='/collection' component={Collection} />
-				{/* <Route path='/infor' component={Infor} /> */}
+				{/* <Route path='/collection' component={Collection} /> */}
+				<Route path='/infor' component={Infor} />
 				{/* <Manager /> */}
 				<Route path='/manager' component={Manager} />
 				</switch>
