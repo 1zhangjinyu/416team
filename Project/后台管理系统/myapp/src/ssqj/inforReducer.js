@@ -6,13 +6,8 @@ const inforReducer=(state={users:[]},action)=>{
 
         case 'DELETEUSER':
             return{users:action.users}
-        case 'UPDATEUSER':
-            return {users:action.users}
-        case 'ADDUSER':
-            return {users:action.users}
         default:
             return state;
     }
 }
-
 export default inforReducer;

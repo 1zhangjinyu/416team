@@ -10,10 +10,15 @@ class Login extends Component {
         super();
         // props.dispatch(manager());
         this.state={
+<<<<<<< HEAD:Project/后台管理系统/myapp/src/ssqj/Login.js
             // inpname:this.props.managers.username,
             // inppsd:this.props.managers.username
             inpname:'',
             inppsd:''
+=======
+            inpname:this.props.managers.username,
+            inppsd:this.props.managers.username
+>>>>>>> 588b479a610cce6b153e3c02ae1f97c44c04d769:Project/后台管理系统/a_subject/Login.js
         }    
     }   
     // componentDidMount(props){
