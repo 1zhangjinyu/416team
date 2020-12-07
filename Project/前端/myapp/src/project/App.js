@@ -2,27 +2,27 @@ import React from 'react';
 import {HashRouter as Router,Redirect,Route,NavLink,Switch,privateRoute} from 'react-router-dom'
 import { Provider } from 'react-redux';
 import 'antd-mobile/dist/antd-mobile.css';
-import Login from './Login';
-import Weight from './Weight';
-import FoodRank from './FoodRank';
-import Compare from './Compare';
-import Mytab from './Mytab';
-import Home from './Home';
-import Search from './Search';
-import Search1 from './Search1';
-import My from './My';
-import Recommend from './Recommend';
-import Fooddetails from './Fooddetails';
+import Login from './pages/Login';
+import Weight from './pages/Weight';
+import FoodRank from './pages/FoodRank';
+import Compare from './pages/Compare';
+//import Mytab from './Mytab';
+import Home from './pages/Home';
+import Search from './pages/Search';
+import Search1 from './pages/Search1';
+import My from './pages/My';
+import Recommend from './pages/Recommend';
+import Fooddetails from './pages/Fooddetails';
 import store from './Store'
-import Report from './Report'
-import OneFood from './OneFood';
-import TwoFood from './TwoFood';
-import ThreeFood from './ThreeFood';
-import AddWeight from './AddWeight';
-import Health from './Health';
-import Trends from './Trends';
-import Collect from './Collect';
-import Food from './Food';
+import Report from './pages/Report'
+import OneFood from './pages/OneFood';
+import TwoFood from './pages/TwoFood';
+import ThreeFood from './pages/ThreeFood';
+import AddWeight from './pages/AddWeight';
+import Health from './pages/Health';
+import Trends from './pages/Trends';
+import Collect from './pages/Collect';
+import Food from './pages/Food';
 
 const App = ()=>{
 	return <Provider store={store}>

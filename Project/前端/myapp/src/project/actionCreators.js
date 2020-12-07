@@ -1,8 +1,8 @@
 //登录页
-let url = 'https://www.hmyyz.top:9966/';
+let url = 'https://www.hmyyz.top:9999/';
 const login = (data)=>{
     return (dispatch)=>{
-        fetch('https://www.hmyyz.top:9966/',{
+        fetch('https://www.hmyyz.top:9999/',{
             method:'POST',
             body:JSON.stringify(data),
             mode:'cors',
@@ -143,7 +143,7 @@ const weights = (data)=>{
         fetch(url+'jltz',{
             method:'POST',
             mode:'cors',
-            // body:JSON.stringify(data)
+            //body:JSON.stringify(data)
             body:data
         })
         .then(function(res){return res.json()})
@@ -191,6 +191,24 @@ const health = ()=>{
         });
     }
 }
+// 我的食物
+const myfoods = (props)=>{
+    return (dispatch)=>{
+        fetch(url+'myfoods',{
+            method:'POST',
+            mode:'cors',
+        })
+        .then(function(res){return res.json()})
+        .then(function(res){
+            console.log(res)
+            return dispatch({
+                type:'ADDMY',
+                myfoods:res,
+            })
+        });
+    }
+}
+export {myfoods}
 export {health}
 export {login}
 export {weights}

@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 //import App from './react/app.js';
-import App from './a_subject/App';
-import Login from './project/Login'
+import App from './project/App';
+
 import 'antd-mobile/dist/antd-mobile.css'
-import Weight from './project/Weight';
+
 ReactDOM.render(
   <App />,
    document.getElementById('root')

@@ -1,0 +1,268 @@
+{
+  "id": "2220619",
+  "name": "擅食轻减",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "14378669",
+      "name": "收 藏",
+      "font_class": "shoucang3",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    },
+    {
+      "icon_id": "3693516",
+      "name": "收 藏",
+      "font_class": "shoucang2",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "3926866",
+      "name": "动态",
+      "font_class": "dongtai",
+      "unicode": "e787",
+      "unicode_decimal": 59271
+    },
+    {
+      "icon_id": "4007907",
+      "name": "食物",
+      "font_class": "shiwu",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
+      "icon_id": "17135181",
+      "name": "小结",
+      "font_class": "xiaojie",
+      "unicode": "e65c",
+      "unicode_decimal": 58972
+    },
+    {
+      "icon_id": "3331811",
+      "name": "新东方-刷新图标",
+      "font_class": "refresh",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "5807121",
+      "name": "箭头",
+      "font_class": "jiantou",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "10093317",
+      "name": "我 的",
+      "font_class": "wd-copy-copy",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "609192",
+      "name": "箭头",
+      "font_class": "jiantouarrowhead7",
+      "unicode": "e6bc",
+      "unicode_decimal": 59068
+    },
+    {
+      "icon_id": "887965",
+      "name": "我的 (2)",
+      "font_class": "wode2",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "905458",
+      "name": "首页",
+      "font_class": "shouye",
+      "unicode": "e6a5",
+      "unicode_decimal": 59045
+    },
+    {
+      "icon_id": "967630",
+      "name": "搜索",
+      "font_class": "search",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
+    {
+      "icon_id": "1149403",
+      "name": "排行榜",
+      "font_class": "paixingbang",
+      "unicode": "e6c5",
+      "unicode_decimal": 59077
+    },
+    {
+      "icon_id": "1294657",
+      "name": "刷新",
+      "font_class": "shuaxin",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    },
+    {
+      "icon_id": "1917112",
+      "name": "错误",
+      "font_class": "error",
+      "unicode": "e7f6",
+      "unicode_decimal": 59382
+    },
+    {
+      "icon_id": "2076355",
+      "name": "早餐",
+      "font_class": "zaocan",
+      "unicode": "e8b2",
+      "unicode_decimal": 59570
+    },
+    {
+      "icon_id": "2170934",
+      "name": "首页",
+      "font_class": "shouye1",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "3737505",
+      "name": "动态",
+      "font_class": "tubiaozhizuomoban-",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "4182953",
+      "name": "定期小结",
+      "font_class": "dingqixiaojie",
+      "unicode": "e6e1",
+      "unicode_decimal": 59105
+    },
+    {
+      "icon_id": "5536100",
+      "name": "日志查询",
+      "font_class": "rizhi",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
+      "icon_id": "5737717",
+      "name": "食物-35",
+      "font_class": "shiwu-",
+      "unicode": "ebd4",
+      "unicode_decimal": 60372
+    },
+    {
+      "icon_id": "5737756",
+      "name": "食物-74",
+      "font_class": "shiwu-1",
+      "unicode": "ebe4",
+      "unicode_decimal": 60388
+    },
+    {
+      "icon_id": "5876642",
+      "name": "推荐",
+      "font_class": "biaoqing",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "5898002",
+      "name": "推荐",
+      "font_class": "biaoqing1",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "6376660",
+      "name": "推荐服务",
+      "font_class": "tuijianfuwu",
+      "unicode": "e701",
+      "unicode_decimal": 59137
+    },
+    {
+      "icon_id": "6446009",
+      "name": "我的",
+      "font_class": "tianchongxing-",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
+      "icon_id": "6980478",
+      "name": "对比分析",
+      "font_class": "duibifenxi",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "7584430",
+      "name": "早餐",
+      "font_class": "zaocan1",
+      "unicode": "e736",
+      "unicode_decimal": 59190
+    },
+    {
+      "icon_id": "8289020",
+      "name": "信息",
+      "font_class": "xinxi",
+      "unicode": "e86f",
+      "unicode_decimal": 59503
+    },
+    {
+      "icon_id": "8802643",
+      "name": "报告 工单",
+      "font_class": "baogaogongdan",
+      "unicode": "e64b",
+      "unicode_decimal": 58955
+    },
+    {
+      "icon_id": "9688351",
+      "name": "点赞",
+      "font_class": "dianzan",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "10060838",
+      "name": "箭头",
+      "font_class": "jiantoujinggao",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "11372777",
+      "name": "收藏",
+      "font_class": "shoucang",
+      "unicode": "e8c6",
+      "unicode_decimal": 59590
+    },
+    {
+      "icon_id": "12476912",
+      "name": "收藏",
+      "font_class": "shoucang1",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "14359973",
+      "name": "修改",
+      "font_class": "xiugai",
+      "unicode": "e634",
+      "unicode_decimal": 58932
+    },
+    {
+      "icon_id": "16383621",
+      "name": "点赞",
+      "font_class": "dianzan1",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "17784832",
+      "name": "食物棒",
+      "font_class": "shiwubang",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    }
+  ]
+}
