@@ -32,20 +32,19 @@ class Compare extends Component {
                         }}></span>
                     <span>对比详情</span>
                 </div>
-                <div style={{width:'370px',height:'150px',backgroundColor:'rgb(247,240,240)'}}>
+                <div style={{width:'100%',height:'150px',backgroundColor:'rgb(247,240,240)'}}>
                 <div id="comleft" onClick={()=>this.props.history.push('/home/search1')}>
-                    <p style={{fontSize:'30px',paddingLeft:'35px',color:'red',position:'absolute'}}>+</p>
+                    <p style={{fontSize:'30px',paddingLeft:'35px',lineHeight:'90px',color:'red',position:'absolute'}}>+</p>
                     <img src={arr1.img} className="compare-img"/>
                 </div>
-                <img src={require('../image/vs.png')} style={{width:'50px',height:'50px',marginLeft:'-160px',marginTop:'50px'}}/>
+                <img src={require('../image/vs.png')} style={{width:'50px',height:'50px',marginLeft:'10%',marginTop:'50px'}}/>
                 <div id="conright" onClick={()=>this.props.history.push('/home/search1')}>
-                    <p style={{fontSize:'30px',paddingLeft:'35px',color:'red',position:'absolute'}}>+</p>
+                    <p style={{fontSize:'30px',paddingLeft:'35px',lineHeight:'90px',color:'red',position:'absolute'}}>+</p>
                     <img src={arr2.img} className="compare-img"/>
                 </div>
                 </div>
                 <div style={{width:'100%',height:'600px',backgroundColor:'white'}}>
                     <p style={{fontSize:'18px',textAlign:'center',paddingTop:'20px'}}>营养元素</p>
-                    <p style={{color:'#ccc'}}>  ___________________________________________________________</p>
                     <table className="compare-table">
                         <tr>
                             <td>{arr1.heat}</td>

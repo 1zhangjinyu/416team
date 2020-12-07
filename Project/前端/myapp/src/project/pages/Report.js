@@ -102,15 +102,15 @@ class Report extends Component {
                     <div style={{position:'absolute'}}>
                         <p style={{marginRight:'120px'}}>
 							剩余(kcal) {Math.floor(this.props.restcal-kcal)}</p>
-                        <p>摄入(kcal) {kcal}</p>
+                        <p >摄入(kcal) {kcal}</p>
                     </div>    
                 </div>
 				
 				<div className="report-max">
-					<div className="report-mid">
+					{/* <div className="report-mid">
 						<p>你还没有记录</p>
 						<p>点击屏幕下方按钮添加</p>
-					</div>
+					</div> */}
 					<div className="report-food">
 						<Breakfastfood props={this.props}/>
 						<Lunchfood props={this.props}/>

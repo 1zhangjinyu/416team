@@ -128,24 +128,29 @@ class Home extends Component {
                 <div style={{backgroundColor:'rgb(86,186,186)'}}>
                    <p style={{fontSize:'30px',color:'white',textAlign:'center'}}>擅 食 轻 减</p>
         <button className="home-search" onClick={()=>this.props.history.push('/home/search')} > 请输入食物名称  </button>
-            <div id="home-left" className="iconfont icon-duibifenxi" >
-                <p id="compare" onClick={()=>this.props.history.push('/home/com')}>食物对比</p>
+        <div className="big">
+            <div id="home-left">
+                <div className="iconfont icon-duibifenxi" style={{float:'left'}}></div>
+                <p id="compare" onClick={()=>this.props.history.push('/home/com')} style={{float:'left'}}>食物对比</p>
             </div>
-            <div id="home-right" className="iconfont icon-paixingbang" >
-                <p id="bang" onClick={()=>this.props.history.push('/home/rank')}>食物排行榜</p>
+            <div id="home-right">
+            <div className="iconfont icon-paixingbang" style={{float:'left'}}></div>
+                <p id="bang" onClick={()=>this.props.history.push('/home/rank')} style={{float:'left'}}>食物排行榜</p>
             </div>
+        </div>
+            
                 </div>
                 <div id="healthy">
                     <span id="rec">健康记录</span>
                     <span id="rep" onClick={()=>this.props.history.push('/home/health')}>健康报告> </span>
-        <p style={{fontSize:'5px',color:'grey',paddingTop:'20px',paddingLeft:'20px'}}>还可以吃 {Math.floor(this.props.restcal-kcal)}kcal</p>
-                    <p style={{paddingLeft:'20px'}}>__________________________________________</p>
-                    <p style={{fontSize:'5px',color:'grey',paddingTop:'20px',paddingLeft:'20px'}}>体重 {this.props.health.sevenweight?this.props.health.sevenweight[0]:''}kg</p>
-                    <p style={{paddingLeft:'20px'}}>__________________________________________</p>
-                    <p style={{paddingLeft:'115px',paddingTop:'15px',fontSize:'17px'}} onClick={()=>this.props.history.push('/report')}>查看更多 ></p>
+        <p style={{fontSize:'14px',color:'grey',paddingTop:'30px',paddingLeft:'30px'}}>还可以吃 {Math.floor(this.props.restcal-kcal)}kcal</p>
+                    {/* <p style={{paddingLeft:'20px'}}>__________________________________________</p> */}
+                    <p style={{fontSize:'14px',color:'grey',paddingTop:'30px',paddingLeft:'30px',paddingTop:'40px'}}>体重 {this.props.health.sevenweight?this.props.health.sevenweight[0]:''}kg</p>
+                    {/* <p style={{paddingLeft:'20px'}}>__________________________________________</p> */}
+                    <p style={{textAlign:'center',paddingTop:'55px',fontSize:'17px'}} onClick={()=>this.props.history.push('/report')}>查看更多 ></p>
                 </div>
                 <p style={{fontSize:'18px',paddingTop:'20px',paddingLeft:'10px'}}>我的食谱</p>
-                <span className="iconfont icon-shuaxin" style={{paddingLeft:'300px'}} onClick={()=>this.props.dispatch(foods())}>换一批</span>
+                <span className="iconfont icon-shuaxin" style={{float:'right',marginRight:'8%'}} onClick={()=>this.props.dispatch(foods())}>换一批</span>
                 <div id="eat">
                     <p style={{fontSize:'15px'}}>早餐</p>
                     <Breakfast data={arr1} props={this.props}/>
