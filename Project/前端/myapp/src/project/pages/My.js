@@ -38,7 +38,7 @@ class My extends Component {
                     </div>
                     <div id="healthyrep">
                         <div className="iconfont icon-baogaogongdan"></div>
-                        <p id="word">基本信息</p>
+                        <p id="word" onClick={()=>this.props.history.push('/my/infor')} >基本信息</p>
                         <div className="iconfont icon-jiantou"></div>
                         
                     </div>

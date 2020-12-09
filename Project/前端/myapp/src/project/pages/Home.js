@@ -152,11 +152,19 @@ class Home extends Component {
                 <p style={{fontSize:'18px',paddingTop:'20px',paddingLeft:'10px'}}>我的食谱</p>
                 <span className="iconfont icon-shuaxin" style={{float:'right',marginRight:'8%'}} onClick={()=>this.props.dispatch(foods())}>换一批</span>
                 <div id="eat">
-                    <p style={{fontSize:'15px'}}>早餐</p>
+                    <div style={{height:'20px'}}>
+                       <p style={{textAlign:'center',lineHeight:'20px',fontSize:'15px'}}>早餐</p>
+                        </div>
                     <Breakfast data={arr1} props={this.props}/>
-                    <p style={{fontSize:'15px',paddingTop:'30px'}}>午餐</p>
+                    <div style={{height:'20px',marginTop:'8px'}}>
+                        <p style={{textAlign:'center',lineHeight:'20px',fontSize:'15px'}}>午餐</p>
+                    </div>
+                    
                     <Lunch data={arr2} props={this.props}/>
-                    <p style={{fontSize:'15px',paddingTop:'30px'}}>晚餐</p>
+                    <div style={{height:'20px' ,marginTop:'8px'}}>
+                         <p style={{textAlign:'center',lineHeight:'20px',fontSize:'15px'}}>晚餐</p>
+                    </div>
+                   
                     <Dinner data={arr3} props={this.props}/>
                 </div>
                 <Mytab />

@@ -17,7 +17,7 @@ class Mytab extends React.Component {
 		<div style={{ position: 'fixed',  width: '100%', bottom: 0 }}>
 		  <TabBar
 			unselectedTintColor="#949494"
-			tintColor="#ff5000"
+			tintColor="rgb(86,186,186)"
 			barTintColor="white"
 		  >
 			<TabBar.Item

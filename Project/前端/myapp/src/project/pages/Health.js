@@ -26,7 +26,7 @@ class Health extends Component {
                 </div>
                 <div id="weight">
                     <p style={{textAlign:'center',paddingTop:'10px'}}>体重</p>
-                    <p style={{paddingLeft:'20px',color:'rgb(118,145,211)',fontWeight:'bolder'}}>___________________________________________________</p>
+                    <p style={{paddingLeft:'20%',color:'rgb(118,145,211)',fontWeight:'bolder'}}>___________________________________________________</p>
                     <p style={{paddingLeft:'30px',paddingTop:'30px'}}>最新体重</p>
                     <div style={{width:'50px',height:'30px',backgroundColor:'rgb(188,238,244)',borderRadius:'15px',textAlign:'center',lineHeight:'30px',float:'left',marginLeft:'90px',marginTop:'-20px'}}>{arr1[0]}kg</div>
                     {/* <input type="range" min max s/> */}

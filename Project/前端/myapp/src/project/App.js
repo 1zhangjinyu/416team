@@ -24,6 +24,7 @@ import Trends from './pages/Trends';
 import Collect from './pages/Collect';
 import Food from './pages/Food';
 
+
 const App = ()=>{
 	return <Provider store={store}>
 	<Router>
