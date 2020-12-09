@@ -1,7 +1,7 @@
 
 const foodnote = (props) => {
     return (dispatch)=>{
-         let url='https://www.liucl.xyz:1770/food'
+         let url='https://www.liucl.xyz:1234/food'
         fetch(url,{
             method:'post',
 

@@ -7,6 +7,7 @@ import {func} from './func'
 const Food = (props) => {
     let i=0;
     props.dispatch(foodnote());
+    
     return (
         <div>
             <Head/>
@@ -41,6 +42,7 @@ const Food = (props) => {
                 <button style={{marginTop:'30px'}}
                 className='add'
                 onClick={(addo)=>{
+                   
                     let food=document.getElementById('food5');
                     let fname=food.fname.value;
                     let protein=food.protein.value;
@@ -55,8 +57,13 @@ const Food = (props) => {
                     let wc=food.wc.value;
                     let we=food.we.value;
                     
-                    addo={table:'food',type:'addo',fname:fname,img:img,protein:protein,fat:fat,co3:co3,fiber,gi:gi,gl:gl,wa:wa,wc:wc,we:we,heat:heat}                               
-                    func(addo)
+                    addo={type:'addo',table:'food',fname:fname,img:img,protein:protein,fat:fat,co3:co3,fiber,gi:gi,gl:gl,wa:wa,wc:wc,we:we,heat:heat}                               
+                    props.dispatch(func(addo))
+                    setTimeout(()=>{
+                        alert('添加成功');
+                    },10000)
+                    
+                    
                 }}
                
                 >添加栏目</button>
@@ -103,9 +110,13 @@ const Food = (props) => {
                             <td>
                                 <button
                                 onClick={(delo)=>{
+                                    
                                     let fname=item.fname;
-                                    delo={table:'food',type:'delo',fname:fname}
-                                    func(delo)
+                                    delo={type:'delo',table:'food',fname:fname}
+                                    props.dispatch(func(delo))
+                                    setTimeout(()=>{
+                                        alert('删除成功');
+                                    },10000)
                                 }}>删除</button>
                             </td>
                         </tr>
@@ -117,6 +128,7 @@ const Food = (props) => {
 }
 
 const mapStateToProps=(state)=>({
-    foods:state.foodnote.foods
+    foods:state.foodnote.foods,
+    rets:state.func.rets
   })
 export default connect(mapStateToProps)(Food)

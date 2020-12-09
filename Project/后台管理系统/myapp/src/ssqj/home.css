@@ -1,6 +1,5 @@
 ul{
     list-style: none;
-    padding:0
 }
 .right{
     width:250px;
@@ -46,7 +45,7 @@ ul{
     border-top:1px solid teal;
 }
 .top{
-    width:1550px;
+    width:1025px;
     height:100px;
     background-color: teal;
     margin-left: 250px;
@@ -69,7 +68,7 @@ ul{
     margin-right: 80px;
     width: 300px;
     height:100px;
-    border:10px solid teal;
+    border:10px solid rgb(0, 128, 128);
     background-color: rgba(231, 229, 229, 0.795);
     border-radius:40px 40px 40px 40px;
 
@@ -82,19 +81,51 @@ ul{
     width:300px;
     height:300px;  
     margin-top: 30px;
-    margin-left: 500px;
+    margin-left: 550px;
     position:fixed;
 }
 #img1{
     margin-top: 400px;
-    margin-left: 620px;
+    margin-left: 670px;
     position:fixed;
 }
-#update{
-    margin-top: 0px;
-    margin-left: 320px;
+#update1{
+    width: 500px;
+    height: 280px;
+    margin-top: 30px;
+    margin-left: 480px;
     position:fixed;
-    background-color: tan;
+    background-color: rgba(231, 229, 229, 0.9);
+    border:3px solid teal;
+}
+#update2{
+    width: 500px;
+    height: 280px;
+    margin-top: 30px;
+    margin-left: 480px;
+    position:fixed;
+    background-color: rgba(231, 229, 229, 0.9);
+    border:3px solid teal;
+
+}
+#update3{
+    width: 500px;
+    height: 280px;
+    margin-top: 30px;
+    margin-left: 480px;
+    position:fixed;
+    background-color: rgba(231, 229, 229, 0.9);
+    border:3px solid teal;
+}
+
+#update4{
+    width: 500px;
+    height: 280px;
+    margin-top: 30px;
+    margin-left: 480px;
+    position:fixed;
+    background-color: rgba(231, 229, 229, 0.9);
+    border:3px solid teal;
 }
 .bread{
     width:1000px;
@@ -190,6 +221,34 @@ ul{
     border-bottom: 1px solid;
     text-align:center;  
     width:130px;
+    background-color: rgba(231, 229, 229, 0.795);
+    height: 25px;
+}
+.cont{
+    margin-top: 30px;
+    margin-left: 280px;
+    margin-bottom: 30px;
+}
+.cont table{            
+    border-right: 1px solid;
+    border-top: 1px solid;
+    margin-top: 20px;
+
+    /*相邻边框被合并*/
+    border-collapse:collapse;
+}
+.cont td{
+    border-left: 1px solid;
+    border-bottom: 1px solid;
+    text-align:center;  
+    width:120px;
+    height: 25px;
+}
+.cont th{
+    border-left: 1px solid;
+    border-bottom: 1px solid;
+    text-align:center;  
+    width:120px;
     background-color: rgba(231, 229, 229, 0.795);
     height: 25px;
 }

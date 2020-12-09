@@ -9,3 +9,5 @@ const eatreducer = (state={eats:[]},action) => {
 } 
 
 export default eatreducer
+
+

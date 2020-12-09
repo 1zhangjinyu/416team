@@ -18,7 +18,7 @@ let con = mysql.createPool({
 
 let id;
 
-//判断是否已经注册，若未注册，先注册，跳到登记信息页，并分配给一个新的id(date.now())))
+//判断是否已经注册，若未注册，先注册，跳到登记信息页，并分配给一个新的id(date                                                                                                                                                             .no                                                                             w())))
 app.post('/',async (c,next) =>{
 
     c.setHeader('Access-Control-Allow-Origin','*');
@@ -33,8 +33,7 @@ app.post('/',async (c,next) =>{
 
     if(rows.length === 0){
         let idnew = Date.now();
-        const sql2 = `insert into users (id,username,psd) values('${idnew}',
-          '${username}','${psd1}')`;
+        const sql2 = `insert into users (id,username,psd) values('${idnew}','${u                                                                             sername}','${psd1}')`;
         await con.execute(sql2);
 
         id = idnew;
@@ -64,6 +63,14 @@ app.post('/weight',async c=>{
     c.setHeader('Access-Control-Allow-Methods','GET,POST');
     let body = c.body;
     body = JSON.parse(body);
+    let date1=new Date();
+    let year = (date1.getFullYear()+'');
+    let month=date1.getMonth()+1;
+    month = month<10?'0'+month:month;
+    let d=date1.getDate();
+    d=d<10?('0'+d):d;
+    let date=year+month+d;
+
     let sex = body.sex,
         weight = body.weight,
         goalweight = body.goalweight,
@@ -72,9 +79,14 @@ app.post('/weight',async c=>{
         age = body.age;
     console.log(sex,weight,goalweight,height,age,type);
 
-     const sql = `update users set sex=${sex},age=${age},weights=${weight},goalweight=${goalweight},height=${height},type=${type} where id='${id}'`;
+    let bmi = weight/height/height;
+
+     const sql = `update users set sex=${sex},age=${age},weights=${weight},goalw                                                                             eight=${goalweight},height=${height},bmi=${bmi},type=${type} where id='${id}'`;
      await con.execute(sql);
      c.res.body = true;
+
+     const sql1 = `insert into recordweight values('${id}','${weight}','${date}'                                                                             ,0)`;
+     await con.execute(sql1);
 
      const ss = `select * from users`;
      let [r]=await con.execute(ss);
@@ -131,13 +143,13 @@ app.post('/gftj',async c=>{
 
   switch (type){
     case '增重':
-      sql1 = `select * from addweight where id in('${id1}','${id1+1}','${id1+2}','${id1+3}','${id1+4}','${id1+5}')`;
+      sql1 = `select * from addweight where id in('${id1}','${id1+1}','${id1+2}'                                                                             ,'${id1+3}','${id1+4}','${id1+5}')`;
       break;
     case '减重':
-      sql1 = `select * from loseweight where id in('${id1}','${id1+1}','${id1+2}','${id1+3}','${id1+4}','${id1+5}')`;
+      sql1 = `select * from loseweight where id in('${id1}','${id1+1}','${id1+2}                                                                             ','${id1+3}','${id1+4}','${id1+5}')`;
       break;
     case '保持':
-      sql1 = `select * from keepweight where id in('${id1}','${id1+1}','${id1+2}','${id1+3}','${id1+4}','${id1+5}')`;
+      sql1 = `select * from keepweight where id in('${id1}','${id1+1}','${id1+2}                                                                             ','${id1+3}','${id1+4}','${id1+5}')`;
       break;
   }
 
@@ -158,7 +170,7 @@ app.post('/rest',async c=>{
   const sql1 = `select neww from recordweight where num=0`;
   let [row] = await con.execute(sql);
   let [row1] = await con.execute(sql1);
-
+  //console.log(row,row1);
   let str = JSON.stringify(row[0]);
   let str1 = JSON.stringify(row1[0]);
 
@@ -179,6 +191,7 @@ app.post('/rest',async c=>{
 })
 
 
+
 //食物对比
 //前端提供搜索的食物的名称fname  c.body.fname
 app.post('/compare',async c=>{
@@ -194,7 +207,7 @@ app.post('/compare',async c=>{
 });
 
 
-//添加早中晚餐时，点击具体的食物，返回给前端具体的食物热量，并把点击的十五添加到我的食物中和用户对应。
+//添加早中晚餐时，点击具体的食物，返回给前端具体的食物热量，并把点击的十五添加到                                                                             我的食物中和用户对应。
 //前端提供fname:fname的字符串形式、user:users的id值
 
 app.post('/eat',async c=>{
@@ -203,59 +216,62 @@ app.post('/eat',async c=>{
 
   let fname = c.body;
 
-  let time=new Date();
-  let year=(time.getFullYear()+"");
-  let month=time.getMonth+1;
-  month=month<10?'0'+month:month;
-  let day=time.getDate();
-  day=day<10?('0'+day):day;
-  let date=year+month+day;
+  console.log(fname);
+
+  let date1=new Date();
+  let year = (date1.getFullYear()+"")//.slice(-2);
+  let month = date1.getMonth()+1;
+  month = month < 10 ? '0' + month : month;
+  let d = date1.getDate();
+  d = d < 10 ? ('0' + d) : d;
+  let date=year+month+d;
+  console.log(date)
 
   const sql1=`select * from food where fname =${fname}`;
   let [rows]=await con.execute(sql1);
 
   let str = JSON.stringify(rows);
   let food = JSON.parse(str);
-  console.log(food[0]);
-  let str1=JSON.stringify(rows[0]);
 
+  let str1=JSON.stringify(rows[0]);
   if (str1 != ''){
-    //搜索得到食物后，前端点击，添加到我的食物
-    const sql2=`insert into myfood values('${fname}','${time}','${id}','${food[0].img}','${food[0].heat}')`;
-    let [rows1]=await con.execute(sql2);
     c.res.body=str1;
   }else{
     c.res.body='false';
   }
+  const sql2=`insert into myfoods values('${fname}','${date}','${id}','${food[0]                                                                             .img}','${food[0].heat}')`;
+  let [rows1]=await con.execute(sql2);
+  const l = `select * from myfoods`;
+  let [w] = await con.execute(l);
+  //console.log(w);
 
-  
 });
-
 
 
 //用户点击我的食物功能时，从列表中查询记录并返回（检验date.now()）
 //前端传递users的id ->c.query.id
-app.post('/myfood' ,async c=>{
-  //日期
-  let time=new Date();
-  let year=(time.getFullYear()+"");
-  let month=time.getMonth+1;
-  month=month<10?'0'+month:month;
-  let day=time.getDate();
-  d=d<10?('0'+d):d;
-  let date=year+month+day;
+app.post('/myfoods' ,async c=>{
+  let date1=new Date();
+  let year = (date1.getFullYear()+"")//.slice(-2);
+  let month = date1.getMonth()+1;
+  month = month < 10 ? '0' + month : month;
+  let d = date1.getDate();
+  d = d < 10 ? ('0' + d) : d;
+  let date=year+month+d;
+
   //解决跨域
   c.setHeader('Access-Control-Allow-Origin','*');
   c.setHeader('Access-Control-Allow-Methods','GET,POST');
 
   //let userid=c.body.id;//用户
-  //删除旧的数据
-  const sql1=`delete from myfood where (dates <>'${date}' and id='${id}')` ;
-  let [row1]=con.execute(sql1);
+  //删除旧的数据，只保存当天的饮食数据
+  const sql1=`delete from myfoods where dates <>'${date}' and id='${id}'` ;
+  let [row1]=await con.execute(sql1);
   //查找当天的数据
-  const sql2=`select from myfood where( dates='${date}' and  id='${id}' )`;
+  const sql2=`select * from myfoods where dates='${date}' and id='${id}'`;
   let [row2]=await con.execute(sql2);
-  let str=JSON.stringify(row2[0]);
+  let str=JSON.stringify(row2);
+  console.log(str)
   c.res.body=str;
 });
 
@@ -294,7 +310,7 @@ app.post('/jltz',async (c,next)=>{
   console.log(date)
 
   //删除重复日期
-  //let date='20201203'
+
   for(let i=0;i<str1.length;i++){
     if(date===str1[i].dates){
       let sql2=`delete from recordweight where dates='${date}'`;
@@ -383,10 +399,4 @@ app.post('/jkbg',async (c,next)=>{
 
 
 
-
-
-
-app.run(9966);
-
-
-
+app.run(9999);

@@ -8,6 +8,8 @@ import login from './loginReducer'
 import manager from './managerReducer'
 import infor from './inforReducer'
 import target from './targetReducer'
+import func from './funcreducer'
+import contents from './contreducer'
 //import thunk from 'redux-thunk'
 let rootReducer =combineReducers({
   eatfood,
@@ -18,7 +20,9 @@ let rootReducer =combineReducers({
   login,
   manager,
   infor,
-  target
+  target,
+  func,
+  contents
  })
 
  function logger({ getState }) {

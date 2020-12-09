@@ -26,6 +26,7 @@ import Food from './pages/Food';
 //import Information from './pages/information';
 import TestWrapper from './pages/information';
 
+
 const App = ()=>{
 	return <Provider store={store}>
 	<Router>

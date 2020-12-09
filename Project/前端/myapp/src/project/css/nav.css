@@ -13,7 +13,7 @@ li{
     color:white;
     float:right;
     margin-top: -38px;
-    margin-right: 165px;
+    margin-right: 37%;
 }
 .icon-xinxi{
     width:100px;
@@ -68,6 +68,8 @@ li{
 }
 .icon-jiantouarrowhead7{
     color:white;
+    float: left;
+    margin-left: 10px;
     
 }
 .icon-dongtai{
@@ -100,34 +102,42 @@ li{
     border:1px solid rgb(86,186,186)
 }
 #home-left{
-    width:40%;
+    /* float: left; */
+    width:30%;
     height:30px;
-    margin-top:5%;
+    position: absolute;
+    
+    margin-top:3%;
     margin-left: 10%;
 }
 #home-right{
     float:right;
-    width:40%;
+    width:30%;
     height:30px;
-    margin-top: -8%;
+  
+    margin-top: 3%;
     margin-left: 65%;
+}
+.big{
+    width:100%;
+    height:50px;
+   
 }
 #compare{
     margin-left: 13%;
-    margin-top: -13%;
+   
     color:white;
 }
 #bang{
-    margin-left:13%;
-    margin-top: -13%;
+    margin-left:5%;
     color:white;
 }
 #healthy{
-    width:300px;
+    width:80%;
     height:230px;
     background-color: white;
     box-shadow: 2px 2px 10px #909090;
-    margin-left: 38px;
+    margin-left:10%;
     margin-top: 20px;
     padding-top: 15px;
     border-radius: 30px 30px 30px 30px;
@@ -138,32 +148,39 @@ li{
 }
 #rep{
     font-size: 15px;
-    padding-left: 120px;
+    /* padding-left: 120px; */
+    float:right;
+    margin-right: 10px;
     color: grey;
 }
 #eat{
-    width:350px;
+    width:85%;
     height:600px;
     background-color: white;
-    margin-left: 10px;
+    margin-left: 8%;
     margin-top: 20px;
     padding-top: 10px;
 }
 #morning{
-    width:350px;
+    width:90%;
     height:100px;
     background-color: white;
-    margin-left: 0px;
+    margin-left: 5%;
     margin-top: 20px;
     padding-top: 10px;
+    border:1px solid #bbe1f1;background:#eefaff
+   
 }
 #morning li{
     float: left;
+    width:30%;
+    height:90%;
+    margin-left: 2%;
 }
 #picture{
-    width:100px;
-    height:100px;
-    margin-left:13px;
+    width:100%;
+    height:100%;
+    margin-left:5%;
     margin-top:3px;
 }
 
@@ -174,6 +191,7 @@ li{
     background-color: white;
 }
 .foodrank-header{
+    width:100%;
     height: 40px;
     text-align: center;
     line-height: 40px;
@@ -186,12 +204,12 @@ li{
 }
 .foodrank ol{
     margin-top: 0px;
-    width: 90px;
+    width: 20%;
     height: 550px;
     background-color: rgb(238, 237, 237);
 }
 .foodrank ol li{
-    width: 90px;
+    width: 100%;
     height: 45px;
     
     text-align: center;
@@ -205,18 +223,18 @@ li{
 .foodlist{
     float: left;
     margin-top: -548px;
-    margin-left: 95px;
-    width: 278px;
+    margin-left: 20%;
+    width: 100%;
 
 }
 .foodlist li{
-    width: 278px;
+    width: 80%;
     height: 80px;
     border-bottom:1px solid silver ;
 }
 .foodlist-name{
     float: right;
-    margin-right: 35px;
+    margin-right: 20%;
     margin-top: 20px;
 }
 .foodlist-name p{
@@ -245,22 +263,22 @@ li{
     width:160px;
     height:200px;
     background-color:white;
-    margin-top: 10px;
+    margin-top: 15px;
     float: left;
     margin-left: 20px;
-    box-shadow: 2px 2px 10px #909090;
-   
+    box-shadow: 0px 15px 10px -15px #909090;
+  
 }
 /* 我的 */
 #user{
     width:50px;
     height:50px;
-    margin-left: 20px;
+    margin-left: 10%;
     margin-top: 40px;
     
 }
 #nav{
-    width:300px;
+    width:80%;
     height:70px;
     background-color:white;
     margin-top:-30px;
@@ -272,7 +290,7 @@ li{
     width:60px;
     height:60px;
     float:left;
-    margin-left:30px;
+    margin-left:10%;
     margin-top: 5px;
     background-color: white;
 }
@@ -281,16 +299,16 @@ li{
     height:60px;
 }
 #report{
-    width:340px;
+    width:90%;
     height:700px;
     background-color:white;
-    margin-left:15px;
+    margin-left:5%;
     margin-top:10px;
     border-radius: 10px 10px 10px 10px;
     border:1px solid #ccc;
 }
 #healthyrep{
-    width:320px;
+    width:90%;
     height:40px;
     background-color: white;
     margin-left: 10px;
@@ -308,19 +326,19 @@ li{
     height:90px;
     background-color:white;
     float:left;
-    margin-left:50px;
+    margin-left:10%;
     margin-top:30px;
-    border:1px solid #ccc;
+   
 }
 #conright{
     position: relative;
     width:90px;
     height:90px;
     background-color:white;
-    float:left;
-    margin-left:90px;
+    float:right;
+    margin-right:10%;
     margin-top:30px;
-    border:1px solid #ccc;
+    
 }
 .compare-img{
     position: absolute;
@@ -336,7 +354,7 @@ li{
     width:100px;
     height:100px;
     background-color: white;
-    margin-left: 135px;
+    margin-left: 35%;
     margin-top: 40px;
     border-radius: 55px;
     font-size: 24px;
@@ -346,7 +364,7 @@ li{
     border:5px solid rgb(86,186,186);
 }
 #weight{
-    width:350px;
+    width:90%;
     height:200px;
     margin-left: 13px;
     margin-top: 20px;

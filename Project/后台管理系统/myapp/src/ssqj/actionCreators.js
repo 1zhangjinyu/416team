@@ -11,7 +11,7 @@ const manager=(data)=>{
           mode:'cors',
           body:JSON.stringify(data) 
         })
-        .then(function(res){return res.text()})
+        .then(function(res){return res.json()})
         .then(res=>{
             dispatch({
                 type:'MANAGER',
@@ -104,7 +104,6 @@ const deleteuser=(deleteid)=>{
             return dispatch({
                 type:'DELETEUSERS',
                 users:res
-<<<<<<< HEAD:Project/后台管理系统/myapp/src/ssqj/actionCreators.js
             })
         });
     }
@@ -156,18 +155,13 @@ const adduser=(adddata)=>{
             return dispatch({
                 type:'ADDUSER',
                 user:res
-=======
->>>>>>> 588b479a610cce6b153e3c02ae1f97c44c04d769:Project/后台管理系统/a_subject/actionCreators.js
             })
         });
     }
 }
-<<<<<<< HEAD:Project/后台管理系统/myapp/src/ssqj/actionCreators.js
 export{adduser}
 export{searchuser}
 export {updateuser}
-=======
->>>>>>> 588b479a610cce6b153e3c02ae1f97c44c04d769:Project/后台管理系统/a_subject/actionCreators.js
 export{information}
 export {collpages}
 export {managerdetail}

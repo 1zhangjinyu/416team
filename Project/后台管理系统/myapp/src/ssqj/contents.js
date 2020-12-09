@@ -1,7 +1,7 @@
 
-const losefood = (props) => {
+const contents = (props) => {
     return (dispatch)=>{
-         let url='https://www.liucl.xyz:1234/foodlist/lose'
+         let url='https://www.liucl.xyz:1234/cont'
         fetch(url,{
             method:'post',
 
@@ -9,11 +9,11 @@ const losefood = (props) => {
         .then(res=>res.json())
         .then(res=>{
             dispatch({
-                type:'LOSE',
-                lose:res,
+                type:'CON',
+                cont:res,
             })
             
         })
     }
 }
-export {losefood}
+export {contents}
