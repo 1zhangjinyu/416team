@@ -35,21 +35,23 @@ const foods = (props)=>{
         });
     }
 }
-// const newfoods = (props)=>{
-//     return (dispatch)=>{
-//         fetch(url+'foods',{
-//             method:'POST',
-//             mode:'cors',
-//         })
-//         .then(function(res){return res.json()})
-//         .then(function(res){
-//             return dispatch({
-//                 type:'FOODS',
-//                 foods:res,
-//             })
-//         });
-//     }
-// }
+//基本信息页
+const sub = (data)=>{
+    return (dispatch)=>{
+        fetch(url+'weight',{
+            method:'POST',
+            body:JSON.stringify(data),
+            mode:'cors',
+        })
+        .then(function(res){return res.json()})
+        .then(function(res){
+            return dispatch({
+                type:'INFOR',
+                infor:res,
+            })
+        });
+    }
+}
 //每日推荐
 const recommendfoods = (props)=>{
     return (dispatch)=>{
@@ -219,4 +221,5 @@ export {addbreakfast}
 export {addlunch}
 export {adddinner}
 export {heat}
+export {sub}
 

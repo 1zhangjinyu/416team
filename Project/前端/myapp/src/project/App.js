@@ -23,13 +23,15 @@ import Health from './pages/Health';
 import Trends from './pages/Trends';
 import Collect from './pages/Collect';
 import Food from './pages/Food';
+//import Information from './pages/information';
+import TestWrapper from './pages/information';
 
 const App = ()=>{
 	return <Provider store={store}>
 	<Router>
     <Switch>
 			<Route exact path='/' component={Login} />
-			<Route path='/weight' component={Weight} />
+			<Route path='/weight' component={TestWrapper} />
 			<Route exact path='/home' component={Home}/>
             <Route path='/home/search' component={Search}/>
             <Route path="/home/rank" component={FoodRank}/>
@@ -41,6 +43,7 @@ const App = ()=>{
 			<Route path="/my/trends" component={Trends}/>
 			<Route path="/my/collect" component={Collect}/>
 			<Route path="/my/food" component={Food}/>
+			<Route path="/my/information" component={Weight}/>
 			<Route exact path="/recommend" component={Recommend}/>
 			<Route path="/home/fooddetails" component={Fooddetails}/>
 			<Route exact path="/report" component={Report}/>

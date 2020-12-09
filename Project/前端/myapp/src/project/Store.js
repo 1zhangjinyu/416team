@@ -13,8 +13,9 @@ import login from './reducer/loginReducer';
 import rest from './reducer/restReducer';
 import healthlist from './reducer/healthReducer';
 import myfoodslist from './reducer/myfoodReducer';
+import inforlist from './reducer/inforReducer';
 let rootReducer = combineReducers({foodslist,breakfastfoods,login,dianzan,healthlist,
-    shoucang,comparefoods,recommendlist,weightlist,lunchfoods,dinnerfoods,rest,myfoodslist})
+    shoucang,comparefoods,recommendlist,weightlist,lunchfoods,dinnerfoods,rest,myfoodslist,inforlist})
 
 const store = createStore(
     rootReducer,

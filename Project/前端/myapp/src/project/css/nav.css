@@ -228,6 +228,18 @@ li{
     margin-left: 15px;
     margin-top: 10px;
 }
+.icon-shoucang:hover{
+    color:red;
+}
+.icon-dianzan1:hover{
+    color:red;
+}
+.icon-dianzan1:visited{
+    color:red;
+}
+.icon-shoucang:visited{
+    color:red;
+}
 /* 每日推荐 */
 #recommend{
     width:160px;
@@ -387,4 +399,27 @@ li{
     border: 2px solid  rgb(86,186,186);
     border-radius: 5px;
     background-color: white;
+}
+
+/*基本信息*/
+#infor{
+    width:340px;
+    height:600px;
+    background-color:white;
+    margin-left:15px;
+    margin-top:10px;
+    border-radius: 10px 10px 10px 10px;
+    border:1px solid #ccc;
+}
+#inforrep{
+    width:320px;
+    height:25px;
+    background-color: white;
+    padding-top: 20px;
+    margin-left: 10px;
+    border-bottom: 1px solid #ccc;
+}
+#words{
+    padding-top:10px;
+    padding-left:10px;
 }

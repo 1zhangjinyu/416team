@@ -1,15 +1,17 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
 import '../css/style.css';
+import {connect} from 'react-redux';
+import {sub} from '../actionCreators'
 
 class Weight extends Component {
     constructor(props){
         super(props);
         this.state={
-            inpSex:'',
-            inpWeight:'',
-            inpNew:'',
-            inpType:'',
+            inpSex:'this.props.infor.sex',
+            inpWeight:'this.props.infor.weight',
+            inpNew:'this.props.infor.goalweight',
+            inpType:'this.props.infor.type',
             inpAge:''
         }
     }
@@ -32,24 +34,13 @@ class Weight extends Component {
         this.setState({inpAge:e.target.value})
     }
     
-    sub=()=>{
-        let data = {sex:this.state.inpSex,weight:this.state.inpWeight,goalweight:this.state.inpNew,height:this.state.inpHeight,type:this.state.inpType,age:this.state.inpAge};
-        fetch('https://www.hmyyz.top:9999/weight', {
-            method: 'POST', 
-            mode:'cors',
-            body: JSON.stringify(data), 
-                
-        })
-        .then(function(res){return res.text()})
-        .catch(error => console.error('Error:', error))
-        .then(function(res){
-            console.log(res);
-        });
-    }
     render() {
         return (
             <div className="weight">
-                <div className="weight-header">个人信息</div>
+               <div className='foodrank-header'>
+                    <span className="iconfont icon-jiantouarrowhead7" onClick={()=>this.props.history.push('/my')}></span>
+                    <span>基本信息</span>
+                </div>
                 <form>
                     性别：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="radio" name="man" id="man" value="'男'" onChange={this.sexChange}/> 男 &nbsp;&nbsp;
@@ -99,13 +90,18 @@ class Weight extends Component {
                     
                 </form>
                 <button onClick={()=>{
+                    let data = {sex:this.state.inpSex,weight:this.state.inpWeight,goalweight:this.state.inpNew,height:this.state.inpHeight,type:this.state.inpType,age:this.state.inpAge};
                     this.props.history.push('/home');
-                    return this.sub();
+                    return this.props.dispatch(sub(data));
                 }}>提交</button>
             </div>
         )
     }
 }
+const mapStateToProps = (state) =>({
+    infor:state.inforlist.infor
+})
+export default connect(mapStateToProps)(Weight)
 //onClick={this.props.history.push('/home')
 //onDoubleClick={this.props.history.push('/home')}
-export default withRouter(Weight);
+//export default withRouter(Weight);

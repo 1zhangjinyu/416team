@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../css/nav.css'
+
 import {connect} from 'react-redux';
 import Mytab from '../Mytab'
 import {myfoods} from '../actionCreators'
@@ -32,7 +33,7 @@ class My extends Component {
                 <div id="report">
                     <p style={{paddingLeft:'10px',paddingTop:'20px',fontSize:'15px'}}>我的健康资料</p>
                     <p style={{color:'#ccc'}}>______________________________________________________</p>
-                    <div id="healthyrep">
+                    <div id="healthyrep" onClick={()=>this.props.history.push('/my/information')}>
                         <div className="iconfont icon-baogaogongdan"></div>
                         <p id="word">基本信息</p>
                         <div className="iconfont icon-jiantou"></div>

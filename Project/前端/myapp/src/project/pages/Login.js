@@ -1,15 +1,11 @@
 import React, { Component,useState } from 'react';
-import {ActivityIndicator} from 'antd-mobile'
-import {HashRouter as Router,Redirect,Route,NavLink,Switch,privateRoute} from 'react-router-dom'
 import '../css/style.css';
 import {connect} from 'react-redux';
 import {login} from '../actionCreators';
 class Login extends Component {
     
     constructor(props){
-
         super(props);
-        
         this.state={
             inpName:'',
             inpPsd:''
@@ -20,10 +16,8 @@ class Login extends Component {
     }
     psdChange = (e)=>{
         this.setState({inpPsd:e.target.value})
-    }
-      
+    }  
     render(){
-        
         let data = {username:this.state.inpName,password:this.state.inpPsd};
         console.log(this.props.user)
         return (
@@ -45,8 +39,6 @@ class Login extends Component {
                         placeholder="请输入密码"></input>
                 </form>
                 <button onClick={()=>{
-                    //this.props.history.push('/weight')
-                    //return this.props.dispatch(login(data));
                     this.props.dispatch(login(data));
                     setTimeout(()=>{
                         if(this.props.user===false){
