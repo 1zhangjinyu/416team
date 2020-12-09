@@ -4,8 +4,10 @@ import {connect } from 'react-redux'
 import {eatfood} from './eatfood'
 import {func} from './func'
 const Eat = (props) => {
+   
     let i=0;
     props.dispatch(eatfood());
+    
     return (
         <div>
             <Head/>
@@ -30,14 +32,18 @@ const Eat = (props) => {
                 <button style={{marginTop:'30px'}}
                 className='add'
                 onClick={(adde)=>{
+                   console.log (props)
                     let food=document.getElementById('food4');
                     let fname=food.fname.value;
                     let dates=food.dates.value;
                     let img=food.img.value;
                     let heat=food.heat.value;
                     let id=food.id.value;
-                    adde={table:'myfoods',type:'adde',id:id,fname:fname,dates:dates,img:img,heat:heat}                               
-                    func(adde)
+                    adde={type:'adde',table:'myfoods',id:id,fname:fname,dates:dates,img:img,heat:heat}                               
+                    props.dispatch(func(adde))
+                    setTimeout(()=>{
+                        alert('添加成功');
+                    },10000)
                 }}
                
                 >添加栏目</button>
@@ -77,6 +83,7 @@ const Eat = (props) => {
 }
 
 const mapStateToProps=(state)=>({
-    eats:state.eatfood.eats
+    eats:state.eatfood.eats,
+    rets:state.func.rets
   })
 export default connect(mapStateToProps)(Eat)

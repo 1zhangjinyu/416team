@@ -1,7 +1,7 @@
 
 const eatfood = (props) => {
     return (dispatch)=>{
-         let url='https://www.liucl.xyz:1770/eat'
+         let url='https://www.liucl.xyz:1234/eat'
         fetch(url,{
             method:'post',
 
@@ -17,3 +17,5 @@ const eatfood = (props) => {
     }
 }
 export {eatfood}
+
+

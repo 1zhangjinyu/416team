@@ -15,6 +15,7 @@ const Head= () => {
                     <NavLink to='/infor'><li className='small'>基本信息</li></NavLink>
                     
                     <NavLink to='/eat'><li className='small'>饮食记录</li></NavLink>
+                    <NavLink to='/content'><li className='small'>文章管理</li></NavLink>
                     <li className='big'><img style={{paddingRight:'10px'}} src={require('./img/shuju.png')}/>数据管理</li>
                     <NavLink to='/foodlist'><li className='small'>食谱管理</li></NavLink>
                     <NavLink to='/food'><li className='small'>食物信息</li></NavLink>

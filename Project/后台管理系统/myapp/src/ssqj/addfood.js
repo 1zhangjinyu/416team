@@ -2,7 +2,7 @@
 const addfood = (props) => {
     let data='add'
     return (dispatch)=>{
-         let url='https://www.liucl.xyz:1770/foodlist/add'
+         let url='https://www.liucl.xyz:1234/foodlist/add'
         fetch(url,{
             method:'post',
             body:data
