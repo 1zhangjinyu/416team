@@ -2,6 +2,7 @@ import React, { Component,useState } from 'react';
 import '../css/style.css';
 import {connect} from 'react-redux';
 import {login} from '../actionCreators';
+import {foods} from '../actionCreators';
 class Login extends Component {
     
     constructor(props){
@@ -16,7 +17,10 @@ class Login extends Component {
     }
     psdChange = (e)=>{
         this.setState({inpPsd:e.target.value})
-    }  
+    }
+    componentDidMount(){
+        this.props.dispatch(foods());
+      } 
     render(){
         let data = {username:this.state.inpName,password:this.state.inpPsd};
         console.log(this.props.user)
@@ -72,6 +76,7 @@ class Login extends Component {
 }
 
 const mapStateToProps = (state) =>({
-    user:state.login.user
+    user:state.login.user,
+    foods:state.foodslist.foods,
 })
 export default connect(mapStateToProps)(Login)

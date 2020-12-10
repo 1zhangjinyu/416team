@@ -5,7 +5,8 @@ import arrayTreeFilter from 'array-tree-filter';
 import React, { Component } from 'react'
 import {connect} from 'react-redux';
 import {sub} from '../actionCreators'
-import '../css/style.css'
+import '../css/style.css';
+import {foods} from '../actionCreators';
 import { district, provinceLite } from 'antd-mobile-demo-data';
 const isIPhone = new RegExp('\\biPhone\\b|\\biPod\\b', 'i').test(window.navigator.userAgent);
 let moneyKeyboardWrapProps;
@@ -92,7 +93,7 @@ const sex = [
     (<div>
       <span>男</span>
     </div>),
-    value: '男',
+    value: "'男'",
   },
   {
     label:
@@ -100,7 +101,7 @@ const sex = [
       
       <span>女</span>
     </div>),
-    value: '女',
+    value: "'女'",
   },
   
 ];
@@ -110,7 +111,7 @@ const goal = [
       (<div>
         <span>增重</span>
       </div>),
-      value: '增重',
+      value: "'增重'",
     },
     {
       label:
@@ -118,7 +119,7 @@ const goal = [
         
         <span>减重</span>
       </div>),
-      value: '减重',
+      value: "'减重'",
     },
     {
       label:
@@ -126,7 +127,7 @@ const goal = [
         
         <span>保持</span>
       </div>),
-      value: '保持',
+      value: "'保持'",
     },
   ];
 class Test extends React.Component {
@@ -138,6 +139,11 @@ class Test extends React.Component {
     asyncValue: [],
     sValue: ['1990', '1月'],
     visible: false,
+    sexValue:'',
+    inpWeight:'',
+    inpNew:'',
+    inpType:'',
+    inpAge:''
   };
   onClick = () => {
     setTimeout(() => {
@@ -206,6 +212,9 @@ class Test extends React.Component {
       sexValue: sex,
     });
   };
+  componentDidMount(){
+    this.props.dispatch(foods());
+  }
   render() {
     const { getFieldProps } = this.props.form;
     const { type } = this.state;
@@ -237,7 +246,7 @@ class Test extends React.Component {
             placeholder="请输入"
             clear
             onChange={(v) => { console.log('onChange', v); }}
-            onBlur={(v) => { console.log('onBlur', v); }}
+            onBlur={(v) => {this.setState({inpHeight:v})}}
             moneyKeyboardWrapProps={moneyKeyboardWrapProps}
           >身高(m)</InputItem>
         <InputItem
@@ -245,7 +254,7 @@ class Test extends React.Component {
             placeholder="请输入"
             clear
             onChange={(v) => { console.log('onChange', v); }}
-            onBlur={(v) => { console.log('onBlur', v); }}
+            onBlur={(v) => {this.setState({inpWeight:v})}}
             moneyKeyboardWrapProps={moneyKeyboardWrapProps}
           >体重(kg)</InputItem>
         <InputItem
@@ -253,12 +262,12 @@ class Test extends React.Component {
             placeholder="请输入"
             clear
             onChange={(v) => { console.log('onChange', v); }}
-            onBlur={(v) => { console.log('onBlur', v); }}
+            onBlur={(v) => {this.setState({inpNew:v})}}
             moneyKeyboardWrapProps={moneyKeyboardWrapProps}
           >目标体重</InputItem>
         <Picker
           data={goal}
-          value={this.props.infor.type?this.props.infor.type:this.state.goalValue}
+          value={this.state.goalValue}
           cols={1}
           onChange={this.onChangeGoal}
         >
@@ -267,21 +276,16 @@ class Test extends React.Component {
         
       </List>
       <button id="button" onClick={()=>{
-                    let data = {sex:this.state.inpSex,weight:this.state.inpWeight,goalweight:this.state.inpNew,height:this.state.inpHeight,type:this.state.inpType,age:this.state.inpAge};
+                    let data = {sex:this.state.sexValue[0],weight:this.state.inpWeight,goalweight:this.state.inpNew,height:this.state.inpHeight,type:this.state.goalValue[0],age:2020-this.state.sValue[0]};
                     this.props.history.push('/home');
                     return this.props.dispatch(sub(data));
                 }}>提交</button>
     </div>);
   }
 }
-
 const TestWrapper = createForm()(Test);
-//export default TestWrapper;
-// ReactDOM.render(<TestWrapper />, mountNode);
-
-
-
 const mapStateToProps = (state) =>({
-    infor:state.inforlist
+    infor:state.inforlist,
+    foods:state.foodslist.foods,
 })
 export default connect(mapStateToProps)(TestWrapper)

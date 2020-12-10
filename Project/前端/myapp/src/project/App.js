@@ -44,7 +44,7 @@ const App = ()=>{
 			<Route path="/my/trends" component={Trends}/>
 			<Route path="/my/collect" component={Collect}/>
 			<Route path="/my/food" component={Food}/>
-			<Route path="/my/information" component={Weight}/>
+			<Route path="/my/infor" component={Weight}/>
 			<Route exact path="/recommend" component={Recommend}/>
 			<Route path="/home/fooddetails" component={Fooddetails}/>
 			<Route exact path="/report" component={Report}/>
