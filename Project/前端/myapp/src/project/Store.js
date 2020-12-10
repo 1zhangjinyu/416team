@@ -13,8 +13,11 @@ import login from './reducer/loginReducer';
 import rest from './reducer/restReducer';
 import healthlist from './reducer/healthReducer';
 import myfoodslist from './reducer/myfoodReducer';
+import inforlist from './reducer/inforReducer';
+import dongtailist from './reducer/dongtaiReducer'
+import mydtlist from './reducer/mydtReducer'
 let rootReducer = combineReducers({foodslist,breakfastfoods,login,dianzan,healthlist,
-    shoucang,comparefoods,recommendlist,weightlist,lunchfoods,dinnerfoods,rest,myfoodslist})
+    shoucang,comparefoods,recommendlist,weightlist,lunchfoods,dinnerfoods,rest,myfoodslist,inforlist,dongtailist,mydtlist})
 
 const store = createStore(
     rootReducer,

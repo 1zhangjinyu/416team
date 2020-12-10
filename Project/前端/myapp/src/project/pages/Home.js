@@ -87,15 +87,6 @@ class Home extends Component {
     componentWillMount(){
         this.props.dispatch(heat());
         this.props.dispatch(health());
-        if(this.props.foods===[]){
-            this.props.dispatch(foods());
-        }  
-    }
-    componentDidUpdate(preProps,preState){
-        console.log(preProps.foods)
-        if(this.props.foods===[]){
-            this.props.dispatch(foods());
-        }  
     }
     render() {
         console.log(this.props.health.sevenweight);

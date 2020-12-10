@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "4829604",
+      "name": "发动态",
+      "font_class": "fadongtai",
+      "unicode": "e6e9",
+      "unicode_decimal": 59113
+    },
+    {
+      "icon_id": "11714418",
+      "name": "添加图片",
+      "font_class": "tubiaozhizuomoban-1",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
       "icon_id": "14378669",
       "name": "收 藏",
       "font_class": "shoucang3",

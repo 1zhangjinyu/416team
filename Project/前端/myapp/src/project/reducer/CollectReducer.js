@@ -1,12 +1,12 @@
 
 let todo = [];
 
-function collectlist(state=todo,action){
-    if(action.type=='ADD_TODO'){
+function shoucang(state=todo,action){
+    if(action.type=='ADD'){
         // 不可变对象
         return [...state,action.col]
     }
-    if(action.type=='DEL_TODO'){
+    if(action.type=='DEL'){
         // action.index
         let arr = [...state];
         arr.splice(action.index,1);
@@ -14,7 +14,7 @@ function collectlist(state=todo,action){
     }
     return state;
 }
-export default collectlist;
+export default shoucang;
 
 
 

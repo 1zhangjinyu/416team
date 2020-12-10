@@ -25,7 +25,7 @@ import {connect} from 'react-redux';
                      {/* <p>{item.content}</p> */}
                      <button onClick={(e)=>{
                           this.props.dispatch({
-                             type:'DEL_TODO',
+                             type:'DEL',
                              index:idx
                          })
                      }} style={{color:'white',width:'70px',height:'40px',marginLeft:'280px',backgroundColor:'rgb(86,186,186)'}}>删除</button></li>
