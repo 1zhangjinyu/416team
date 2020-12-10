@@ -16,16 +16,6 @@ class Login extends Component {
             inppsd:''
         }    
     }   
-    // componentDidMount(props){
-    //     console.log(props)
-    //         if(this.props.managers.id){
-    //             this.props.history.push('/home');
-    //         }else{
-    //              alert('用户名或密码错误');
-    //         }    
-        
-    // }
-    
     nameChange=(e)=>{
         this.setState({inpname:e.target.value})
     }
@@ -63,8 +53,10 @@ class Login extends Component {
                         />
                         <button className="loginBtn" onClick={(e)=>{      
                             this.props.dispatch(manager(data));
+                            console.log(data);
+                            
                             setTimeout(()=>{
-                                // this.props.dispatch(manager(data));
+                                console.log(this.props.managers);
                                 if(this.props.managers==false){
                                     alert('用户名或密码有误');
                                     return ;

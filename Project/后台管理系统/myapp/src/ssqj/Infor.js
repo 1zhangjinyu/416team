@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-import './home.css'
-
+import './manage.css'
 import {information,deleteuser,searchuser,adduser} from './actionCreators';
 import {connect} from 'react-redux'
-import Head from './head'
+
 class Infor extends Component {
     constructor(props){
         super();
@@ -15,15 +14,13 @@ class Infor extends Component {
             weightnew:'',
             sexnew:'',
             oldnew:'',
-            bminew:''
+            bminew:'',
+            goalweightnew:'',
+            searchid:''
         }
     }
     // componentDidUpdate(props){
-    //     console.log(this.props)
-    //     this.setState={
-    //         inpsd:props.information.item.psd,
-    //         inpuser:props.information.item.username,
-    //     }
+    //    this.btnadd();
     // }
     addid=(e)=>{
         this.setState({idnew:e.target.value})
@@ -36,49 +33,96 @@ class Infor extends Component {
         this.setState({psdnew:e.target.value})
 
     }
+    addweight=(e)=>{
+        this.setState({weightnew:e.target.value})
+
+    }
+    addheight=(e)=>{
+        this.setState({heightnew:e.target.value})
+
+    }
+    addsex=(e)=>{
+        this.setState({sexnew:e.target.value})
+
+    }
+    addold=(e)=>{
+        this.setState({oldnew:e.target.value})
+
+    }
+    addgoalweight=(e)=>{
+        this.setState({goalweightnew:e.target.value})
+
+    }
+    searchChange=(e)=>{
+        this.setState({searchid:e.target.value})
+
+    }
+    
     render(props){
         this.props.dispatch(information());
         // console.log(props);
         let i=0;
         // console.log(props.information);
-        let newdata={
-            username:this.state.inpuser
-        }
+        // let newdata={
+        //     username:this.state.inpuser
+        // }
         let searchid=this.state.searchid;
         // console.log(searchid);
         let adddata={
-
+            idnew:this.state.idnew,
+            usernamenew:this.state.usernamenew,
+            psdnew:this.state.psdnew,
+            heightnew:Number(this.state.heightnew),
+            weightnew:Number(this.state.weightnew),
+            sexnew:this.state.sexnew,
+            oldnew:Number(this.state.oldnew),
+            bminew:Number(this.state.bminew),
+            goalweightnew:Number(this.state.goalweightnew)
         }
+        // console.log(this.props.information)
     return (
         <div className="inforContainer">
-            <Head />
-            <div className="bread"> 用户管理 {'>'} 基本信息</div>
-            <input placeholder="输入你想搜索的用户id" style={{marginTop:"55px",marginLeft:"300px",height:'30px'}} value={this.state.searchid} onChange={this.searchChange}></input>
+            <div className="daohanglan"> 用户管理 {'>'} 基本信息</div>
+            <input placeholder="输入你想搜索的用户id" style={{marginTop:"155px",marginLeft:"300px",height:'30px'}} value={this.state.searchid} onChange={this.searchChange}></input>
             <button onClick={()=>{
                 this.props.dispatch(searchuser(searchid));
+                searchuser();
                 setTimeout(()=>{
                     this.props.history.push({
                         pathname:'/detail',
                         data:this.props.targetuser
                 })
-                // this.props.dispatch(targetuser)
             },1000);
+                
             }} className="sousuo">搜索</button>
-            <div className="infor">
-            <table border="1px" cellspacing="0px" >
-                <tr>
-                    <th >id</th>
-                    <th >用户名</th>    
-                    <th >密码</th>
-                    <th style={{width:'350px'}} >操作</th>
+            <table border="1px" cellspacing="0px" width="100%">
+                <tr style={{backgroundColor:'rgba(231,229,229,0.795)'}}>
+                    <th width="30">id</th>
+                    <th width="50">用户名</th>    
+                    <th width="50">密码</th>
+                    <th width="100">操作</th>
 
                 </tr>
-                
+                {information()}
                 {this.props.information.map((item)=>{
+                    //  if(this.id===this.props.targetuser.id)
+                    // //  {
+                    // //     let tr=document.getElementsByTagName("tr");
+                    // //     tr.style.backgroundColor="rgba(231,229,229,0.795)"
+                    // // }
+                    // {
+                    //     return <tr style={{backgroundColor:'rgba(231,229,229,0.795)'}}>
+                    //         <td>1</td>
+                    //         </tr>
+                    // }
 
                     i++;
                     return<tr>
-                               
+                        {/* {()=>{
+                            if(this.props.targetuser.username===item.username){
+                                document.getElementsByTagName("tr").style.backgroundColor="rgba(231,229,229,0.795)"
+                            }
+                        }} */}
                         <td>{i}</td>
                         <td>
                             {item.username} 
@@ -88,8 +132,6 @@ class Infor extends Component {
                         </td>
                         <td>
                             <button onClick={()=>{
-                                // let hid=document.getElementById("hid");
-                                // hid.style.display="block";
                                 this.props.history.push({
                                     pathname:'/detail',
                                     data:item
@@ -104,28 +146,15 @@ class Infor extends Component {
                            <button onClick={()=>{
                                let deleteid=item.id;
                                this.props.dispatch(deleteuser(deleteid));
-                               console.log(deleteid);
+                            //    console.log(deleteid);
+                                alert("删除成功")
                             }} className="three">删除用户</button>
                         </td>
                         </tr>
-                        {/* <tr style={{display:"none",position:"absolute",marginTop:"200px",marginLeft:"0px"}} id="hid"><div >
-                                    <tr><th>用户名</th><th>密码</th><th>身高</th><th>体重</th><th>性别</th><th>年龄</th><th>BMI</th><th>目标体重</th><th>类型</th></tr>
-                                    <tr>
-                                        <td><input value={item.username}/></td>
-                                        <td><input value={item.psd}/></td><td><input value={item.height}/></td><td><input value={item.weight}/></td><td><input value={item.sex}/></td><td><input value={item.age}/></td><td><input value={item.goalweight}/></td><td><input value={item.type}/></td>
-                                    </tr>
-                                    <button onClick={()=>{
-                                        this.props.dispatch(updateuser(newdata));
-                                    }}>保存修改</button>
-                                    
-                                </div>
-                        </tr> */}
+                      
                 })}
-            {/* <tr style={{display:"hidden"}}><td><input /></td>
-            <td><input /></td><td><input /></td><td><input /></td>
-            </tr> */}
+           
             </table>
-            </div>
             <div style={{marginTop:"20px",marginLeft:"300px",display:"none"}} id="tianjia">
             <p>id:<input value={this.state.idnew} onChange={this.addid}/>
             用户名:<input value={this.state.usernamenew} onChange={this.addusername}/></p>
@@ -135,11 +164,17 @@ class Infor extends Component {
             性别:<input value={this.state.sexnew} onChange={this.addsex}/></p>
             <p>年龄:<input value={this.state.oldnew} onChange={this.addold}/>
             BMI:<input value={this.state.bminew} onChange={this.addbmi}/></p>
+            目标体重:<input value={this.state.goalweightnew} onChange={this.addgoalweight}/>
             类型:
             <select><option>--请选择--</option><option>减重</option><option>增重</option><option>塑形</option></select>
             <button onClick={()=>{
-               this.props.dispatch(adduser(adddata));
-
+                this.props.dispatch(adduser(adddata));
+                information();
+                if(this.props.adduser=='no'){
+                    alert('添加失败，必须指定id')
+                }else{
+                    alert('添加成功')
+                }
             }}>确认添加</button>
             </div>
 
@@ -147,8 +182,7 @@ class Infor extends Component {
             <button style={{marginTop:"20px" ,marginLeft:"300px" }}
             onClick={()=>{
                 let tianjia=document.getElementById('tianjia');
-                tianjia.style.display="block";
-               
+                tianjia.style.display="block";   
             }}
             >添加用户</button>
              
@@ -158,7 +192,8 @@ class Infor extends Component {
 }
 const mapStateToProps=(state)=>({
     information:state.infor.users,
-    targetuser:state.target.targetuser
+    targetuser:state.target.targetuser,
+    adduser:state.adduser.addres
     
 }); 
 export default  connect(mapStateToProps)(Infor);
