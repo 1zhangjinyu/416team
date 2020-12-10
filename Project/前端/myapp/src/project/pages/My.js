@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import '../css/nav.css'
-
 import {connect} from 'react-redux';
 import Mytab from '../Mytab'
 import {myfoods} from '../actionCreators'
@@ -13,11 +12,11 @@ class My extends Component {
             <div style={{backgroundColor:'rgb(247,240,240)'}}>
                 <div style={{backgroundColor:'rgb(86,186,186)',height:'130px'}}>
                     <img id="user" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=201340457,3408503524&fm=26&gp=0.jpg"/>
-                    <p style={{color:'white',fontSize:'15px',float:'right',marginRight:'45%',marginTop:'55px'}}>用户12345678</p>
+                    <p style={{color:'white',fontSize:'15px',float:'right',marginRight:'190px',marginTop:'55px'}}>用户12345678</p>
                     <div className="iconfont icon-xiugai"></div>
                 </div>
                 <div id="nav">
-                    <div id="mytrend" onClick={()=>this.props.history.push('/my/trends')}>
+                    <div id="mytrend" onClick={()=>this.props.history.push('/my/dongtai')}>
                         <div className="iconfont icon-dongtai"></div>
                         <p style={{paddingTop:'10px',fontSize:'5px',textAlign:'center'}}>我的动态</p>
                     </div>
@@ -31,21 +30,11 @@ class My extends Component {
                     </div>
                 </div>
                 <div id="report">
-<<<<<<< HEAD
                     <p style={{paddingLeft:'10px',paddingTop:'20px',fontSize:'15px'}}>我的健康资料</p>
                     <p style={{color:'#ccc'}}>______________________________________________________</p>
-                    <div id="healthyrep" onClick={()=>this.props.history.push('/my/information')}>
-=======
-                   
-                   
                     <div id="healthyrep">
-                         <p style={{paddingLeft:'10px',paddingTop:'20px',fontSize:'15px'}}>我的健康资料</p>
-                        
-                    </div>
-                    <div id="healthyrep">
->>>>>>> 52acf6d0cff53e593a5cf8a120c7f11f57441baf
                         <div className="iconfont icon-baogaogongdan"></div>
-                        <p id="word" onClick={()=>this.props.history.push('/my/infor')} >基本信息</p>
+                        <p id="word">基本信息</p>
                         <div className="iconfont icon-jiantou"></div>
                         
                     </div>

@@ -210,6 +210,41 @@ const myfoods = (props)=>{
         });
     }
 }
+// 发动态
+const fadongtai = (data)=>{
+    return (dispatch)=>{
+        fetch(url+'dt',{
+            method:'POST',
+            body:JSON.stringify(data),
+            mode:'cors',
+        })
+        .then(function(res){return res.text()})
+        .then(function(res){
+            console.log(res)
+            return dispatch({
+                type:'DT',
+                myfoods:res,
+            })
+        });
+    }
+}
+// 我的动态
+const mydt = (props)=>{
+    return (dispatch)=>{
+        fetch(url+'mydt',{
+            method:'POST',
+            mode:'cors',
+        })
+        .then(function(res){return res.json()})
+        .then(function(res){
+            console.log(res)
+            return dispatch({
+                type:'ADDMYDT',
+                myfoods:res,
+            })
+        });
+    }
+}
 export {myfoods}
 export {health}
 export {login}
@@ -222,4 +257,6 @@ export {addlunch}
 export {adddinner}
 export {heat}
 export {sub}
+export {fadongtai}
+export {mydt}
 

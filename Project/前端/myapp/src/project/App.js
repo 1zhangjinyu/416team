@@ -25,6 +25,9 @@ import Collect from './pages/Collect';
 import Food from './pages/Food';
 //import Information from './pages/information';
 import TestWrapper from './pages/information';
+import Dongtai from './pages/Dongtai';
+import dtdetails from './pages/dtdetails';
+import Mydongtai from './pages/Mydongtai';
 
 
 const App = ()=>{
@@ -39,9 +42,12 @@ const App = ()=>{
             <Route path="/home/com" component={Compare}/>
 			<Route path="/home/search1" component={Search1}/>
 			<Route exact path="/recommend" component={Recommend}/>
+			<Route path="/recommend/dongtai" component={Dongtai} />
 			<Route path="/recommend/fooddetails" component={Fooddetails}/>
+			<Route path="/recommend/dtdetails" component={dtdetails}/>
             <Route exact path="/my" component={My}/>
 			<Route path="/my/trends" component={Trends}/>
+			<Route path="/my/dongtai" component={Mydongtai}/>
 			<Route path="/my/collect" component={Collect}/>
 			<Route path="/my/food" component={Food}/>
 			<Route path="/my/information" component={Weight}/>
