@@ -240,3 +240,33 @@
     font-size: 14px;
     color:#ccc;
 }
+
+.dt{
+    
+    width: 100%;
+    height: 150px;
+    display: flex;
+}
+.word{
+    width: 99%;
+    height: 150px;
+    border: none;
+    font-size: 20px;
+}
+.imgdiv{
+    background-color: white;
+    margin-top: -2px;
+    width: 100%;
+    height: 100px;
+}
+
+
+.sub{
+    width: 80%;
+    height: 50px;
+    background-color: rgb(86,186,186);
+    border: 1px solid  rgb(86,186,186);
+    margin-left: 9%;
+    font-size: 18px;
+    margin-top: 30px;
+}

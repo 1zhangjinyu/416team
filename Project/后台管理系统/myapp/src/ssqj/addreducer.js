@@ -1,11 +1,10 @@
-
-const addreducer = (state={add:[]},action) => {
+const addReducer=(state={addres:''},action)=>{
     switch(action.type){
-        case 'ADD':
-            return {add:action.add}
-            default:
-                return state;
+        case 'ADDUSER':
+            return {addres:action.addres}
+        default:
+            return state;
     }
-} 
+}
 
-export default addreducer
+export default addReducer;
