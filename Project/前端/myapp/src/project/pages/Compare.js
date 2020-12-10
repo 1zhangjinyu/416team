@@ -32,12 +32,12 @@ class Compare extends Component {
                         }}></span>
                     <span>对比详情</span>
                 </div>
-                <div style={{width:'100%',height:'150px',backgroundColor:'rgb(247,240,240)'}}>
+                <div style={{width:'100%',height:'150px',backgroundColor:'rgb(247,240,240)',position:'relative'}}>
                 <div id="comleft" onClick={()=>this.props.history.push('/home/search1')}>
                     <p style={{fontSize:'30px',paddingLeft:'35px',lineHeight:'90px',color:'red',position:'absolute'}}>+</p>
                     <img src={arr1.img} className="compare-img"/>
                 </div>
-                <img src={require('../image/vs.png')} style={{width:'50px',height:'50px',marginLeft:'10%',marginTop:'50px'}}/>
+                <img src={require('../image/vs.png')} className="vs"/>
                 <div id="conright" onClick={()=>this.props.history.push('/home/search1')}>
                     <p style={{fontSize:'30px',paddingLeft:'35px',lineHeight:'90px',color:'red',position:'absolute'}}>+</p>
                     <img src={arr2.img} className="compare-img"/>

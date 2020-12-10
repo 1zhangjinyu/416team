@@ -11,13 +11,13 @@ class Breakfastfood extends Component {
     render() {
 		console.log(this.props);
         return (
-            <div>{
-                this.props.props.breakfastfoods.map((item)=><li className="report-food-li">
+            <div style={{width:'100%'}}>{
+                this.props.props.breakfastfoods.map((item)=><div className="report-food-li">
                     <img className="report-food-picture" src={item.img} ></img>
 					<p className="report-food-p">{item.fname}</p>
 					<p className="report-food-p2">{item.heat}千卡</p>
 					<p className="report-food-p3">早餐</p>
-                </li>   
+                </div>   
                 )
             }
             </div>
@@ -101,8 +101,9 @@ class Report extends Component {
 					</div>
                     <div style={{position:'absolute'}}>
                         <p style={{marginRight:'120px'}}>
-							剩余(kcal) {Math.floor(this.props.restcal-kcal)}</p>
-                        <p >摄入(kcal) {kcal}</p>
+							剩余(kcal) {Math.floor(this.props.restcal-kcal)}
+						</p>
+                        <p>摄入(kcal) {kcal}</p>
                     </div>    
                 </div>
 				

@@ -333,6 +333,16 @@ li{
     width: 90px;
     height: 90px;
 }
+.vs{
+    width:50px;
+    height:50px;
+    margin-left:2%;
+    margin-top:50px;
+    position:absolute;
+    top:20%;
+    left:50%;
+    transform:translate(-50%, -50%);
+}
 /* 添加食物 */
 #mornfood li{
     border-bottom: 1px solid #ccc;
@@ -342,7 +352,7 @@ li{
     width:100px;
     height:100px;
     background-color: white;
-    margin-left: 35%;
+    margin-left: 40%;
     margin-top: 40px;
     border-radius: 55px;
     font-size: 24px;
@@ -354,25 +364,47 @@ li{
 #weight{
     width:90%;
     height:200px;
-    margin-left: 13px;
+    margin-left: 6%;
     margin-top: 20px;
     background-color: white;
 }
 #diary{
-    width:350px;
+    width:90%;
     height:400px;
-    margin-left: 13px;
+    margin-left: 6%;
     margin-top: 20px;
     background-color: white;
 }
 #weekday{
-    width:35px;
+    width:9%;
     height:200px;
     background-color: white;
     border-right: 1px solid #ccc;
     float:left;
-    margin-left: 13px;
+    margin-left: 4%;
     margin-top: 10px;
+}
+.date{
+    margin-top:10px;
+    width:80%;
+    height:15%;
+    background-color:rgb(188,238,244);
+    border-radius:18px;
+    text-align:center;
+    margin-left:8%;
+    line-height:30px;
+}
+
+.neweight{
+    width:50px;
+    height:25px;
+    background-color:rgb(188,238,244);
+    border-radius:10px;
+    text-align:center;
+    line-height:30px;
+    float:left;
+    margin-left:90px;
+    margin-top:-20px;
 }
 
 /* 记录体重 */

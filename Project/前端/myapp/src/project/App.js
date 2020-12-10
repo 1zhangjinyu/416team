@@ -49,10 +49,7 @@ const App = ()=>{
 			<Route path="/report/twofood" component={TwoFood}/>
 			<Route path="/report/threefood" component={ThreeFood}/>
 			<Route path="/report/addweight" component={AddWeight}/>
-			<Route path="/home/health" component={Health}/>
-
-            
-            
+			<Route path="/home/health" component={Health}/>       
 	</Switch>
 		
 	</Router>
