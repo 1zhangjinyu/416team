@@ -46,7 +46,7 @@ class Mytab extends React.Component {
 			  selectedIcon={
 				<i className='iconfont icon-biaoqing1'></i>
 			  }
-			  title="每日推荐"
+			  title="圈子"
 			  key="Login"
 				  selected={pathname === '/recommend'}
 				  onPress={() => {

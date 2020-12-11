@@ -229,18 +229,19 @@ const fadongtai = (data)=>{
     }
 }
 // 我的动态
-const mydt = (props)=>{
+const mydt = (data)=>{
     return (dispatch)=>{
         fetch(url+'mydt',{
             method:'POST',
             mode:'cors',
+            body:data
         })
         .then(function(res){return res.json()})
         .then(function(res){
             console.log(res)
             return dispatch({
                 type:'ADDMYDT',
-                myfoods:res,
+                mydt:res,
             })
         });
     }

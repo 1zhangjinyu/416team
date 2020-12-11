@@ -67,7 +67,7 @@ class Dongtai extends Component {
                                 this.props.dispatch(fadongtai(data))
                                 setTimeout(()=>{
                                     this.props.history.push('/recommend')
-                                },1000)
+                                },0)
                                 return
                             }}>发表</button>
                         </form>

@@ -1,39 +1,32 @@
 import React from 'react'
 import {NavBar,Icon,TabBar, ActionSheet} from 'antd-mobile';
 import {connect} from 'react-redux';
+import '../css/nav.css'
+
 class dtdetails extends React.Component{
 	constructor(props) {
 		super(props);
 		this.state = {
-			selectedTab: 'redTab',
+            selectedTab: 'redTab',
+            i:0,
 		  }
 		
 	  }	
 	  
-	//   componentDidMount(){
-	// 	let id=this.props.location.id
-	// 	//console.log(this.props.todo);
-	// 	this.props.todo.map((item)=>{
-	// 		if(item.id==id){
-	// 			this.setState({
-	// 				selectedTab:'blueTab',
-	// 			})
-	// 		}
-	// 	})
-	// }
-	// componentDidMount(){
-	// 	let id=this.props.location.id
-	// 	console.log(this.props.nice);
-	// 	this.props.nice.map((item)=>{
-	// 		if(item.id==id){
-	// 			this.setState({
-	// 				selectedTab:'greenTab',
-	// 			})
-	// 		}
-	// 	})
-	// }
+	  componentDidMount(){
+		let id=this.props.location.contid
+		
+        this.props.nice.map((item)=>{
+			if(item.id==id){
+				this.setState({
+					i:item.num,
+				})
+			}
+		})
+	}
+	
     render(){
-		const {img,contid,content}=this.props.location;
+		const {img,contid,content,username}=this.props.location;
 		let url = this.props.location.pathname.split('/')[1];
 		//console.log(url);
 		let url1 = '/'+url
@@ -45,8 +38,9 @@ class dtdetails extends React.Component{
                     <span>详情</span>
                 </div>
 				<div style={{width:'100%'}}>
+                    <p style={{fontSize:'20px',marginBottom:'20px',marginTop:'10px',marginLeft:'10px'}}>用户{username}</p>
 					<img  src={this.props.location.img}  style={{width:'100%',height:'375px'}}/>
-					<span>{content}</span>
+					<span style={{fontSize:'18px'}}>{content}</span>
 				</div>
 					
 					 
@@ -56,51 +50,27 @@ class dtdetails extends React.Component{
             tintColor="#33A3F4"
             barTintColor="white"
             >
-			
                 <TabBar.Item
-                icon={
-                    <i className='iconfont icon-shoucang1'></i>
-                }
-                selectedIcon={
-                    <i className='iconfont icon-shoucang'></i>
-                }
-                title="收藏"	
-                key="shoucang"
-                selected={this.state.selectedTab==='blueTab'}
-                onPress={() => {
-                    
-                    this.props.dispatch({
-                        type:'ADD_TODO',
-                        col:{img:img,content:content,content:content}
-                    })
-
-                this.setState({
-                        selectedTab:'blueTab',
-                    })
-                }}	 
-                >
-                
-                </TabBar.Item>
-                <TabBar.Item
+                style={{float:'right'}}
                 icon={
                     <i className='iconfont icon-dianzan1'></i>
                 }
                 selectedIcon={
                     <i className='iconfont icon-dianzan1'></i>
                 }
-                title="点赞"	
+                title={this.state.i}	
                 key="item"
                 selected={this.state.selectedTab==='greenTab'}
                 onPress={() => {  
+                    this.setState({
+                        i:++this.state.i
+                    })
                     this.props.dispatch({
                         type:'ADD_TODO',
-                        tre:{img:img,content:content}
+                        tre:{img:img,content:content,id:contid,username:username,num:this.state.i}
                     })
-
-                this.setState({
-                        selectedTab:'greenTab',
-                    })
-                }}	 
+                    // this.props.dispatch()
+				}}	 
                 >
                 
                 </TabBar.Item>
@@ -115,7 +85,6 @@ class dtdetails extends React.Component{
 }
 
 const mapStateToProps = (state) =>({
-	todo:state.shoucang,
 	nice:state.dianzan
 })
 export default connect(mapStateToProps)(dtdetails)
