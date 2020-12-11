@@ -61,6 +61,7 @@ const recommendfoods = (props)=>{
         })
         .then(function(res){return res.json()})
         .then(function(res){
+            console.log(res)
             return dispatch({
                 type:'RECOMMEND',
                 recommendfoods:res,
