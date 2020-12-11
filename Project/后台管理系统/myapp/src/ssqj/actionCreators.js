@@ -23,7 +23,6 @@ const manager=(data)=>{
 //修改管理员登录表单信息
 const changeManager=(updata)=>{
     return (dispatch)=>{
-        
         fetch('https://www.liucl.xyz:3745/changeManager',{
           method:'POST',
           mode:'cors',
