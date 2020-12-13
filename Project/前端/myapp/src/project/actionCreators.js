@@ -247,6 +247,22 @@ const mydt = (data)=>{
         });
     }
 }
+const infor = (props)=>{
+    return (dispatch)=>{
+        fetch(url+'myinfo',{
+            method:'POST',
+            mode:'cors',
+        })
+        .then(function(res){return res.json()})
+        .then(function(res){
+            return dispatch({
+                type:'DATA',
+                data:res,
+            })
+        });
+    }
+}
+export {infor}
 export {myfoods}
 export {health}
 export {login}

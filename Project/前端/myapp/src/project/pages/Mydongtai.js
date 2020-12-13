@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux';
 import {mydt} from '../actionCreators'
-
+import '../css/nav.css'
 class Mydongtai extends Component {
     constructor(props){
         super(props);
@@ -25,7 +25,7 @@ class Mydongtai extends Component {
                 <div>
                     {
                         this.props.mydt.map((item,idx) =>
-                            <li style={{borderBottom:'1px solid #ccc'}}>
+                            <div className="send">
                                 <img src={item.img} style={{ width:'80px',height:'80px',marginLeft:'30px',marginTop:'20px'}} />
                                 <p style={{marginTop:'-60px',paddingLeft:'150px'}}>{item.content}</p>
                                 <button onClick={(e) => {
@@ -34,8 +34,8 @@ class Mydongtai extends Component {
                                         index: idx
                                     })
                                     this.props.dispatch(mydt(item.contid))
-                                }} style={{ color: 'white', width: '70px', height: '40px', marginLeft: '280px', backgroundColor: 'rgb(86,186,186)' }}>删除</button>
-                            </li>
+                                }} className="del">删除</button>
+                            </div>
                         )
                     }
                 </div>

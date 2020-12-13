@@ -47,9 +47,17 @@ class DetailExample extends React.Component{
                 </div>
 				<div style={{width:'100%'}}>
 					<img  src={this.props.location.img}  style={{width:'100%',height:'375px'}}/>
-					<span>{foodname}</span>
-					<span>{this.props.location.content}</span>
+					<div style={{borderBottom:'1px solid #ccc',width:'100%',height:'40px'}}>
+						<p style={{lineHeight:'40px',fontSize:'20px',paddingLeft:'15px'}}>{foodname}</p>
+					</div>
+					
+					<br></br>
+					<div style={{width:'80%',height:'120px',marginLeft:'20px'}}>
+						<p style={{fontFamily:'"Times New Roman", Times, serif',fontSize:'15px'}}>{this.props.location.content}</p>
+					</div>
+					
 				</div>
+
 					
 					 
 				<div style={{ position: 'fixed',  width: '100%', bottom: 0 }}>

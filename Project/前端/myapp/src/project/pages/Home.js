@@ -5,6 +5,7 @@ import {foods} from '../actionCreators';
 import {heat} from '../actionCreators';
 import {health} from '../actionCreators'
 import Mytab from '../Mytab'
+import {infor} from '../actionCreators'
 
 class Breakfast extends Component {
     constructor(props){
@@ -88,6 +89,7 @@ class Home extends Component {
       }
     
     componentWillMount(){
+        this.props.dispatch(infor());
         this.props.dispatch(heat());
         this.props.dispatch(health());
     }

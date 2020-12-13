@@ -65,9 +65,7 @@ class Dongtai extends Component {
                             <div style={{height:'50px',width:'100%',backgroundColor:'white'}}></div>
                             <button className='sub' type="submit" onClick={()=>{
                                 this.props.dispatch(fadongtai(data))
-                                setTimeout(()=>{
-                                    this.props.history.push('/recommend')
-                                },0)
+                                this.props.history.push('/recommend')
                                 return
                             }}>发表</button>
                         </form>

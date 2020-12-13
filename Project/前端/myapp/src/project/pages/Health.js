@@ -15,11 +15,14 @@ class Health extends Component {
         console.log(this.props)
         let arr1 = health.sevenweight;
         let arr2 = health.sevendate;
+        let url = this.props.location.pathname.split('/')[1];
+		//console.log(url);
+		let url1 = '/'+url
         console.log(arr1)
         return (
             <div>
                 <div className='foodrank-header'>
-                    <span className="iconfont icon-jiantouarrowhead7" onClick={()=>this.props.history.push('/home')}></span>
+                    <span className="iconfont icon-jiantouarrowhead7" onClick={()=>this.props.history.push(url1)}></span>
                     <span>健康报告</span>
                 </div>
                 <div id="score">{this.props.health.score}

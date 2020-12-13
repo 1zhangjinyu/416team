@@ -18,9 +18,9 @@ class Login extends Component {
     psdChange = (e)=>{
         this.setState({inpPsd:e.target.value})
     }
-    componentDidMount(){
-        this.props.dispatch(foods());
-      } 
+    // componentDidMount(){
+    //     this.props.dispatch(foods());
+    //   } 
     render(){
         let data = {username:this.state.inpName,password:this.state.inpPsd};
         console.log(this.props.user)
