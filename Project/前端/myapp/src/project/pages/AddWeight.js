@@ -27,6 +27,7 @@ class AddWeight extends Component{
             <div className="report-header">
                 <span className="iconfont icon-jiantouarrowhead7" onClick={()=>this.props.history.push('/report')}></span>
                 <span>记录体重</span>
+                <span className="iconfont icon-shuaxin" style={{float:'right',marginRight:'8%',marginTop:'-9%'}} onClick={()=>this.props.dispatch(health())}></span>
             </div>
             <input 
             className="record"

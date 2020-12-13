@@ -28,6 +28,7 @@ class Recommend extends Component {
                                     content:item.content,
                                     userid:item.userid,
                                     contid:item.contid,
+<<<<<<< HEAD
                                     username:item.username
                                 })
                             }}>
@@ -37,6 +38,16 @@ class Recommend extends Component {
                             </div>
                             <img src='https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=332302150,4109713162&fm=111&gp=0.jpg' style={{width:'30px',height:'30px',marginTop:'2px'}} />
                             <p style={{fontSize:'10px',marginRight:'110px',marginTop:'8px',float:'right'}}>{item.username}</p>
+=======
+                                    username:item.username,
+                                    num:item.num
+                                })
+                            }}>
+                            <img src={item.img} style={{width:'160px',height:'140px'}}/>
+                            <img src='https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=332302150,4109713162&fm=111&gp=0.jpg' style={{width:'55px',height:'55px'}} />
+                            <p style={{fontSize:'15px',marginRight:'75px',marginTop:'15px',float:'right'}}>{item.username}</p>
+                            <p style={{fontSize:'10px',marginRight:'45px',marginTop:'-20px',float:'right'}}>{item.content.length>=3 ? item.content.slice(0,3) : item.content}……</p>
+>>>>>>> e3f5c5081d8430f7a3264764f83e2dd2cafef218
                         </div>)
                     }
                 <Mytab />       

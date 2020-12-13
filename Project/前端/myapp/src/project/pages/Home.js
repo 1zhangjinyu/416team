@@ -19,7 +19,8 @@ class Breakfast extends Component {
                       img:item.img,
                       content:item.content,
                       foodname:item.foodname,
-                      id:item.id
+                      id:item.id,
+                      no:item.no
                     })
                 }}>
                     <img id="picture" src={item.img} ></img>
@@ -43,7 +44,8 @@ class Lunch extends Component {
                       img:item.img,
                       content:item.content,
                       foodname:item.foodname,
-                      id:item.id
+                      id:item.id,
+                      no:item.no
                     })
                 }}>
                     <img id="picture" src={item.img} ></img>
@@ -67,7 +69,8 @@ class Dinner extends Component {
                       img:item.img,
                       content:item.content,
                       foodname:item.foodname,
-                      id:item.id
+                      id:item.id,
+                      no:item.no
                     })
                 }}>
                     <img id="picture" src={item.img} ></img>

@@ -35,11 +35,12 @@ class Manager extends Component {
         reads.readAsDataURL(f);
         reads.onload=function(t){
             document.getElementById("show").src=this.result;
-            // console.log(props);
+            console.log(typeof(this.result));
             // console.log( document.getElementById("show").src);
             let updata={id:props.managers.id,
                 imgsrc: document.getElementById("show").src
             };
+            console.log(updata)
             fetch('https://www.liucl.xyz:3745/changeManager',{
                 method:'POST',
                 mode:'cors',
@@ -63,6 +64,15 @@ class Manager extends Component {
             password:this.state.inppsd,
             id:this.props.managers.id,
         }
+        console.log(updata)
+        // let bytes=new Uint8Array(this.props.managers.img.data);
+        // let data='';
+        // let len=bytes.byteLength;
+        // for(let i=0;i<len;i++){
+        //     data+=String.fromCharCode(bytes[i]);
+        // }
+        // let imgsrc1="data:image/png;bases64,"+window.btoa(data);
+        // console.log(imgsrc1)
         
     return (
         <div className="managerBig">
