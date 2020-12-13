@@ -33,11 +33,6 @@ class My extends Component {
                     <div id="healthyrep">
                          <p style={{paddingLeft:'10px',paddingTop:'20px',fontSize:'15px'}}>我的健康资料</p>
                     </div>
-<<<<<<< HEAD
-=======
-                    {/* <p style={{paddingLeft:'10px',paddingTop:'20px',fontSize:'15px'}}>我的健康资料</p>
-                    <p style={{color:'#ccc'}}>______________________________________________________</p> */}
->>>>>>> 92da433e77760bbe9343ec4e897777c945bbbc3a
                     <div id="healthyrep">
                         <div className="iconfont icon-baogaogongdan" onClick={()=>this.props.history.push('/my/infor')}></div>
                         <p id="word">基本信息</p>

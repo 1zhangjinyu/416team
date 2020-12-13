@@ -116,7 +116,6 @@ class DetailExample extends React.Component{
 const mapStateToProps = (state) =>({
 	todo:state.shoucang,
 	nice:state.dianzan,
-	foods:state.foodslist.foods,
 })
 export default connect(mapStateToProps)(DetailExample)
 //export default DetailExample
