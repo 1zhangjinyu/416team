@@ -212,9 +212,9 @@ class Test extends React.Component {
       sexValue: sex,
     });
   };
-  componentDidMount(){
-    this.props.dispatch(foods());
-  }
+  // componentDidMount(){
+  //   this.props.dispatch(foods());
+  // }
   render() {
     const { getFieldProps } = this.props.form;
     const { type } = this.state;

@@ -18,7 +18,7 @@ let con = mysql.createPool({
 
 let id,dtimg,contid;
 
-//判断是否已经注册，若未注册，先注册，跳到登记信息页，并分配给一个新的id(date                                                                                .now())))
+//判断是否已经注册，若未注册，先注册，跳到登记信息页，并分配给一个新的id(date                                                                             w())))
 app.post('/',async (c,next) =>{
 
     c.setHeader('Access-Control-Allow-Origin','*');
@@ -33,7 +33,7 @@ app.post('/',async (c,next) =>{
 
     if(rows.length === 0){
         let idnew = Date.now();
-        const sql2 = `insert into users (id,username,psd) values('${idnew}','${username}','${psd1}')`;
+        const sql2 = `insert into users (id,username,psd) values('${idnew}','sername}','${psd1}')`;
         await con.execute(sql2);
 
         id = idnew;
@@ -81,11 +81,11 @@ app.post('/weight',async c=>{
 
     let bmi = weight/height/height;
 
-     const sql = `update users set sex=${sex},age=${age},weights=${weight},goalweight=${goalweight},height=${height},bmi=${bmi},type=${type} where id='${id}'`;
+     const sql = `update users set sex=${sex},age=${age},weights=${weight},goeight=${goalweight},height=${height},bmi=${bmi},type=${type} where id='${id}'
      await con.execute(sql);
      c.res.body = true;
 
-     const sql1 = `insert into recordweight values('${id}','${weight}','${date}',0)`;
+     const sql1 = `insert into recordweight values('${id}','${weight}','${dat,0)`;
      await con.execute(sql1);
 
      const ss = `select * from users`;
@@ -128,7 +128,6 @@ app.post('/foods',async c=>{
   c.res.body = arrstr;
 
 })
-
 
 //健康报告（还可以吃）
 app.post('/rest',async c=>{
@@ -263,11 +262,6 @@ app.post('/jltz',async (c,next)=>{
   let str1=JSON.stringify(rows1);
   str1=JSON.parse(str1);
 
-  const q = `select * from recordweight`;
-  let [o] = await con.execute(q);
-  //console.log(o);
-
-
 //日期
   let date1=new Date();
   let year = (date1.getFullYear()+"")//.slice(-2);
@@ -287,9 +281,8 @@ app.post('/jltz',async (c,next)=>{
       let [rows4]=await con.execute(sql4);
     }
     else{//num+1
- //     let sql4=`update recordweight set num = num+1 where id='${id}'`;
-//     let [rows4]=await con.execute(sql4);
-
+ //   let sql4=`update recordweight set num = num+1 where id='${id}'`;
+ //   let [rows4]=await con.execute(sql4);
     }
   }
 
@@ -310,9 +303,8 @@ app.post('/jltz',async (c,next)=>{
   let [rows5]=await con.execute(sql5);
   let str5=JSON.stringify(rows5);
   c.res.body=str5;
-  //console.log(str5);
-
 })
+
 app.post('/jkbg',async (c,next)=>{
   c.setHeader('Access-Control-Allow-Origin','*');
   c.setHeader('Access-Control-Allow-Methods','GET,POST');
@@ -374,7 +366,7 @@ app.post('/gftj',async c=>{
   const sql = `select blog.*,username from blog,users where userid=id order by contid desc`;
   const [row] = await con.execute(sql);
   let str = JSON.stringify(row);
-  console.log(str)
+  //console.log(str)
   c.res.body = str;
 
 })
@@ -399,7 +391,10 @@ app.post('/dt',async c=>{
 app.post('/imgs',async c=>{
   c.setHeader('Access-Control-Allow-Origin','*');
   c.setHeader('Access-Control-Allow-Method','GET,POST');
-  dtimg = c.body.slice(0,60);
+  //dtimg = c.body.slice(0,60);
+  //console.log(c.body)
+  dtimg = c.body;
+
 })
 
 app.post('/mydt',async c=>{
@@ -412,7 +407,19 @@ app.post('/mydt',async c=>{
   const sql = `select * from blog where userid='${id}'`;
   const [row] = await con.execute(sql);
   c.res.body = JSON.stringify(row)
- console.log(JSON.stringify(row))
+  //console.log(JSON.stringify(row))
+
+})
+
+app.post('myinfo',async c=>{
+  c.setHeader('Access-Control-Allow-Origin','*');
+  c.setHeader('Access-Control-Allow-Method','GET,POST');
+
+  const sql = `select users.*,neww from users,recordweight where users.id='${id}' and recordweight.id='${id}' and num=0`;
+  const [row] = await con.execute(sql);
+  let str = JSON.stringify(row[0]);
+  //console.log(str);
+  c.res.body = str;
 
 })
 
