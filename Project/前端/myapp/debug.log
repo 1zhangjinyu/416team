@@ -393,3 +393,5 @@
 [1204/141255.912:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: 已尝试访问正在退出的过程。 (0xc000010a)
 [1209/084616.705:ERROR:directory_reader_win.cc(43)] FindFirstFile: 系统找不到指定的路径。 (0x3)
 [1210/081528.024:ERROR:directory_reader_win.cc(43)] FindFirstFile: 系统找不到指定的路径。 (0x3)
+[1211/142938.114:ERROR:directory_reader_win.cc(43)] FindFirstFile: 系统找不到指定的路径。 (0x3)
+[1211/142938.123:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\liyaman\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\150bb783-af6f-44c7-88b2-9ea486e2fe14: 系统找不到指定的路径。 (0x3)

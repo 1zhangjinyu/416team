@@ -33,7 +33,7 @@ class dtdetails extends React.Component{
 	// 	})
 	// }
     render(){
-		const {img,contid,content}=this.props.location;
+		const {img,contid,content,username}=this.props.location;
 		let url = this.props.location.pathname.split('/')[1];
 		//console.log(url);
 		let url1 = '/'+url
@@ -45,8 +45,12 @@ class dtdetails extends React.Component{
                     <span>详情</span>
                 </div>
 				<div style={{width:'100%'}}>
+                <img src='https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=332302150,4109713162&fm=111&gp=0.jpg' style={{width:'30px',height:'30px',marginTop:'2px'}} />
+                <p style={{fontSize:'15px',marginBottom:'20px',marginTop:'-25px',marginLeft:'40px'}}>用户{username}</p>
 					<img  src={this.props.location.img}  style={{width:'100%',height:'375px'}}/>
-					<span>{content}</span>
+                    <div style={{height:'40px',borderBottom:'1px solid #ccc'}}></div>
+                    <img src={require('../image/pen.png')} style={{width:'50px',height:'50px'}}/>
+					<p style={{paddingRight:'250px',paddingTop:'15px',float:'right'}}>{content}</p>
 				</div>
 					
 					 
