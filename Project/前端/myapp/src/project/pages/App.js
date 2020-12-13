@@ -10,7 +10,7 @@ class ImagePickerExample extends React.Component {
   }
   onChange = (files, type, index) => {
     // console.log(files, type, index);
-    console.log(files[0].url)
+    // console.log(files[0].url)
     fetch('https://www.hmyyz.top:9999/imgs',{
       method:'POST',
       body:files[0].url,

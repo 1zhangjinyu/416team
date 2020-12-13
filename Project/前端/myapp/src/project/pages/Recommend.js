@@ -35,7 +35,7 @@ class Recommend extends Component {
                             <img src={item.img} style={{width:'160px',height:'140px'}}/>
                             <img src='https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=332302150,4109713162&fm=111&gp=0.jpg' style={{width:'55px',height:'55px'}} />
                             <p style={{fontSize:'15px',marginRight:'75px',marginTop:'15px',float:'right'}}>{item.username}</p>
-                            <p style={{fontSize:'10px',marginRight:'45px',marginTop:'-20px',float:'right'}}>{item.content}</p>
+                            <p style={{fontSize:'10px',marginRight:'45px',marginTop:'-20px',float:'right'}}>{item.content.length>=3 ? item.content.slice(0,3) : item.content}……</p>
                         </div>)
                     }
                 <Mytab />       

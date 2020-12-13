@@ -105,24 +105,8 @@ class Infor extends Component {
                 </tr>
                 {information()}
                 {this.props.information.map((item)=>{
-                    //  if(this.id===this.props.targetuser.id)
-                    // //  {
-                    // //     let tr=document.getElementsByTagName("tr");
-                    // //     tr.style.backgroundColor="rgba(231,229,229,0.795)"
-                    // // }
-                    // {
-                    //     return <tr style={{backgroundColor:'rgba(231,229,229,0.795)'}}>
-                    //         <td>1</td>
-                    //         </tr>
-                    // }
-
                     i++;
                     return<tr>
-                        {/* {()=>{
-                            if(this.props.targetuser.username===item.username){
-                                document.getElementsByTagName("tr").style.backgroundColor="rgba(231,229,229,0.795)"
-                            }
-                        }} */}
                         <td>{i}</td>
                         <td>
                             {item.username} 

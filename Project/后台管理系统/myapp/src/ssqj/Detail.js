@@ -55,7 +55,7 @@ class Detail extends Component {
         const data=this.props.location.data;
         let updateData={
             oldid:data.id,
-            id:Number(this.state.inpid),
+            id:this.state.inpid,
             username:this.state.inpusername,
             psd:this.state.inppsd,
             height:this.state.inpheight,
@@ -107,13 +107,15 @@ class Detail extends Component {
                 <button onClick={()=>{
                     this.props.dispatch(updateuser(updateData));
                     setTimeout(() => {
-                    console.log(this.props.ifok)
+                    console.log(this.props)
+                      
                         if(this.props.ifok==='ok'){
                             alert("修改成功")
                         }else{
                             alert("id唯一分配，不能修改")
                         }
-                    }, 50);
+                    }
+                    , 50);
                     
                 }}>保存修改</button>
             
