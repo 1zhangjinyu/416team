@@ -28,18 +28,31 @@ class Recommend extends Component {
                                     content:item.content,
                                     userid:item.userid,
                                     contid:item.contid,
+<<<<<<< HEAD
                                     username:item.username,
                                     num:item.num
+=======
+                                    num:item.num,
+                                    username:item.username
+>>>>>>> 1ab6561673557430ca0011258747982df8039741
                                 })
                             }}>
                             <img src={item.img} style={{width:'160px',height:'140px'}}/>
                             <div style={{borderBottom:'1px solid #ccc',height:'20px'}}>
+<<<<<<< HEAD
                                  <p style={{fontSize:'10px',lineHeight:'20px'}}>{item.content.length>=3 ? item.content.slice(0,3) : item.content}……</p>
                             </div>
                             <img src='https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=332302150,4109713162&fm=111&gp=0.jpg' style={{width:'30px',height:'30px',marginTop:'2px'}} />
                             <p style={{fontSize:'10px',marginRight:'70px',marginTop:'8px',float:'right'}}>{item.username}</p>
                                     
                              
+=======
+                                 <p style={{fontSize:'10px',lineHeight:'20px'}}>{item.content.length>=3 ? item.content.slice(0,3) : item.content}...</p>
+                            </div>
+                            <img src='https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=332302150,4109713162&fm=111&gp=0.jpg' style={{width:'30px',height:'30px',marginTop:'2px'}} />
+                            <p style={{fontSize:'10px',marginRight:'110px',marginTop:'8px',float:'right'}}>{item.username}</p>
+
+>>>>>>> 1ab6561673557430ca0011258747982df8039741
                         </div>)
                     }
                 <Mytab />       

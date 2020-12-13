@@ -35,6 +35,16 @@ class My extends Component {
                     <div style={{borderBottom:'1px solid #ccc',height:'40px'}}>
                         <p style={{paddingLeft:'10px',fontSize:'15px',lineHeight:'40px'}}>我的健康资料</p>
                     </div>
+<<<<<<< HEAD
+=======
+                    
+                  
+
+                    {/* <div id="healthyrep">
+                         <p style={{paddingLeft:'10px',paddingTop:'20px',fontSize:'15px'}}>我的健康资料</p>
+                    </div> */}
+
+>>>>>>> 1ab6561673557430ca0011258747982df8039741
                     <div id="healthyrep">
                         <div className="iconfont icon-baogaogongdan" onClick={()=>this.props.history.push('/my/infor')}></div>
                         <p id="word">基本信息</p>
