@@ -30,16 +30,11 @@ class My extends Component {
                     </div>
                 </div>
                 <div id="report">
-<<<<<<< HEAD
                     <div id="healthyrep">
                          <p style={{paddingLeft:'10px',paddingTop:'20px',fontSize:'15px'}}>我的健康资料</p>
                     </div>
-=======
-                    <p style={{paddingLeft:'10px',paddingTop:'20px',fontSize:'15px'}}>我的健康资料</p>
-                    <p style={{color:'#ccc'}}>______________________________________________________</p>
->>>>>>> a43580c5ef0b7bc3cb50435e8381e76c24535815
                     <div id="healthyrep">
-                        <div className="iconfont icon-baogaogongdan"></div>
+                        <div className="iconfont icon-baogaogongdan" onClick={()=>this.props.history.push('/my/infor')}></div>
                         <p id="word">基本信息</p>
                         <div className="iconfont icon-jiantou"></div>
                         

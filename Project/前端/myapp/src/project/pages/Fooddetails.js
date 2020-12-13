@@ -6,9 +6,10 @@ import '../css/nav.css'
 class DetailExample extends React.Component{
 	constructor(props) {
 		super(props);
+		let no = this.props.location.no;
 		this.state = {
 			selectedTab: 'redTab',
-			i:0,
+			i:no,
 		  }
 		
 	  }	
@@ -30,8 +31,9 @@ class DetailExample extends React.Component{
 			}
 		})
 	}
+	
     render(){
-		
+		console.log(this.state.i)
 		const {img,id,content,foodname}=this.props.location;
 		let url = this.props.location.pathname.split('/')[1];
 		//console.log(url);
@@ -113,7 +115,8 @@ class DetailExample extends React.Component{
 
 const mapStateToProps = (state) =>({
 	todo:state.shoucang,
-	nice:state.dianzan
+	nice:state.dianzan,
+	foods:state.foodslist.foods,
 })
 export default connect(mapStateToProps)(DetailExample)
 //export default DetailExample

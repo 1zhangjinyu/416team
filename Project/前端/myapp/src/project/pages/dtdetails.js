@@ -38,7 +38,7 @@ class dtdetails extends React.Component{
                     <span>详情</span>
                 </div>
 				<div style={{width:'100%'}}>
-                    <p style={{fontSize:'20px',marginBottom:'20px',marginTop:'10px',marginLeft:'10px'}}>用户{username}</p>
+                    nn
 					<img  src={this.props.location.img}  style={{width:'100%',height:'375px'}}/>
 					<span style={{fontSize:'18px'}}>{content}</span>
 				</div>
