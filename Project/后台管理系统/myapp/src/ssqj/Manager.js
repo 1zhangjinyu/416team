@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './manage.css'
 import {connect} from 'react-redux'
 import { manager, managerdetail ,changeManager} from './actionCreators'
+import Head from './head'
 
 
 
@@ -30,7 +31,7 @@ class Manager extends Component {
         this.setState({inppsd:e.target.value})
     }
    changepic(props){
-        var reads=new FileReader();
+        var reads=new FileReader();  
         var f=document.getElementById("uploadImg").files[0];
         reads.readAsDataURL(f);
         reads.onload=function(t){
@@ -76,9 +77,8 @@ class Manager extends Component {
         
     return (
         <div className="managerBig">
-            <div className="managerTop" >
-                <p>Welcome!</p>
-            </div>
+            <Head/>
+            
             <div className="managerContainer">
                 <img src={"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=121945471,1384115586&fm=26&gp=0.jpg"}/>
                 <span>我的账户</span>

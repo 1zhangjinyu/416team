@@ -69,7 +69,7 @@ const Content = (props) => {
                 用户：<input type="text" name="userid" />
                 <span style={{marginLeft:'70px'}}>文章id：</span><input type="text" name="contid" />               
                 <span  style={{marginLeft:'70px'}}>点赞数：</span><input type="text" name="num" /><br></br> 
-                
+                <br></br>
                 <span >文章：</span><textarea  name ="content" rows = "3" cols = "50" > </textarea>
                 <span  style={{marginLeft:'140px'}}>图片：</span><input type = "file"  name = "img" />
             </form>
@@ -88,7 +88,7 @@ const Content = (props) => {
                     addc={type:'addc',table:'blog',content:content,userid:userid,contid:contid,num:num,img:img}                               
                     props.dispatch(func(addc))
                     setTimeout(()=>{
-                       alert (props.rets)
+                       alert ('添加成功')
                     },1000)
                     
                 }}               
@@ -135,7 +135,7 @@ const Content = (props) => {
                                     delc={type:'delc',table:'blog',contid:contid}
                                     props.dispatch(func(delc))
                                     setTimeout(()=>{
-                                        alert(props.rets)
+                                        alert('删除成功')
                                     },1000)
                                 }}>删除</button>
                             </td>

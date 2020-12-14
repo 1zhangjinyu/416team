@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './manage.css'
 import {information,deleteuser,searchuser,adduser} from './actionCreators';
 import {connect} from 'react-redux'
+import Head from './head'
 
 class Infor extends Component {
     constructor(props){
@@ -82,8 +83,9 @@ class Infor extends Component {
         // console.log(this.props.information)
     return (
         <div className="inforContainer">
-            <div className="daohanglan"> 用户管理 {'>'} 基本信息</div>
-            <input placeholder="输入你想搜索的用户id" style={{marginTop:"155px",marginLeft:"300px",height:'30px'}} value={this.state.searchid} onChange={this.searchChange}></input>
+            <Head/>
+            <div className='bread'> 用户管理>基本信息</div>
+            <input placeholder="输入你想搜索的用户id" style={{marginTop:"55px",marginLeft:"300px",height:'30px'}} value={this.state.searchid} onChange={this.searchChange}></input>
             <button onClick={()=>{
                 this.props.dispatch(searchuser(searchid));
                 searchuser();
@@ -95,12 +97,13 @@ class Infor extends Component {
             },1000);
                 
             }} className="sousuo">搜索</button>
-            <table border="1px" cellspacing="0px" width="100%">
+            <div className='infor'>
+            <table border="1px" cellspacing="0px" >
                 <tr style={{backgroundColor:'rgba(231,229,229,0.795)'}}>
-                    <th width="30">id</th>
-                    <th width="50">用户名</th>    
-                    <th width="50">密码</th>
-                    <th width="100">操作</th>
+                    <th>id</th>
+                    <th>用户名</th>    
+                    <th>密码</th>
+                    <th style={{width:"300px"}}>操作</th>
 
                 </tr>
                 {information()}
@@ -139,6 +142,7 @@ class Infor extends Component {
                 })}
            
             </table>
+            </div>
             <div style={{marginTop:"20px",marginLeft:"300px",display:"none"}} id="tianjia">
             <p>id:<input value={this.state.idnew} onChange={this.addid}/>
             用户名:<input value={this.state.usernamenew} onChange={this.addusername}/></p>

@@ -26,15 +26,15 @@ const Food = (props) => {
             <form id = "food5" action="" method="post">
                 食物：<input  style={{marginLeft:'23px'}} type="text" name="fname" />
                 <span style={{marginLeft:'70px'}}>热量：</span><input style={{marginLeft:'42px'}} type="text" name="heat" />               
-                <span style={{marginLeft:'70px'}}>蛋白质：</span><input style={{marginLeft:'14px'}} type="text" name="protein" /><br></br> 
+                <span style={{marginLeft:'70px'}}>蛋白质：</span><input style={{marginLeft:'14px'}} type="text" name="protein" /><br></br> <br></br> 
                 <span >脂肪：</span><input style={{marginLeft:'23px'}}  type="text" name="fat" />
                 
                 <span style={{marginLeft:'70px'}}>碳水化合物：</span><input type="text" name="co3" />               
-                <span style={{marginLeft:'70px'}}>膳食纤维：</span><input type="text" name="fiber" /><br></br> 
+                <span style={{marginLeft:'70px'}}>膳食纤维：</span><input type="text" name="fiber" /><br></br> <br></br> 
                 <span >GI：</span><input style={{marginLeft:'37px'}} type="text" name="gi" />
                 
                 <span style={{marginLeft:'70px'}}>GL：</span><input style={{marginLeft:'52px'}} type="text" name="gl" />               
-                <span style={{marginLeft:'70px'}}>维生素A：</span><input style={{marginLeft:'4px'}} type="text" name="wa" /><br></br> 
+                <span style={{marginLeft:'70px'}}>维生素A：</span><input style={{marginLeft:'4px'}} type="text" name="wa" /><br></br> <br></br> 
                 <span >维生素C：</span><input type="text" name="wc" />
                 <span style={{marginLeft:'70px'}}>维生素E：</span><input style={{marginLeft:'20px'}} type="text" name="we" />
                 <span  style={{marginLeft:'70px'}}>图片：</span><input type = "file" name = "img" />

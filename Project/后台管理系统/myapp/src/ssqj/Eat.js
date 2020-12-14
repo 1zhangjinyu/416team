@@ -3,6 +3,7 @@ import Head from './head'
 import {connect } from 'react-redux'
 import {eatfood} from './eatfood'
 import {func} from './func'
+import {image} from './func'
 const Eat = (props) => {
    
     let i=0;
@@ -25,15 +26,19 @@ const Eat = (props) => {
             <form id = "food4" action="" method="post">
                 食物：<input type="text" name="fname" />
                 <span style={{marginLeft:'70px'}}>时间：</span><input type="text" name="dates" />               
-                <span style={{marginLeft:'70px'}}>用户：</span><input type="text" name="id" /><br></br> 
+                <span style={{marginLeft:'70px'}}>用户：</span><input type="text" name="id" /><br></br><br></br>  
                 <span >热量：</span><input type="text" name="heat" />
-                <span  style={{marginLeft:'70px'}}>图片：</span><input type = "file" name = "img" />
+                <span  style={{marginLeft:'70px'}}>图片：</span><input type = "file" name = "img"  id='image'/>
             </form>
                 <button style={{marginTop:'30px'}}
                 className='add'
                 onClick={(adde)=>{
                    console.log (props)
                     let food=document.getElementById('food4');
+
+                    // const inp=document.getElementById('image');
+                    // const fromData=new FormData()
+                    // fromData.append('key',inp.files[0]);
                     let fname=food.fname.value;
                     let dates=food.dates.value;
                     let img=food.img.value;
@@ -41,9 +46,10 @@ const Eat = (props) => {
                     let id=food.id.value;
                     adde={type:'adde',table:'myfoods',id:id,fname:fname,dates:dates,img:img,heat:heat}                               
                     props.dispatch(func(adde))
+                    // image(adde,fromData)
                     setTimeout(()=>{
                         alert('添加成功');
-                    },10000)
+                    },1000)
                 }}
                
                 >添加栏目</button>

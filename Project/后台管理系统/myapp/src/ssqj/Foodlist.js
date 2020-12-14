@@ -32,7 +32,7 @@ const Foodlist = (props) => {
 
             <div id = "update1" style={{display:'none'}}>
                 <form id = "foodupdate1" action="" >
-                <br></br><br></br>
+                <br></br>
                     <span style={{marginLeft:'30px'}}>食物：</span><input type="text" name="fname" /><br></br><br></br>
                     <span style={{marginLeft:'30px'}}>时间：</span>
                     <select style={{marginLeft:'30px'}} name = "eattime">
@@ -40,6 +40,7 @@ const Foodlist = (props) => {
                         <option value = "中"> 中 </option>
                         <option value = "晚">晚</option>
                     </select><br></br><br></br>
+                    <span style={{marginLeft:'30px'}}>点赞数</span><input type="text" name="no" /><br></br><br></br>
                     <span style={{marginLeft:'30px'}}>图片：</span><input type = "file" name = "img" /><br></br><br></br>
                     <span style={{marginLeft:'30px'}}>文章：</span><textarea  name ="content" rows = "3" cols = "50" > </textarea><br></br><br></br>
                     </form>
@@ -56,9 +57,10 @@ const Foodlist = (props) => {
                             let food=document.getElementById('foodupdate1');
                             let fname=food.fname.value;
                             let eattime=food.eattime.value;
+                            let no =food.no.value;
                             let img=food.img.value;
                             let content=food.content.value;
-                            updf={type:'updf',table:'addweight',fname:fname,eattime:eattime,img:img,content:content,id:foodid}
+                            updf={type:'updf',table:'addweight',fname:fname,eattime:eattime,img:img,content:content,no:no,id:foodid}
                             
                             props.dispatch(func(updf))
                             setTimeout(()=>{
@@ -73,7 +75,7 @@ const Foodlist = (props) => {
 
             <div id = "update2" style={{display:'none'}}>
                 <form id = "foodupdate2" action="" >
-                <br></br><br></br>
+                <br></br>
                     <span style={{marginLeft:'30px'}}>食物：</span><input type="text" name="fname" /><br></br><br></br>
                     <span style={{marginLeft:'30px'}}>时间：</span>
                     <select style={{marginLeft:'30px'}} name = "eattime">
@@ -81,6 +83,7 @@ const Foodlist = (props) => {
                         <option value = "中"> 中 </option>
                         <option value = "晚">晚</option>
                     </select><br></br><br></br>
+                    <span style={{marginLeft:'30px'}}>点赞数</span><input type="text" name="no" /><br></br><br></br>
                     <span style={{marginLeft:'30px'}}>图片：</span><input type = "file" name = "img" /><br></br><br></br>
                     <span style={{marginLeft:'30px'}}>文章：</span><textarea  name ="content" rows = "3" cols = "50" > </textarea><br></br><br></br>
                     </form>
@@ -97,9 +100,10 @@ const Foodlist = (props) => {
                             let food=document.getElementById('foodupdate2');
                             let fname=food.fname.value;
                             let eattime=food.eattime.value;
+                            let no = food.no.value;
                             let img=food.img.value;
                             let content=food.content.value;
-                            updf={type:'updf',table:'loseweight',fname:fname,eattime:eattime,img:img,content:content,id:foodid}
+                            updf={type:'updf',table:'loseweight',fname:fname,eattime:eattime,img:img,no:no,content:content,id:foodid}
                             
                             props.dispatch(func(updf))
                             setTimeout(()=>{
@@ -114,7 +118,7 @@ const Foodlist = (props) => {
 
             <div id = "update3" style={{display:'none'}}>
                 <form id = "foodupdate3" action="" >
-                <br></br><br></br>
+                <br></br>
                     <span style={{marginLeft:'30px'}}>食物：</span><input type="text" name="fname" /><br></br><br></br>
                     <span style={{marginLeft:'30px'}}>时间：</span>
                     <select style={{marginLeft:'30px'}} name = "eattime">
@@ -122,6 +126,7 @@ const Foodlist = (props) => {
                         <option value = "中"> 中 </option>
                         <option value = "晚">晚</option>
                     </select><br></br><br></br>
+                    <span style={{marginLeft:'30px'}}>点赞数</span><input type="text" name="no" /><br></br><br></br>
                     <span style={{marginLeft:'30px'}}>图片：</span><input type = "file" name = "img" /><br></br><br></br>
                     <span style={{marginLeft:'30px'}}>文章：</span><textarea  name ="content" rows = "3" cols = "50" > </textarea><br></br><br></br>
                     </form>
@@ -140,7 +145,8 @@ const Foodlist = (props) => {
                             let eattime=food.eattime.value;
                             let img=food.img.value;
                             let content=food.content.value;
-                            updf={type:'updf',table:'keepweight',fname:fname,eattime:eattime,img:img,content:content,id:foodid}
+                            let no=food.no.value;
+                            updf={type:'updf',table:'keepweight',fname:fname,eattime:eattime,img:img,no:no,content:content,id:foodid}
                             
                             props.dispatch(func(updf))
                             setTimeout(()=>{
@@ -163,7 +169,8 @@ const Foodlist = (props) => {
                     <option value = "中"> 中 </option>
                     <option value = "晚">晚</option>
                 </select>
-                <span style={{marginLeft:'100px'}}>图片：</span><input type = "file" name = "img" /><br></br><br></br>
+                <span style={{marginLeft:'100px'}}>点赞数</span><input type="text" name="no" /><br></br><br></br>
+                <span>图片：</span><input type = "file" name = "img" /><br></br><br></br>
                 <span >文章：</span><textarea  name ="content" rows = "3" cols = "50" > </textarea>
             </form>
                 <button style={{marginTop:'30px'}}
@@ -173,9 +180,10 @@ const Foodlist = (props) => {
                     let food=document.getElementById('food1');
                     let fname=food.fname.value;
                     let eattime=food.eattime.value;
+                    let no=food.no.value;
                     let img=food.img.value;
                     let content=food.content.value;
-                    addf={type:'addf',table:'addweight',id:i,fname:fname,eattime:eattime,img:img,content:content,}
+                    addf={type:'addf',table:'addweight',id:i,fname:fname,eattime:eattime,img:img,no:no,content:content,}
                                                        
                     props.dispatch(func(addf))
                     setTimeout(()=>{
@@ -191,7 +199,8 @@ const Foodlist = (props) => {
                         <th>排序</th>
                         <th>食物名称</th>                        
                         <th>时间</th>
-                        <th style={{width:'300px'}}>文章 </th>
+                        <th style={{width:'250px'}}>文章 </th>
+                        <th>点赞数</th>
                         <th>图片</th>
                         <th>操作</th>  
                     </tr>
@@ -202,8 +211,8 @@ const Foodlist = (props) => {
                             <td>{i}</td>
                             <td>{item.foodname} </td>
                             <td>{item.eattime}</td>
-                            <td >{item.content.slice(0,14)+'....'}</td>        
-                                         
+                            <td >{item.content.slice(0,10)+'....'}</td>  
+                            <td>{item.no}</td>      
                             <td  >  <button onClick={()=>{
                                  let img=document.getElementById('img');
                                  let img1=document.getElementById('img1');
@@ -253,7 +262,8 @@ const Foodlist = (props) => {
                     <option value = "中"> 中 </option>
                     <option value = "晚">晚</option>
                 </select>
-                <span style={{marginLeft:'100px'}}>图片：</span><input type = "file" name = "img" /><br></br><br></br>
+                <span style={{marginLeft:'100px'}}>点赞数</span><input type="text" name="no" /><br></br><br></br>
+                <span>图片：</span><input type = "file" name = "img" /><br></br><br></br>
                 <span >文章：</span><textarea  name ="content" rows = "3" cols = "30" > </textarea>
             </form>
                 <button style={{marginTop:'30px'}}
@@ -264,8 +274,9 @@ const Foodlist = (props) => {
                     let fname=food.fname.value;
                     let eattime=food.eattime.value;
                     let img=food.img.value;
+                    let no=food.no.value;
                     let content=food.content.value;
-                    addf={type:'addf',table:'loseweight',id:i,fname:fname,eattime:eattime,img:img,content:content}
+                    addf={type:'addf',table:'loseweight',id:i,fname:fname,eattime:eattime,img:img,no:no,content:content}
                                                        
                     props.dispatch(func(addf))
                     setTimeout(()=>{
@@ -278,7 +289,8 @@ const Foodlist = (props) => {
                         <th>排序</th>
                         <th>食物名称</th>                        
                         <th>时间</th>
-                        <th style={{width:'300px'}}>文章 </th>
+                        <th style={{width:'250px'}}>文章 </th>
+                        <th>点赞数</th>
                         <th>图片</th>
                         <th>操作</th>   
                     </tr>
@@ -288,8 +300,8 @@ const Foodlist = (props) => {
                             <td>{j}</td>
                             <td>{item.foodname} </td>
                             <td>{item.eattime}</td>
-                            <td >{item.content.slice(0,14)+'....'}</td>         
-                                         
+                            <td >{item.content.slice(0,10)+'....'}</td>
+                            <td>{item.no} </td>       
                             <td  >  <button onClick={()=>{
                                  let img=document.getElementById('img');
                                  let img1=document.getElementById('img1');
@@ -331,7 +343,8 @@ const Foodlist = (props) => {
                     <option value = "中"> 中 </option>
                     <option value = "晚">晚</option>
                 </select>
-                <span style={{marginLeft:'100px'}}>图片：</span><input type = "file" name = "img" /><br></br><br></br>
+                <span style={{marginLeft:'100px'}}>点赞数</span><input type="text" name="no" /><br></br><br></br>
+                <span>图片：</span><input type = "file" name = "img" /><br></br><br></br>
                 <span >文章：</span><textarea  name ="content" rows = "3" cols = "30" > </textarea>
             </form>
                 <button style={{marginTop:'30px'}}
@@ -342,8 +355,9 @@ const Foodlist = (props) => {
                     let fname=food.fname.value;
                     let eattime=food.eattime.value;
                     let img=food.img.value;
+                    let no=food.no.value;
                     let content=food.content.value;
-                    addf={type:'addf',table:'keepweight',id:i,fname:fname,eattime:eattime,img:img,content:content}
+                    addf={type:'addf',table:'keepweight',id:i,fname:fname,eattime:eattime,img:img,no:no,content:content}
                                                        
                     props.dispatch(func(addf))
                     setTimeout(()=>{
@@ -356,7 +370,8 @@ const Foodlist = (props) => {
                         <th>排序</th>
                         <th>食物名称</th>                        
                         <th>时间</th>
-                        <th style={{width:'300px'}}>文章 </th>
+                        <th style={{width:'250px'}}>文章 </th>
+                        <th>点赞数</th>
                         <th>图片</th>
                         <th>操作</th>   
                     </tr>
@@ -366,8 +381,8 @@ const Foodlist = (props) => {
                             <td>{q}</td>
                             <td>{item.foodname} </td>
                             <td>{item.eattime}</td>
-                            <td >{item.content.slice(0,14)+'....'}</td>         
-                                         
+                            <td >{item.content.slice(0,10)+'....'}</td>         
+                            <td>{item.no}</td>            
                             <td  >  <button onClick={()=>{
                                  let img=document.getElementById('img');
                                  let img1=document.getElementById('img1');

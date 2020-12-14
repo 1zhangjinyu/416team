@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import './manage.css'
 import {updateuser} from './actionCreators'
-
+import Head from './head'
 class Detail extends Component {
     constructor(props){
         const data=props.location.data;
@@ -68,8 +68,10 @@ class Detail extends Component {
 
         }   
         return (
-            <div style={{width:'80%',marginTop:"120px",marginLeft:'250px',position:'absolute'}} >
-                <table border="1px" cellspacing="0px" width="100%" >
+            <div className='detail'>
+                <Head/>
+                
+                <table border="1px" cellspacing="0px">
                 <tr style={{backgroundColor:'rgba(231,229,229,0.795)'}}>
                     <th>id</th>
                 <th>用户名</th><th>密码</th>
