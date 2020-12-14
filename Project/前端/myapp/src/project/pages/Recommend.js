@@ -29,15 +29,16 @@ class Recommend extends Component {
                                     userid:item.userid,
                                     contid:item.contid,
                                     username:item.username,
-                                    num:item.num
+                                    num:item.num,
+                                    times:item.times
                                 })
                             }}>
                             <img src={item.img} style={{width:'160px',height:'140px'}}/>
                             <div style={{borderBottom:'1px solid #ccc',height:'20px'}}>
                                  <p style={{fontSize:'10px',lineHeight:'20px'}}>{item.content.length>=3 ? item.content.slice(0,3) : item.content}……</p>
                             </div>
-                            <img src='https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=332302150,4109713162&fm=111&gp=0.jpg' style={{width:'30px',height:'30px',marginTop:'2px'}} />
-                            <p style={{fontSize:'10px',marginRight:'70px',marginTop:'8px',float:'right'}}>{item.username}</p>
+                            <img src='https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1554132411,3341554696&fm=11&gp=0.jpg' style={{width:'25px',height:'25px',borderRadius: '25px',marginTop:'4px'}} />
+                            <p style={{fontSize:'10px',marginRight:'90px',marginTop:'8px',float:'right'}}>{item.username}</p>
                                     
                              
                         </div>)

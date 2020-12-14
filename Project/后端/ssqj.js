@@ -383,7 +383,20 @@ app.post('/dt',async c=>{
 
   contid = Date.now();
 
-  const sql = `insert into blog values('${id}','${contid}','${content}','${dtimg}',0)`;
+
+  let date1 = new Date();
+  let year = (date1.getFullYear()+"");
+  let month = date1.getMonth()+1;
+  month = month < 10 ? '0' + month : month;
+  let d = date1.getDate();
+  d=d<10?('0'+d):d;
+  let hour = date1.getHours();
+  let minutes = date1.getMinutes();
+  let date = `${year}-${month}-${d} ${hour}:${minutes}`;
+  console.log(date);
+
+
+  const sql = `insert into blog values('${id}','${contid}','${content}','${dtimg}',0,'${date}')`;
   await con.execute(sql);
 
 })
