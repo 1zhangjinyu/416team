@@ -44,14 +44,7 @@ class dtdetails extends React.Component{
                     <div style={{height:'40px',borderBottom:'1px solid #ccc'}}></div>
                     <img src={require('../image/pen.png')} style={{width:'50px',height:'50px'}}/>
 					<p style={{paddingRight:'250px',paddingTop:'15px',float:'right'}}>{content}</p>
-<<<<<<< HEAD
-				
-=======
-
->>>>>>> 1ab6561673557430ca0011258747982df8039741
-				</div>
-					
-					 
+				</div> 
 				<div style={{ position: 'fixed',  width: '100%', bottom: 0 }}>
             <TabBar
             unselectedTintColor="#949494"

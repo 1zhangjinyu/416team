@@ -139,9 +139,9 @@ class Home extends Component {
                 <div id="healthy">
                     <span id="rec">健康记录</span>
                     <span id="rep" onClick={()=>this.props.history.push('/home/health')}>健康报告> </span>
-        <p style={{fontSize:'14px',color:'grey',paddingTop:'30px',paddingLeft:'30px'}}>还可以吃 {Math.floor(this.props.restcal-kcal)}kcal</p>
+        <p style={{fontSize:'16px',color:'grey',paddingTop:'30px',paddingLeft:'30px'}}>还可以吃 {Math.floor(this.props.restcal-kcal)}kcal</p>
                     {/* <p style={{paddingLeft:'20px'}}>__________________________________________</p> */}
-                    <p style={{fontSize:'14px',color:'grey',paddingTop:'30px',paddingLeft:'30px',paddingTop:'40px'}}>体重 {this.props.health.sevenweight?this.props.health.sevenweight[0]:''}kg</p>
+                    <p style={{fontSize:'16px',color:'grey',paddingTop:'30px',paddingLeft:'30px',paddingTop:'40px'}}>体重 {this.props.health.sevenweight?this.props.health.sevenweight[0]:''}kg</p>
                     {/* <p style={{paddingLeft:'20px'}}>__________________________________________</p> */}
                     <p style={{textAlign:'center',paddingTop:'55px',fontSize:'17px'}} onClick={()=>this.props.history.push('/report')}>查看更多 ></p>
                 </div>
@@ -149,16 +149,16 @@ class Home extends Component {
                 <span className="iconfont icon-shuaxin" style={{float:'right',marginRight:'8%'}} onClick={()=>this.props.dispatch(foods())}>换一批</span>
                 <div id="eat">
                     <div style={{height:'20px'}}>
-                       <p style={{textAlign:'center',lineHeight:'20px',fontSize:'15px'}}>早餐</p>
+                       <p style={{textAlign:'center',lineHeight:'20px',fontSize:'18px'}}>早餐</p>
                         </div>
                     <Breakfast data={arr1} props={this.props}/>
                     <div style={{height:'20px',marginTop:'8px'}}>
-                        <p style={{textAlign:'center',lineHeight:'20px',fontSize:'15px'}}>午餐</p>
+                        <p style={{textAlign:'center',lineHeight:'20px',fontSize:'18px'}}>午餐</p>
                     </div>
                     
                     <Lunch data={arr2} props={this.props}/>
                     <div style={{height:'20px' ,marginTop:'8px'}}>
-                         <p style={{textAlign:'center',lineHeight:'20px',fontSize:'15px'}}>晚餐</p>
+                         <p style={{textAlign:'center',lineHeight:'20px',fontSize:'18px'}}>晚餐</p>
                     </div>
                    
                     <Dinner data={arr3} props={this.props}/>
