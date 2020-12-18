@@ -11,7 +11,7 @@ const Head= (props) => {
                     <img style={{width:'100%'}} src={props.managers.img}/>
                 </div>
                 <button className="btn">退出系统</button>
-                <ul>
+                <ul style={{marginLeft:'-40px'}}>
                     <NavLink to='/home'><li className='big'><img style={{paddingRight:'10px'}} src={require('./img/shuju.png')}/>我的首页</li></NavLink>
                     <li className='big'><img style={{paddingRight:'10px'}} src={require('./img/yonghu.png')}/>用户管理</li>
                     <NavLink to='/infor'><li className='small'>基本信息</li></NavLink>

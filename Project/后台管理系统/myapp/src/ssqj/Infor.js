@@ -115,7 +115,7 @@ class Infor extends Component {
                             {item.username} 
                         </td>
                         <td>
-                            {item.psd}
+                            ***
                         </td>
                         <td>
                             <button onClick={()=>{

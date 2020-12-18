@@ -3,7 +3,7 @@ ul{
 }
 .right{
     width:250px;
-    height:619px;
+    height:760px;
     background-color: rgb(86,186,186);
     float: left;
     position:fixed;
@@ -45,7 +45,7 @@ ul{
     border-top:1px solid teal;
 }
 .top{
-    width:1025px;
+    width:1335px;
     height:100px;
     background-color: teal;
     margin-left: 250px;
@@ -128,7 +128,7 @@ ul{
     border:3px solid teal;
 }
 .bread{
-    width:1000px;
+    width:1310px;
     height:30px;
     background-color: rgba(231, 229, 229, 0.795);
     margin-left: 250px;

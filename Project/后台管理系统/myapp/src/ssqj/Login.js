@@ -28,9 +28,9 @@ class Login extends Component {
         let data={username:this.state.inpname,password:this.state.inppsd};
         return (
            
-            <div className="login-big" >
+            <div className="login-big" style={{height:'745px'}}>
                
-                <div className="container">
+                <div className="container" >
                     <div className="imgBox">
                         <img src={"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1708858739,3895159754&fm=26&gp=0.jpg"} />
                     </div>
@@ -61,7 +61,7 @@ class Login extends Component {
                                     alert('用户名或密码有误');
                                     return ;
                                 }else{
-                                    this.props.history.push('/manager');
+                                    this.props.history.push('/home');
                                 }
                             },500);
                         }

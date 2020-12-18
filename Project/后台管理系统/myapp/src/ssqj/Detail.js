@@ -111,13 +111,9 @@ class Detail extends Component {
                     setTimeout(() => {
                     console.log(this.props)
                       
-                        if(this.props.ifok==='ok'){
-                            alert("修改成功")
-                        }else{
-                            alert("id唯一分配，不能修改")
-                        }
+                        alert('修改成功')
                     }
-                    , 50);
+                    , 500);
                     
                 }}>保存修改</button>
             

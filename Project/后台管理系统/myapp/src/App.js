@@ -11,7 +11,7 @@ import Detail from './ssqj/Detail'
 import Eat from './ssqj/Eat';
 import Food from './ssqj/Food';
 import Foodlist from './ssqj/Foodlist';
-
+import Content from './ssqj/Content'
 import Manager from './ssqj/Manager';
 import store from './ssqj/store'
 
@@ -28,6 +28,7 @@ const App=()=>{
 			<Route path='/food' component={Food}/>
 			<Route path='/foodlist' component={Foodlist}/>
 			<Route path='/manager' component={Manager}/>
+			<Route path='/content' component={Content} />
 			<Route render={()=><Redirect to='/home'/>}/>
 		</Switch>
 	</Router>
